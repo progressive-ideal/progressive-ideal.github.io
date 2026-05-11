@@ -252,6 +252,13 @@ select:focus {
     }
 }
 
+/* Add padding to footer on mobile to account for sticky mobile CTA */
+@media (max-width: 1023px) {
+    footer {
+        padding-bottom: 70px;
+    }
+}
+
 /* Print styles */
 @media print {
     header,
