@@ -78,13 +78,18 @@ const GalleryComponent = (function() {
             return;
         }
         
-        // Render gallery items
-        const html = gallery.map((item, index) => renderGalleryItem(item, index)).join('');
+        // Render gallery items with wrapper ID for lightGallery
+        const html = '<div id="gallery-grid" class="contents">' + gallery.map((item, index) => renderGalleryItem(item, index)).join('') + '</div>';
         container.innerHTML = html;
         
         // Re-initialize scroll animations
-        if (typeof initScrollAnimations === 'function') {
-            initScrollAnimations();
+        if (typeof window.initScrollAnimations === 'function') {
+            window.initScrollAnimations();
+        }
+        
+        // Initialize lightGallery and filters after content is rendered
+        if (typeof window.initGalleryLightbox === 'function') {
+            window.initGalleryLightbox();
         }
     }
     

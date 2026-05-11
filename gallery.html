@@ -81,7 +81,7 @@
     
     <script>
         // Gallery lightbox and filter functionality
-        (function() {
+        window.initGalleryLightbox = function() {
             const galleryGrid = document.getElementById('gallery-grid');
             const filterButtons = document.querySelectorAll('.gallery-filter');
             const galleryItems = document.querySelectorAll('.gallery-item');
@@ -253,7 +253,7 @@
             
             // Initialize lightGallery on page load
             initLightGallery();
-        })();
+        };
     </script>
 </body>
 </html>

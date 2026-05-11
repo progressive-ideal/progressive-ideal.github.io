@@ -482,3 +482,8 @@ function initTextRotator() {
         setInterval(rotateText, interval);
     }, interval);
 }
+
+// Expose functions globally for dynamic content components
+window.initCarousels = initCarousel;
+window.initFAQ = initFAQ;
+window.initScrollAnimations = initScrollAnimations;

@@ -93,9 +93,9 @@ const FAQComponent = (function() {
         
         container.innerHTML = html;
         
-        // Re-initialize FAQ accordion functionality
-        if (typeof initFAQAccordion === 'function') {
-            initFAQAccordion();
+        // Re-initialize FAQ accordion functionality (call global initFAQ from main.js)
+        if (typeof window.initFAQ === 'function') {
+            window.initFAQ();
         }
         
         // Re-initialize scroll animations
