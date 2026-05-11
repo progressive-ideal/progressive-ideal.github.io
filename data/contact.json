@@ -1,5 +1,5 @@
 {
-  "organization": "Progressive Ideal Trust Orphanage",
+  "organization": "Progressive Ideal Yatimkhana",
   "address": {
     "street": "123, Pangsha",
     "city": "Rajbari",
@@ -7,7 +7,7 @@
     "postalCode": "12345"
   },
   "phone": "+880 1234567890",
-  "email": "info@progressiveidealtrust.org",
+  "email": "info@progressiveidealyatimkhana.org",
   "hours": {
     "weekdays": "9:00 AM - 5:00 PM",
     "friday": "Closed",

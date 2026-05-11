@@ -15,10 +15,10 @@
     
     // Default data (fallback)
     const defaultContact = {
-        organization: "Progressive Ideal Trust",
+        organization: "Progressive Ideal Yatimkhana",
         address: { street: "123 Charity Lane", city: "City", country: "Country", postalCode: "12345" },
         phone: "+1 (555) 123-4567",
-        email: "info@progressiveidealtrust.org"
+        email: "info@progressiveidealyatimkhana.org"
     };
     
     const defaultSocialLinks = [
@@ -72,8 +72,8 @@
                 <div class="lg:col-span-4">
                     <a href="/" class="inline-block">
                         <div class="flex items-center gap-2">
-                            <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-primary-500 text-white font-bold text-lg">
-                                P
+                            <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-primary-500 text-white font-bold text-sm">
+                                PIY
                             </div>
                             <span class="text-lg font-bold text-white">${contact.organization}</span>
                         </div>
@@ -133,7 +133,7 @@
             
             <!-- Bottom Bar -->
             <div class="mt-16 flex flex-col items-center justify-between gap-4 border-t border-gray-800 py-8 sm:flex-row">
-                <p class="text-sm text-gray-500">© ${new Date().getFullYear()} ${contact.organization} Orphanage. All rights reserved.</p>
+                <p class="text-sm text-gray-500">© ${new Date().getFullYear()} ${contact.organization}. All rights reserved.</p>
                 <div class="flex gap-6">
                     <a href="#" class="text-sm text-gray-500 transition-colors hover:text-gray-300">Privacy Policy</a>
                     <a href="#" class="text-sm text-gray-500 transition-colors hover:text-gray-300">Terms of Service</a>

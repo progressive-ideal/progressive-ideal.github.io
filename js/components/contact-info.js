@@ -10,7 +10,7 @@
     
     // Default data (fallback)
     const defaultContact = {
-        organization: "Progressive Ideal Trust Orphanage",
+        organization: "Progressive Ideal Yatimkhana",
         address: {
             street: "123 Charity Lane",
             city: "City",
@@ -18,7 +18,7 @@
             postalCode: "12345"
         },
         phone: "+1 (555) 123-4567",
-        email: "info@progressiveidealtrust.org",
+        email: "info@progressiveidealyatimkhana.org",
         hours: {
             weekdays: "9:00 AM - 5:00 PM",
             friday: "Closed",

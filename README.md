@@ -1,4 +1,4 @@
-# Content Update Guide — Pity Website
+# Content Update Guide — PIY Website
 
 This is a static website built with plain HTML, CSS, and JavaScript. There is no database or content management system (CMS). All content lives directly inside HTML files. To update content, you edit the HTML files using a code editor.
 
@@ -7,7 +7,7 @@ This is a static website built with plain HTML, CSS, and JavaScript. There is no
 ## 📁 Site Structure Overview
 
 ```
-pity/
+piy/
 ├── index.html              ← Homepage
 ├── about.html              ← About page
 ├── contact.html            ← Contact page
@@ -106,7 +106,7 @@ The nav block looks like this (appears in all pages):
 ```html
 <nav class="navbar">
   <div class="container nav-container">
-    <a href="index.html" class="nav-logo">Pity</a>
+    <a href="index.html" class="nav-logo">PIY</a>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
@@ -140,14 +140,14 @@ The easiest approach is to duplicate an existing update file (e.g., `updates/ann
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>YOUR TITLE - Pity</title>
+    <title>YOUR TITLE - PIY</title>
     <link rel="stylesheet" href="../css/styles.css" />
   </head>
   <body>
     <!-- Navigation (copy from another update file) -->
     <nav class="navbar">
       <div class="container nav-container">
-        <a href="../index.html" class="nav-logo">Pity</a>
+        <a href="../index.html" class="nav-logo">PIY</a>
         <ul class="nav-links">
           <li><a href="../index.html">Home</a></li>
           <li><a href="../about.html">About</a></li>
@@ -174,7 +174,7 @@ The easiest approach is to duplicate an existing update file (e.g., `updates/ann
     <!-- Footer (copy from another update file) -->
     <footer class="footer">
       <div class="container">
-        <p>&copy; 2026 Pity. All rights reserved.</p>
+        <p>&copy; 2026 PIY. All rights reserved.</p>
       </div>
     </footer>
 
@@ -270,7 +270,7 @@ Open `contact.html` and update the contact details directly in the HTML:
 <div class="contact-info">
   <div class="contact-item">
     <h3>Email</h3>
-    <p>info@pity.org</p>
+    <p>info@piy.org</p>
     <!-- Change this -->
   </div>
   <div class="contact-item">

@@ -1,5 +1,5 @@
 /**
- * Progressive Ideal Trust Orphanage - Main JavaScript
+ * Progressive Ideal Yatimkhana - Main JavaScript
  * Handles all interactive functionality
  */
 
