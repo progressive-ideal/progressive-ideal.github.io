@@ -146,6 +146,16 @@ html {
     background: #16a34a;
 }
 
+/* Hide scrollbar utility class */
+.scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+
 /* Selection color */
 ::selection {
     background-color: #22c55e;
