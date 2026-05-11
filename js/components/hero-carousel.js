@@ -43,17 +43,10 @@
             </div>
         `).join('');
         
-        const dotsHTML = images.map((_, index) => `
-            <button class="hero-carousel-dot ${index === 0 ? 'active' : ''}" data-dot-index="${index}" aria-label="Go to slide ${index + 1}"></button>
-        `).join('');
-        
         return `
             <div class="hero-carousel" data-hero-carousel>
                 ${slidesHTML}
                 <div class="hero-carousel-overlay"></div>
-                <div class="hero-carousel-dots" data-carousel-dots>
-                    ${dotsHTML}
-                </div>
             </div>
         `;
     }
@@ -63,7 +56,6 @@
      */
     function initCarousel(container, interval) {
         const slides = container.querySelectorAll('.hero-carousel-slide');
-        const dots = container.querySelectorAll('.hero-carousel-dot');
         
         if (slides.length <= 1) return;
         
@@ -74,18 +66,16 @@
          * Go to specific slide
          */
         function goToSlide(index) {
-            // Remove active class from current slide and dot
+            // Remove active class from current slide
             slides[currentIndex].classList.remove('active');
-            dots[currentIndex].classList.remove('active');
             
             // Update index
             currentIndex = index;
             if (currentIndex >= slides.length) currentIndex = 0;
             if (currentIndex < 0) currentIndex = slides.length - 1;
             
-            // Add active class to new slide and dot
+            // Add active class to new slide
             slides[currentIndex].classList.add('active');
-            dots[currentIndex].classList.add('active');
         }
         
         /**
@@ -111,15 +101,6 @@
                 clearInterval(autoPlayInterval);
             }
         }
-        
-        // Dot click handlers
-        dots.forEach((dot, index) => {
-            dot.addEventListener('click', () => {
-                goToSlide(index);
-                // Reset auto-play timer after manual interaction
-                startAutoPlay();
-            });
-        });
         
         // Pause on hover (optional - for better UX)
         container.addEventListener('mouseenter', stopAutoPlay);

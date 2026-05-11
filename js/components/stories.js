@@ -88,7 +88,7 @@
         return `
                 <div class="relative mt-16" data-carousel>
                     <div class="overflow-hidden">
-                        <div class="flex transition-transform duration-500 ease-out" data-carousel-track>
+                        <div class="flex transition-transform duration-300 ease-out" data-carousel-track>
                             ${slidesHTML}
                         </div>
                     </div>

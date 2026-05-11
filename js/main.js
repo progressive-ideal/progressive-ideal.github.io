@@ -269,7 +269,7 @@ function initCarousel() {
     }
     
     function startAutoPlay() {
-        autoPlayInterval = setInterval(nextSlide, 5000);
+        autoPlayInterval = setInterval(nextSlide, 3500);
     }
     
     function resetAutoPlay() {
