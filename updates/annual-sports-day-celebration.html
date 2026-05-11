@@ -24,6 +24,9 @@
         }
     </script>
     <link rel="stylesheet" href="../css/styles.css">
+    
+    <!-- lightGallery CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.7.2/css/lightgallery-bundle.min.css">
 </head>
 <body class="min-h-screen font-sans antialiased">
     <div id="scroll-progress" class="fixed top-0 left-0 z-[60] h-0.5 bg-primary-600 transition-all"></div>
@@ -53,14 +56,27 @@
         <section class="py-16 lg:py-24">
             <div class="container mx-auto px-4 lg:px-8">
                 <article class="mx-auto max-w-3xl">
-                    <div class="overflow-hidden rounded-2xl shadow-lg" data-animate="fade-in-up">
-                        <img src="https://images.unsplash.com/photo-1461896836934-bd45ba7e4cac?w=1200&h=600&fit=crop" alt="Children participating in sports day" class="w-full" loading="lazy">
-                    </div>
-                    <div class="mt-10 space-y-6 text-lg text-gray-600" data-animate="fade-in-up" data-delay="100">
-                        <p>Our annual Sports Day on March 22nd was a spectacular celebration of athleticism, teamwork, and joy! Over 150 children participated in a full day of sporting events, from track and field to team sports, showcasing their talents and determination.</p>
-                        <p>The day began with an energetic opening ceremony where the children marched in their team colors — Red, Blue, Green, and Yellow. The atmosphere was electric as parents, volunteers, and staff cheered from the sidelines. The relay races were a particular highlight, with nail-biting finishes that had everyone on their feet.</p>
-                        <p>Football matches drew the largest crowds, with the Green Team taking home the trophy after a thrilling penalty shootout. Other events included sack races, tug-of-war, long jump, and a special obstacle course designed for our younger children. Every participant received a medal, reinforcing our belief that effort and participation matter more than winning.</p>
-                        <p>Beyond the competition, Sports Day is about building confidence, learning sportsmanship, and having fun. We saw children encourage their competitors, help each other up after falls, and celebrate each other's victories. These moments of character and compassion are what make events like these truly special.</p>
+                    <div id="blog-gallery">
+                        <!-- Hero Image -->
+                        <div class="overflow-hidden rounded-2xl shadow-lg" data-animate="fade-in-up">
+                            <a href="https://images.unsplash.com/photo-1461896836934-bd45ba7e4cac?w=1200&h=800&fit=crop" data-sub-html="<h4 class='text-lg font-semibold'>Annual Sports Day Celebration</h4><p class='text-sm opacity-80'>Children participating in various sports activities</p>" class="gallery-item block cursor-pointer">
+                                <img src="https://images.unsplash.com/photo-1461896836934-bd45ba7e4cac?w=1200&h=600&fit=crop" alt="Children participating in sports day" class="w-full transition-transform duration-300 hover:scale-105" loading="lazy">
+                            </a>
+                        </div>
+                        <div class="mt-10 space-y-6 text-lg text-gray-600" data-animate="fade-in-up" data-delay="100">
+                            <p>Our annual Sports Day on March 22nd was a spectacular celebration of athleticism, teamwork, and joy! Over 150 children participated in a full day of sporting events, from track and field to team sports, showcasing their talents and determination.</p>
+                            <p>The day began with an energetic opening ceremony where the children marched in their team colors — Red, Blue, Green, and Yellow. The atmosphere was electric as parents, volunteers, and staff cheered from the sidelines. The relay races were a particular highlight, with nail-biting finishes that had everyone on their feet.</p>
+                            
+                            <!-- Content Image with Lightbox -->
+                            <div class="my-8 overflow-hidden rounded-2xl shadow-lg">
+                                <a href="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=1200&h=800&fit=crop" data-sub-html="<h4 class='text-lg font-semibold'>Relay Race Excitement</h4><p class='text-sm opacity-80'>Children cheering during the exciting relay race finale</p>" class="gallery-item block cursor-pointer">
+                                    <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=800&h=500&fit=crop" alt="Children cheering at sports event" class="w-full transition-transform duration-300 hover:scale-105" loading="lazy">
+                                </a>
+                            </div>
+                            
+                            <p>Football matches drew the largest crowds, with the Green Team taking home the trophy after a thrilling penalty shootout. Other events included sack races, tug-of-war, long jump, and a special obstacle course designed for our younger children. Every participant received a medal, reinforcing our belief that effort and participation matter more than winning.</p>
+                            <p>Beyond the competition, Sports Day is about building confidence, learning sportsmanship, and having fun. We saw children encourage their competitors, help each other up after falls, and celebrate each other's victories. These moments of character and compassion are what make events like these truly special.</p>
+                        </div>
                     </div>
                 </article>
             </div>
@@ -76,5 +92,28 @@
     <script src="../js/components/header.js"></script>
     <script src="../js/components/footer.js"></script>
     <script src="../js/main.js"></script>
+    
+    <!-- lightGallery JS -->
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.2/lightgallery.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.2/plugins/zoom/lg-zoom.umd.js"></script>
+    
+    <script>
+        // Initialize lightGallery for blog images
+        lightGallery(document.getElementById('blog-gallery'), {
+            plugins: [lgZoom],
+            speed: 300,
+            zoom: true,
+            actualSize: false,
+            showZoomInOutIcons: true,
+            download: false,
+            counter: true,
+            selector: '.gallery-item',
+            mobileSettings: {
+                controls: true,
+                showCloseIcon: true,
+                showZoomInOutIcons: true
+            }
+        });
+    </script>
 </body>
 </html>

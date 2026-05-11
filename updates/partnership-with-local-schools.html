@@ -24,6 +24,9 @@
         }
     </script>
     <link rel="stylesheet" href="../css/styles.css">
+    
+    <!-- lightGallery CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.7.2/css/lightgallery-bundle.min.css">
 </head>
 <body class="min-h-screen font-sans antialiased">
     <div id="scroll-progress" class="fixed top-0 left-0 z-[60] h-0.5 bg-primary-600 transition-all"></div>
@@ -53,8 +56,10 @@
         <section class="py-16 lg:py-24">
             <div class="container mx-auto px-4 lg:px-8">
                 <article class="mx-auto max-w-3xl">
-                    <div class="overflow-hidden rounded-2xl shadow-lg" data-animate="fade-in-up">
-                        <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=1200&h=600&fit=crop" alt="Partnership with local schools" class="w-full" loading="lazy">
+                    <div id="blog-gallery" class="overflow-hidden rounded-2xl shadow-lg" data-animate="fade-in-up">
+                        <a href="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=1200&h=800&fit=crop" data-sub-html="<h4 class='text-lg font-semibold'>Partnership with Local Schools</h4><p class='text-sm opacity-80'>Children learning in partner school classrooms</p>" class="gallery-item block cursor-pointer">
+                            <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=1200&h=600&fit=crop" alt="Partnership with local schools" class="w-full transition-transform duration-300 hover:scale-105" loading="lazy">
+                        </a>
                     </div>
                     <div class="mt-10 space-y-6 text-lg text-gray-600" data-animate="fade-in-up" data-delay="100">
                         <p>We are thrilled to announce an exciting new partnership with three esteemed local schools — Greenfield Academy, Sunrise Preparatory, and Heritage High School. This collaboration will enable our children to attend mainstream schools with full tuition support, marking a significant step forward in our education program.</p>
@@ -76,5 +81,28 @@
     <script src="../js/components/header.js"></script>
     <script src="../js/components/footer.js"></script>
     <script src="../js/main.js"></script>
+    
+    <!-- lightGallery JS -->
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.2/lightgallery.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.2/plugins/zoom/lg-zoom.umd.js"></script>
+    
+    <script>
+        // Initialize lightGallery for blog images
+        lightGallery(document.getElementById('blog-gallery'), {
+            plugins: [lgZoom],
+            speed: 300,
+            zoom: true,
+            actualSize: false,
+            showZoomInOutIcons: true,
+            download: false,
+            counter: false,
+            selector: '.gallery-item',
+            mobileSettings: {
+                controls: true,
+                showCloseIcon: true,
+                showZoomInOutIcons: true
+            }
+        });
+    </script>
 </body>
 </html>
