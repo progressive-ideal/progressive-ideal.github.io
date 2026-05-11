@@ -1,0 +1,131 @@
+/**
+ * Header Component
+ * Reusable header with navigation for all pages
+ */
+
+(function() {
+    'use strict';
+    
+    /**
+     * Get the current page path for active navigation state
+     */
+    function getCurrentPage() {
+        const path = window.location.pathname;
+        // Handle both /about and /about.html formats
+        if (path === '/' || path === '/index.html') return 'home';
+        if (path.startsWith('/about')) return 'about';
+        if (path.startsWith('/contact')) return 'contact';
+        if (path.startsWith('/gallery')) return 'gallery';
+        if (path.startsWith('/updates')) return 'updates';
+        return '';
+    }
+    
+    /**
+     * Generate navigation link with active state
+     */
+    function navLink(href, text, currentPage, pageName) {
+        const isActive = currentPage === pageName;
+        const activeClass = isActive ? 'text-gray-900' : 'text-gray-600';
+        const hoverClass = isActive ? 'hover:text-primary-600' : 'hover:text-gray-900';
+        return `<a href="${href}" class="text-sm font-medium ${activeClass} transition-colors ${hoverClass}">${text}</a>`;
+    }
+    
+    /**
+     * Generate mobile navigation link with active state
+     */
+    function mobileNavLink(href, text, currentPage, pageName) {
+        const isActive = currentPage === pageName;
+        const activeClass = isActive ? 'text-gray-900' : 'text-gray-600';
+        return `<a href="${href}" class="block py-3 text-base font-medium ${activeClass}">${text}</a>`;
+    }
+    
+    /**
+     * Render the header component
+     */
+    function renderHeader() {
+        const currentPage = getCurrentPage();
+        
+        const headerHTML = `
+    <!-- Header -->
+    <header class="sticky top-0 z-50 w-full border-b border-gray-200 bg-white/80 backdrop-blur-lg transition-all" data-header>
+        <div class="container mx-auto flex h-16 items-center justify-between px-4 lg:h-20 lg:px-8">
+            <!-- Logo -->
+            <a href="/" class="flex items-center gap-2">
+                <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-primary-500 text-white font-bold text-lg lg:h-12 lg:w-12">
+                    P
+                </div>
+                <span class="hidden sm:block text-lg font-bold text-gray-900">
+                    Progressive Ideal Trust
+                </span>
+            </a>
+            
+            <!-- Desktop Navigation -->
+            <nav class="hidden lg:flex lg:items-center lg:gap-8" aria-label="Main navigation">
+                ${navLink('/', 'Home', currentPage, 'home')}
+                ${navLink('/about', 'About', currentPage, 'about')}
+                ${navLink('/#programs', 'Programs', currentPage, 'programs')}
+                ${navLink('/#impact', 'Impact', currentPage, 'impact')}
+                ${navLink('/gallery', 'Gallery', currentPage, 'gallery')}
+                ${navLink('/updates', 'Updates', currentPage, 'updates')}
+                ${navLink('/contact', 'Contact', currentPage, 'contact')}
+            </nav>
+            
+            <!-- Actions -->
+            <div class="flex items-center gap-4">
+                <a href="/#donate" class="hidden rounded-full bg-primary-500 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-primary-600 sm:inline-flex shadow-lg shadow-primary-500/25">
+                    Donate Now
+                </a>
+                
+                <!-- Mobile Menu Button -->
+                <button type="button" data-mobile-toggle class="rounded-lg p-2 text-gray-600 transition-colors hover:bg-gray-100 lg:hidden" aria-label="Open menu" aria-expanded="false">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Navigation -->
+        <div class="hidden lg:hidden" data-mobile-menu>
+            <nav class="border-t border-gray-200 bg-white px-4 py-4">
+                ${mobileNavLink('/', 'Home', currentPage, 'home')}
+                ${mobileNavLink('/about', 'About', currentPage, 'about')}
+                ${mobileNavLink('/#programs', 'Programs', currentPage, 'programs')}
+                ${mobileNavLink('/#impact', 'Impact', currentPage, 'impact')}
+                ${mobileNavLink('/gallery', 'Gallery', currentPage, 'gallery')}
+                ${mobileNavLink('/updates', 'Updates', currentPage, 'updates')}
+                ${mobileNavLink('/contact', 'Contact', currentPage, 'contact')}
+                <div class="mt-4 border-t border-gray-200 pt-4">
+                    <a href="/#donate" class="block w-full rounded-full bg-primary-500 px-5 py-3 text-center text-sm font-semibold text-white transition-colors hover:bg-primary-600">
+                        Donate Now
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>`;
+        
+        // Find the header placeholder or insert at beginning of body
+        const placeholder = document.getElementById('header-placeholder');
+        if (placeholder) {
+            placeholder.outerHTML = headerHTML;
+        } else {
+            // Insert after skip-to-content link if exists, otherwise at start of body
+            const skipLink = document.querySelector('a[href="#main-content"]');
+            if (skipLink) {
+                skipLink.insertAdjacentHTML('afterend', headerHTML);
+            } else {
+                document.body.insertAdjacentHTML('afterbegin', headerHTML);
+            }
+        }
+    }
+    
+    // Expose render function globally
+    window.renderHeader = renderHeader;
+    
+    // Auto-render if document is ready
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', renderHeader);
+    } else {
+        renderHeader();
+    }
+})();
