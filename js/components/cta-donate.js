@@ -15,6 +15,7 @@
         description: 'Your generosity directly supports children in need, providing them with food, shelter, education, and hope for a brighter future.',
         buttonText: 'Donate Now',
         buttonUrl: '/#donate',
+        sectionId: '',
         showImpactExamples: true,
         showTrustBadges: true
     };
@@ -79,7 +80,7 @@
         
         return `
     <!-- CTA Section -->
-    <section class="relative overflow-hidden bg-gradient-to-br from-primary-500 to-primary-700 py-20 lg:py-28">
+    <section ${cfg.sectionId ? `id="${cfg.sectionId}"` : ''} class="relative overflow-hidden bg-gradient-to-br from-primary-500 to-primary-700 py-20 lg:py-28">
         <div class="absolute inset-0 z-0 overflow-hidden" aria-hidden="true">
             <div class="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-white/10 blur-3xl"></div>
             <div class="absolute -bottom-20 -left-20 h-64 w-64 rounded-full bg-white/10 blur-3xl"></div>
