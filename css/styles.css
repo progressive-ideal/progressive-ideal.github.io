@@ -359,13 +359,35 @@ select:focus {
     width: 320px;
     max-width: 85vw;
     height: 100%;
-    background: rgba(0, 0, 0, 0.85);
+    background: rgba(0, 0, 0, 0.25);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    z-index: 50;
+    z-index: 1050;
+    pointer-events: auto;
     transform: translateX(100%);
     transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
     overflow-y: auto;
+}
+
+/* Ensure toolbar stays above info panel */
+.lg-toolbar {
+    z-index: 1060 !important;
+}
+
+/* Ensure components container stays above info panel */
+.lg-components {
+    z-index: 1060 !important;
+}
+
+/* Ensure the outer container has proper stacking context */
+.lg-outer {
+    z-index: 1000;
+}
+
+/* Ensure image container is below info panel */
+.lg-img-wrap,
+.lg-item {
+    z-index: 1010 !important;
 }
 
 .lg-info-panel.lg-info-panel-visible {

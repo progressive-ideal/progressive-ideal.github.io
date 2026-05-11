@@ -79,6 +79,9 @@
     <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.2/plugins/thumbnail/lg-thumbnail.umd.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.2/plugins/zoom/lg-zoom.umd.js"></script>
     
+    <!-- Lightbox Component -->
+    <script src="js/components/lightbox.js"></script>
+    
     <script>
         // Gallery lightbox and filter functionality
         window.initGalleryLightbox = function() {
@@ -86,130 +89,17 @@
             const filterButtons = document.querySelectorAll('.gallery-filter');
             const galleryItems = document.querySelectorAll('.gallery-item');
             let lightGalleryInstance = null;
-            let eventListenersAttached = false;
             
-            // Initialize lightGallery
+            // Initialize lightGallery using the reusable component
             function initLightGallery() {
                 if (lightGalleryInstance) {
                     lightGalleryInstance.destroy();
                 }
                 
-                lightGalleryInstance = lightGallery(galleryGrid, {
+                lightGalleryInstance = initLightbox(galleryGrid, {
                     selector: '.gallery-item:not([style*="display: none"])',
                     plugins: [lgThumbnail, lgZoom],
-                    speed: 300,
-                    thumbnail: true,
-                    zoom: true,
-                    actualSize: false,
-                    showZoomInOutIcons: true,
-                    download: false,
-                    counter: true,
-                    mousewheel: true,
-                    getCaptionFromTitleOrAlt: false,
-                    mobileSettings: {
-                        controls: true,
-                        showCloseIcon: true,
-                        showZoomInOutIcons: true
-                    }
-                });
-                
-                // Attach event listeners only once
-                if (!eventListenersAttached) {
-                    galleryGrid.addEventListener('lgAfterOpen', addInfoButton);
-                    galleryGrid.addEventListener('lgAfterSlide', updateInfoPanel);
-                    galleryGrid.addEventListener('lgBeforeClose', closeInfoPanel);
-                    eventListenersAttached = true;
-                }
-            }
-            
-            // Add custom info button to the lightbox
-            function addInfoButton() {
-                const toolbar = document.querySelector('.lg-toolbar');
-                if (!toolbar || toolbar.querySelector('.lg-info-btn')) return;
-                
-                const infoBtn = document.createElement('button');
-                infoBtn.type = 'button';
-                infoBtn.className = 'lg-info-btn lg-icon';
-                infoBtn.setAttribute('aria-label', 'Show info');
-                infoBtn.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>';
-                infoBtn.addEventListener('click', toggleInfoPanel);
-                toolbar.appendChild(infoBtn);
-                
-                // Add info panel to the lightbox
-                const outer = document.querySelector('.lg-outer');
-                if (outer && !outer.querySelector('.lg-info-panel')) {
-                    const panel = document.createElement('div');
-                    panel.className = 'lg-info-panel';
-                    panel.innerHTML = '<div class="lg-info-panel-content"></div>';
-                    outer.appendChild(panel);
-                }
-            }
-            
-            // Toggle info panel visibility
-            function toggleInfoPanel() {
-                const panel = document.querySelector('.lg-info-panel');
-                const infoBtn = document.querySelector('.lg-info-btn');
-                if (!panel) return;
-                
-                panel.classList.toggle('lg-info-panel-visible');
-                if (infoBtn) {
-                    infoBtn.classList.toggle('lg-info-btn-active');
-                }
-                
-                if (panel.classList.contains('lg-info-panel-visible')) {
-                    updateInfoPanelContent();
-                }
-            }
-            
-            // Close info panel when lightbox closes
-            function closeInfoPanel() {
-                const panel = document.querySelector('.lg-info-panel');
-                if (panel) {
-                    panel.classList.remove('lg-info-panel-visible');
-                }
-            }
-            
-            // Update info panel when slide changes
-            function updateInfoPanel() {
-                const panel = document.querySelector('.lg-info-panel');
-                if (panel && panel.classList.contains('lg-info-panel-visible')) {
-                    updateInfoPanelContent();
-                }
-            }
-            
-            // Update info panel content with current image description
-            function updateInfoPanelContent() {
-                const panelContent = document.querySelector('.lg-info-panel-content');
-                if (!panelContent) return;
-                
-                const currentIndex = lightGalleryInstance ? lightGalleryInstance.index : 0;
-                const visibleItems = getVisibleItems();
-                const currentItem = visibleItems[currentIndex];
-                
-                if (currentItem) {
-                    const description = currentItem.getAttribute('data-description') || '';
-                    const title = currentItem.querySelector('h3') ? currentItem.querySelector('h3').textContent : '';
-                    const category = currentItem.getAttribute('data-category') || '';
-                    
-                    let html = '';
-                    if (title) {
-                        html += '<h3 class="lg-info-title">' + title + '</h3>';
-                    }
-                    if (category) {
-                        html += '<span class="lg-info-category">' + category.charAt(0).toUpperCase() + category.slice(1) + '</span>';
-                    }
-                    if (description) {
-                        html += '<p class="lg-info-description">' + description + '</p>';
-                    }
-                    
-                    panelContent.innerHTML = html;
-                }
-            }
-            
-            // Get currently visible gallery items
-            function getVisibleItems() {
-                return Array.from(galleryItems).filter(function(item) {
-                    return item.style.display !== 'none';
+                    thumbnail: true
                 });
             }
             

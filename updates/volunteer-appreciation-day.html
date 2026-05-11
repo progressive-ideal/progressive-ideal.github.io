@@ -95,22 +95,14 @@
     <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.2/lightgallery.umd.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.2/plugins/zoom/lg-zoom.umd.js"></script>
     
+    <!-- Lightbox Component -->
+    <script src="../js/components/lightbox.js"></script>
+    
     <script>
-        // Initialize lightGallery for blog images
-        lightGallery(document.getElementById('blog-gallery'), {
+        // Initialize lightGallery for blog images using the reusable component
+        initLightbox('#blog-gallery', {
             plugins: [lgZoom],
-            speed: 300,
-            zoom: true,
-            actualSize: false,
-            showZoomInOutIcons: true,
-            download: false,
-            counter: false,
-            selector: '.gallery-item',
-            mobileSettings: {
-                controls: true,
-                showCloseIcon: true,
-                showZoomInOutIcons: true
-            }
+            selector: '.gallery-item'
         });
     </script>
 </body>
