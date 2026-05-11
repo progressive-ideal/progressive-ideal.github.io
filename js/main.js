@@ -151,7 +151,7 @@ function initProgressBars() {
 }
 
 /**
- * Carousel - Testimonials slider
+ * Carousel - Testimonials slider with responsive visible slides
  */
 function initCarousel() {
     const carousel = document.querySelector('[data-carousel]');
@@ -168,25 +168,53 @@ function initCarousel() {
     let currentIndex = 0;
     const totalSlides = slides.length;
     let autoPlayInterval;
+    let visibleSlides = 1;
     
-    // Create dots
-    if (dotsContainer) {
-        dotsContainer.innerHTML = '';
-        slides.forEach((_, index) => {
-            const dot = document.createElement('button');
-            dot.type = 'button';
-            dot.setAttribute('aria-label', `Go to slide ${index + 1}`);
-            dot.className = `h-2.5 rounded-full transition-all ${index === 0 ? 'w-8 bg-primary-600' : 'w-2.5 bg-gray-300'}`;
-            dot.addEventListener('click', () => goToSlide(index));
-            dotsContainer.appendChild(dot);
-        });
+    /**
+     * Calculate visible slides based on window width
+     */
+    function getVisibleSlides() {
+        const width = window.innerWidth;
+        if (width >= 1024) return 3;  // lg: 3 slides
+        if (width >= 640) return 2;    // sm: 2 slides
+        return 1;                      // mobile: 1 slide
     }
     
+    /**
+     * Calculate total pages (groups of visible slides)
+     */
+    function getTotalPages() {
+        return Math.ceil(totalSlides / visibleSlides);
+    }
+    
+    /**
+     * Create dots based on number of pages
+     */
+    function createDots() {
+        if (!dotsContainer) return;
+        dotsContainer.innerHTML = '';
+        
+        const totalPages = getTotalPages();
+        for (let i = 0; i < totalPages; i++) {
+            const dot = document.createElement('button');
+            dot.type = 'button';
+            dot.setAttribute('aria-label', `Go to page ${i + 1}`);
+            dot.className = `h-2.5 rounded-full transition-all ${i === 0 ? 'w-8 bg-primary-600' : 'w-2.5 bg-gray-300'}`;
+            dot.addEventListener('click', () => goToPage(i));
+            dotsContainer.appendChild(dot);
+        }
+    }
+    
+    /**
+     * Update dots to reflect current page
+     */
     function updateDots() {
         if (!dotsContainer) return;
         const dots = dotsContainer.querySelectorAll('button');
+        const currentPage = Math.floor(currentIndex / visibleSlides);
+        
         dots.forEach((dot, index) => {
-            if (index === currentIndex) {
+            if (index === currentPage) {
                 dot.className = 'h-2.5 w-8 rounded-full bg-primary-600 transition-all';
             } else {
                 dot.className = 'h-2.5 w-2.5 rounded-full bg-gray-300 transition-all';
@@ -194,21 +222,50 @@ function initCarousel() {
         });
     }
     
-    function goToSlide(index) {
-        currentIndex = index;
-        track.style.transform = `translateX(-${currentIndex * 100}%)`;
-        updateDots();
+    /**
+     * Go to a specific page (group of slides)
+     */
+    function goToPage(pageIndex) {
+        currentIndex = pageIndex * visibleSlides;
+        // Ensure we don't go beyond the last slide
+        currentIndex = Math.min(currentIndex, totalSlides - 1);
+        updateCarousel();
         resetAutoPlay();
     }
     
-    function nextSlide() {
-        currentIndex = (currentIndex + 1) % totalSlides;
-        goToSlide(currentIndex);
+    /**
+     * Update carousel position
+     */
+    function updateCarousel() {
+        const slideWidth = 100 / visibleSlides;
+        track.style.transform = `translateX(-${currentIndex * slideWidth}%)`;
+        updateDots();
     }
     
+    /**
+     * Go to next slide
+     */
+    function nextSlide() {
+        if (currentIndex >= totalSlides - 1) {
+            currentIndex = 0;
+        } else {
+            currentIndex++;
+        }
+        updateCarousel();
+        resetAutoPlay();
+    }
+    
+    /**
+     * Go to previous slide
+     */
     function prevSlide() {
-        currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-        goToSlide(currentIndex);
+        if (currentIndex <= 0) {
+            currentIndex = totalSlides - 1;
+        } else {
+            currentIndex--;
+        }
+        updateCarousel();
+        resetAutoPlay();
     }
     
     function startAutoPlay() {
@@ -219,6 +276,25 @@ function initCarousel() {
         clearInterval(autoPlayInterval);
         startAutoPlay();
     }
+    
+    /**
+     * Handle window resize - recalculate visible slides
+     */
+    function handleResize() {
+        const newVisibleSlides = getVisibleSlides();
+        if (newVisibleSlides !== visibleSlides) {
+            visibleSlides = newVisibleSlides;
+            // Reset to first slide to avoid empty spaces
+            currentIndex = 0;
+            createDots();
+            updateCarousel();
+        }
+    }
+    
+    // Initialize
+    visibleSlides = getVisibleSlides();
+    createDots();
+    updateCarousel();
     
     // Event listeners
     if (prevBtn) {
@@ -253,6 +329,13 @@ function initCarousel() {
             }
         }
     }
+    
+    // Resize handler with debounce
+    let resizeTimeout;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(handleResize, 150);
+    });
     
     // Start autoplay
     startAutoPlay();

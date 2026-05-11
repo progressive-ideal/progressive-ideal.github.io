@@ -43,8 +43,8 @@
         
         return `
                             <!-- Story ${index + 1} -->
-                            <div class="flex-shrink-0 px-3" data-carousel-slide style="width: 100%;">
-                                <div class="rounded-2xl bg-white p-8 shadow-lg mx-auto max-w-2xl">
+                            <div class="flex-shrink-0 px-3 w-full sm:w-1/2 lg:w-1/3" data-carousel-slide>
+                                <div class="rounded-2xl bg-white p-8 shadow-lg h-full">
                                     <div class="mb-6">
                                         ${quoteIcon}
                                     </div>
