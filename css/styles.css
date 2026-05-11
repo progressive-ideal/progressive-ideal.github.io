@@ -297,10 +297,11 @@ select:focus {
 .text-rotator {
     position: relative;
     display: inline-block;
-    min-height: 1.2em;
+    height: 1.4em;
     vertical-align: bottom;
     overflow: hidden;
     width: 100%;
+    line-height: 1.4em;
 }
 
 .text-rotator-item {
@@ -314,6 +315,7 @@ select:focus {
     left: 0;
     top: 0;
     width: 100%;
+    line-height: 1.4em;
 }
 
 .text-rotator-item.active {
