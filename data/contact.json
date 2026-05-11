@@ -10,7 +10,7 @@
   "email": "info@progressiveidealtrust.org",
   "hours": {
     "weekdays": "9:00 AM - 5:00 PM",
-    "saturday": "10:00 AM - 2:00 PM",
-    "sunday": "Closed"
+    "friday": "Closed",
+    "saturday": "9:00 AM - 5:00 PM"
   }
 }

@@ -21,8 +21,8 @@
         email: "info@progressiveidealtrust.org",
         hours: {
             weekdays: "9:00 AM - 5:00 PM",
-            saturday: "10:00 AM - 2:00 PM",
-            sunday: "Closed"
+            friday: "Closed",
+            saturday: "Closed"
         }
     };
     
@@ -110,7 +110,7 @@
                                 </div>
                                 <div>
                                     <h3 class="font-semibold text-gray-900">Office Hours</h3>
-                                    <p class="mt-1 text-gray-600">Monday - Friday: ${contact.hours.weekdays}<br>Saturday: ${contact.hours.saturday}<br>Sunday: ${contact.hours.sunday}</p>
+                                    <p class="mt-1 text-gray-600">Sunday - Thursday: ${contact.hours.weekdays}<br>Friday: ${contact.hours.friday}<br>Saturday: ${contact.hours.saturday}</p>
                                 </div>
                             </div>
                         </div>
