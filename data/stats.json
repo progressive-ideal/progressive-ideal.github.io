@@ -1,0 +1,14 @@
+{
+  "stats": [
+    { "value": 50000, "label": "Funds Raised", "prefix": "$", "suffix": "+", "showInHero": true },
+    { "value": 150, "label": "Children Helped", "suffix": "+", "showInHero": true },
+    { "value": 50, "label": "Active Volunteers", "suffix": "+", "showInHero": true },
+    { "value": 25, "label": "Years of Service", "showInHero": true },
+    { "value": 200, "label": "Meals Served Monthly" }
+  ],
+  "campaigns": [
+    { "name": "New Classroom Building", "progress": 65, "goal": "$50,000" },
+    { "name": "Medical Fund", "progress": 80, "goal": "$20,000" },
+    { "name": "Food & Nutrition", "progress": 45, "goal": "$30,000" }
+  ]
+}

@@ -85,34 +85,11 @@
             </svg>
         </div>
         
-        <!-- Stats Section -->
+        <!-- Stats Section (dynamically populated by stats.js) -->
         <section class="border-y border-gray-200 bg-gray-50 py-16 lg:py-20">
             <div class="container mx-auto px-4 lg:px-8">
-                <div class="grid grid-cols-2 gap-8 sm:grid-cols-4">
-                    <div class="text-center" data-animate="fade-in-up">
-                        <div class="text-4xl font-bold text-primary-600 lg:text-5xl">
-                            <span data-counter="50000">$0</span>+
-                        </div>
-                        <div class="mt-2 text-sm font-medium text-gray-600">Funds Raised</div>
-                    </div>
-                    <div class="text-center" data-animate="fade-in-up" data-delay="100">
-                        <div class="text-4xl font-bold text-primary-600 lg:text-5xl">
-                            <span data-counter="150">0</span>+
-                        </div>
-                        <div class="mt-2 text-sm font-medium text-gray-600">Children Helped</div>
-                    </div>
-                    <div class="text-center" data-animate="fade-in-up" data-delay="200">
-                        <div class="text-4xl font-bold text-primary-600 lg:text-5xl">
-                            <span data-counter="50">0</span>+
-                        </div>
-                        <div class="mt-2 text-sm font-medium text-gray-600">Active Volunteers</div>
-                    </div>
-                    <div class="text-center" data-animate="fade-in-up" data-delay="300">
-                        <div class="text-4xl font-bold text-primary-600 lg:text-5xl">
-                            <span data-counter="25">0</span>
-                        </div>
-                        <div class="mt-2 text-sm font-medium text-gray-600">Years of Service</div>
-                    </div>
+                <div id="hero-stats-container">
+                    <!-- Loading skeleton will be shown while data loads -->
                 </div>
             </div>
         </section>
@@ -257,59 +234,14 @@
                     </p>
                 </div>
                 
-                <!-- Stats Grid -->
-                <div class="mt-16 grid grid-cols-2 gap-8 lg:grid-cols-4">
-                    <div class="text-center" data-animate="fade-in-up" data-delay="100">
-                        <div class="text-4xl font-bold text-primary-600 lg:text-5xl" data-counter="150">0</div>
-                        <div class="mt-2 text-sm font-medium text-gray-600">Children Supported</div>
-                    </div>
-                    <div class="text-center" data-animate="fade-in-up" data-delay="200">
-                        <div class="text-4xl font-bold text-primary-600 lg:text-5xl" data-counter="95">0</div>
-                        <div class="mt-2 text-sm font-medium text-gray-600">School Graduation Rate %</div>
-                    </div>
-                    <div class="text-center" data-animate="fade-in-up" data-delay="300">
-                        <div class="text-4xl font-bold text-primary-600 lg:text-5xl" data-counter="200">0</div>
-                        <div class="mt-2 text-sm font-medium text-gray-600">Meals Served Monthly</div>
-                    </div>
-                    <div class="text-center" data-animate="fade-in-up" data-delay="400">
-                        <div class="text-4xl font-bold text-primary-600 lg:text-5xl" data-counter="25">0</div>
-                        <div class="mt-2 text-sm font-medium text-gray-600">Years of Service</div>
-                    </div>
+                <!-- Impact Stats Container (dynamically populated by stats.js) -->
+                <div id="impact-stats-container" class="mt-16">
+                    <!-- Loading skeleton will be shown while data loads -->
                 </div>
                 
-                <!-- Campaign Progress Bars -->
-                <div class="mx-auto mt-20 max-w-3xl space-y-8" data-animate="fade-in-up" data-delay="300">
-                    <h3 class="text-center text-xl font-semibold text-gray-900">Active Campaigns</h3>
-                    
-                    <div>
-                        <div class="mb-2 flex items-center justify-between">
-                            <span class="font-medium text-gray-900">New Classroom Building</span>
-                            <span class="text-sm text-gray-600">65% of $50,000</span>
-                        </div>
-                        <div class="h-3 overflow-hidden rounded-full bg-gray-200">
-                            <div class="h-full rounded-full bg-gradient-to-r from-primary-400 to-primary-600" data-progress="65" style="width: 0%"></div>
-                        </div>
-                    </div>
-                    
-                    <div>
-                        <div class="mb-2 flex items-center justify-between">
-                            <span class="font-medium text-gray-900">Medical Fund</span>
-                            <span class="text-sm text-gray-600">80% of $20,000</span>
-                        </div>
-                        <div class="h-3 overflow-hidden rounded-full bg-gray-200">
-                            <div class="h-full rounded-full bg-gradient-to-r from-primary-400 to-primary-600" data-progress="80" style="width: 0%"></div>
-                        </div>
-                    </div>
-                    
-                    <div>
-                        <div class="mb-2 flex items-center justify-between">
-                            <span class="font-medium text-gray-900">Food & Nutrition</span>
-                            <span class="text-sm text-gray-600">45% of $30,000</span>
-                        </div>
-                        <div class="h-3 overflow-hidden rounded-full bg-gray-200">
-                            <div class="h-full rounded-full bg-gradient-to-r from-primary-400 to-primary-600" data-progress="45" style="width: 0%"></div>
-                        </div>
-                    </div>
+                <!-- Campaign Progress Bars (dynamically populated by stats.js) -->
+                <div id="campaigns-container" class="mx-auto mt-20 max-w-3xl space-y-8" data-animate="fade-in-up" data-delay="300">
+                    <!-- Loading skeleton will be shown while data loads -->
                 </div>
             </div>
         </section>
@@ -446,6 +378,7 @@
     <script src="js/components/programs.js"></script>
     <script src="js/components/faq.js"></script>
     <script src="js/components/stories.js"></script>
+    <script src="js/components/stats.js"></script>
     <!-- JavaScript -->
     <script src="js/main.js"></script>
 </body>
