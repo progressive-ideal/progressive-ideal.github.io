@@ -257,6 +257,11 @@ select:focus {
     footer {
         padding-bottom: 70px;
     }
+    
+    /* Adjust back-to-top button position on mobile to avoid overlap with sticky CTA */
+    #back-to-top {
+        bottom: 5rem; /* 80px - sits above the mobile CTA bar */
+    }
 }
 
 /* Print styles */
