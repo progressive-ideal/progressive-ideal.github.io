@@ -104,12 +104,8 @@ html {
 [data-carousel-slide] {
     flex-shrink: 0;
     width: 100%;
-}
-
-@media (min-width: 768px) {
-    [data-carousel-slide] {
-        width: 100%;
-    }
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
 
 /* Carousel dots */
