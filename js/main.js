@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initHeaderScroll();
     initNewsletterForm();
     initSmoothScroll();
+    initTextRotator();
 });
 
 /**
@@ -443,4 +444,51 @@ function throttle(func, limit) {
             setTimeout(() => inThrottle = false, limit);
         }
     };
+}
+
+/**
+ * Text Rotator - Rotates through text items with animation
+ */
+function initTextRotator() {
+    const rotator = document.querySelector('.text-rotator');
+    if (!rotator) return;
+    
+    const items = rotator.querySelectorAll('.text-rotator-item');
+    if (items.length <= 1) return;
+    
+    let currentIndex = 0;
+    const interval = 3500; // 3.5 seconds
+    
+    // Ensure only the first item is active initially
+    items.forEach((item, index) => {
+        if (index === 0) {
+            item.classList.add('active');
+        } else {
+            item.classList.remove('active');
+            item.classList.remove('exit');
+        }
+    });
+    
+    function rotateText() {
+        // Get current and next items
+        const currentItem = items[currentIndex];
+        const nextIndex = (currentIndex + 1) % items.length;
+        const nextItem = items[nextIndex];
+        
+        // Add exit class to current item and remove active
+        currentItem.classList.remove('active');
+        currentItem.classList.add('exit');
+        
+        // After transition, prepare next item
+        setTimeout(() => {
+            currentItem.classList.remove('exit');
+            nextItem.classList.add('active');
+            currentIndex = nextIndex;
+        }, 500); // Match the CSS transition duration
+    }
+    
+    // Start the rotation after initial delay
+    setTimeout(() => {
+        setInterval(rotateText, interval);
+    }, interval);
 }

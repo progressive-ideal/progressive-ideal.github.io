@@ -276,6 +276,43 @@ select:focus {
     }
 }
 
+/* Text Rotator Animation */
+.text-rotator {
+    position: relative;
+    display: inline-block;
+    min-height: 1.2em;
+    vertical-align: bottom;
+    overflow: hidden;
+    width: 100%;
+}
+
+.text-rotator-item {
+    display: block;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out, visibility 0s linear 0.5s;
+    white-space: nowrap;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+
+.text-rotator-item.active {
+    position: relative;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out, visibility 0s linear 0s;
+}
+
+.text-rotator-item.exit {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20px);
+}
+
 /* Dark mode support (if needed in future) */
 @media (prefers-color-scheme: dark) {
     /* Dark mode styles can be added here */
