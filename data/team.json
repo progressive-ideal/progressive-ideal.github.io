@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "name": "John Smith",
+    "role": "Executive Director",
+    "bio": "20+ years in child welfare and nonprofit management",
+    "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop"
+  },
+  {
+    "id": 2,
+    "name": "Sarah Johnson",
+    "role": "Program Director",
+    "bio": "Expert in child development and education programs",
+    "image": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop"
+  },
+  {
+    "id": 3,
+    "name": "Michael Chen",
+    "role": "Operations Manager",
+    "bio": "Ensuring smooth daily operations and facility management",
+    "image": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop"
+  },
+  {
+    "id": 4,
+    "name": "Emily Davis",
+    "role": "Outreach Coordinator",
+    "bio": "Building partnerships and community relationships",
+    "image": "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=200&h=200&fit=crop"
+  }
+]

@@ -5,31 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="We're thrilled to announce a new partnership with three local schools for mainstream education.">
     <title>Partnership with Local Schools | Progressive Ideal Trust Orphanage</title>
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏠</text></svg>">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: { sans: ['Manrope', 'system-ui', 'sans-serif'] },
-                    colors: {
-                        primary: { 50:'#f0fdf4',100:'#dcfce7',200:'#bbf7d0',300:'#86efac',400:'#4ade80',500:'#22c55e',600:'#16a34a',700:'#15803d',800:'#166534',900:'#14532d' },
-                        accent: { 50:'#eff6ff',100:'#dbeafe',200:'#bfdbfe',300:'#93c5fd',400:'#60a5fa',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',800:'#1e40af',900:'#1e3a8a' }
-                    }
-                }
-            }
-        }
-    </script>
+    <script src="../js/tailwind-config.js"></script>
+    
+    <!-- Common Head Elements (Favicon, Google Fonts) -->
+    <script src="../js/components/head-config.js"></script>
     <link rel="stylesheet" href="../css/styles.css">
     
     <!-- lightGallery CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.7.2/css/lightgallery-bundle.min.css">
 </head>
 <body class="min-h-screen font-sans antialiased">
-    <div id="scroll-progress" class="fixed top-0 left-0 z-[60] h-0.5 bg-primary-600 transition-all"></div>
     <!-- Header Placeholder (will be replaced by component) -->
     <div id="header-placeholder"></div>
 
@@ -74,13 +60,14 @@
 
     <!-- Footer Placeholder (will be replaced by component) -->
     <div id="footer-placeholder"></div>
-    <button type="button" id="back-to-top" class="fixed bottom-6 right-6 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-primary-500 text-white shadow-lg shadow-primary-500/25 transition-all duration-300 hover:bg-primary-600" style="opacity:0;pointer-events:none;transform:translateY(16px)" aria-label="Back to top">
-        <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path></svg>
-    </button>
+    
     <!-- Component Scripts -->
+    <script src="../js/components/scroll-progress.js"></script>
+    <script src="../js/components/back-to-top.js"></script>
     <script src="../js/components/header.js"></script>
     <script src="../js/components/footer.js"></script>
     <script src="../js/components/mobile-cta.js"></script>
+    <script src="../js/components/cta-donate.js"></script>
     <script src="../js/main.js"></script>
     
     <!-- lightGallery JS -->

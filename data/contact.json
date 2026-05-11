@@ -1,0 +1,16 @@
+{
+  "organization": "Progressive Ideal Trust Orphanage",
+  "address": {
+    "street": "123, Pangsha",
+    "city": "Rajbari",
+    "country": "Bangladesh",
+    "postalCode": "12345"
+  },
+  "phone": "+880 1234567890",
+  "email": "info@progressiveidealtrust.org",
+  "hours": {
+    "weekdays": "9:00 AM - 5:00 PM",
+    "saturday": "10:00 AM - 2:00 PM",
+    "sunday": "Closed"
+  }
+}

@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "question": "How can I donate to the orphanage?",
+    "answer": "You can donate online through our secure donation platform, via bank transfer, or in person at our facility. We accept one-time donations as well as monthly recurring contributions. All donations are tax-deductible."
+  },
+  {
+    "id": 2,
+    "question": "Can I volunteer at the orphanage?",
+    "answer": "Yes! We welcome volunteers with various skills. You can help with teaching, mentoring, organizing activities, administrative work, or maintenance. Please contact us to learn about current opportunities and the application process."
+  },
+  {
+    "id": 3,
+    "question": "How are donations used?",
+    "answer": "Approximately 85% of donations go directly to programs supporting the children - education, healthcare, nutrition, and daily care. The remaining 15% covers essential operational costs. We publish annual reports detailing how funds are allocated."
+  },
+  {
+    "id": 4,
+    "question": "Can I sponsor a specific child?",
+    "answer": "Yes, we offer a child sponsorship program where you can support a specific child's education and care. You'll receive regular updates on their progress and can even exchange letters. Contact us to learn more about sponsorship opportunities."
+  },
+  {
+    "id": 5,
+    "question": "Is my donation tax-deductible?",
+    "answer": "Yes, Progressive Ideal Trust Orphanage is a registered charitable organization. All donations are tax-deductible to the full extent allowed by law. You will receive a receipt for your donation that can be used for tax purposes."
+  }
+]

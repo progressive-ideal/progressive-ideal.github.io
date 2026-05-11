@@ -227,9 +227,9 @@ html {
 
 /* Back to top button */
 #back-to-top.visible {
-    opacity: 1;
-    pointer-events: auto;
-    transform: translateY(0);
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    transform: translateY(0) !important;
 }
 
 /* Scroll progress bar */

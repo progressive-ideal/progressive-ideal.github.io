@@ -6,66 +6,17 @@
     <meta name="description" content="Progressive Ideal Trust Orphanage - Providing hope, care, and a brighter future for children in need.">
     <title>Progressive Ideal Trust Orphanage | Home</title>
     
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏠</text></svg>">
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Manrope', 'system-ui', 'sans-serif'],
-                    },
-                    colors: {
-                        primary: {
-                            50: '#f0fdf4',
-                            100: '#dcfce7',
-                            200: '#bbf7d0',
-                            300: '#86efac',
-                            400: '#4ade80',
-                            500: '#22c55e',
-                            600: '#16a34a',
-                            700: '#15803d',
-                            800: '#166534',
-                            900: '#14532d',
-                        },
-                        accent: {
-                            50: '#eff6ff',
-                            100: '#dbeafe',
-                            200: '#bfdbfe',
-                            300: '#93c5fd',
-                            400: '#60a5fa',
-                            500: '#3b82f6',
-                            600: '#2563eb',
-                            700: '#1d4ed8',
-                            800: '#1e40af',
-                            900: '#1e3a8a',
-                        }
-                    }
-                }
-            }
-        }
-    </script>
+    <script src="js/tailwind-config.js"></script>
+    
+    <!-- Common Head Elements (Favicon, Google Fonts) -->
+    <script src="js/components/head-config.js"></script>
     
     <!-- Custom Styles -->
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body class="min-h-screen font-sans antialiased">
-    <!-- Skip to Content -->
-    <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[80] focus:rounded-lg focus:bg-primary-600 focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-white focus:shadow-lg">
-        Skip to content
-    </a>
-    
-    <!-- Scroll Progress -->
-    <div id="scroll-progress" class="fixed top-0 left-0 z-[60] h-0.5 bg-primary-600 transition-all"></div>
-    
     <!-- Header Placeholder (will be replaced by component) -->
     <div id="header-placeholder"></div>
     
@@ -284,83 +235,9 @@
                     </p>
                 </div>
                 
-                <div class="mt-16 grid gap-8 sm:grid-cols-2">
-                    <!-- Education Program -->
-                    <div class="group relative rounded-2xl bg-white p-8 shadow-lg transition-all hover:shadow-xl" data-animate="fade-in-up" data-delay="100">
-                        <div class="mb-5 inline-flex h-14 w-14 items-center justify-center rounded-xl bg-primary-100 text-primary-600 transition-colors group-hover:bg-primary-500 group-hover:text-white">
-                            <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"></path>
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path>
-                            </svg>
-                        </div>
-                        <h3 class="text-xl font-semibold text-gray-900">Education & Learning</h3>
-                        <p class="mt-3 text-gray-600">
-                            Quality education from primary through secondary school, including tutoring, computer training, and vocational skills development.
-                        </p>
-                        <a href="#" class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary-600 transition-colors hover:text-primary-700">
-                            Learn More
-                            <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                            </svg>
-                        </a>
-                    </div>
-                    
-                    <!-- Healthcare Program -->
-                    <div class="group relative rounded-2xl bg-white p-8 shadow-lg transition-all hover:shadow-xl" data-animate="fade-in-up" data-delay="200">
-                        <div class="mb-5 inline-flex h-14 w-14 items-center justify-center rounded-xl bg-primary-100 text-primary-600 transition-colors group-hover:bg-primary-500 group-hover:text-white">
-                            <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
-                            </svg>
-                        </div>
-                        <h3 class="text-xl font-semibold text-gray-900">Healthcare & Wellness</h3>
-                        <p class="mt-3 text-gray-600">
-                            Regular medical check-ups, vaccinations, dental care, mental health support, and balanced nutrition for healthy development.
-                        </p>
-                        <a href="#" class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary-600 transition-colors hover:text-primary-700">
-                            Learn More
-                            <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                            </svg>
-                        </a>
-                    </div>
-                    
-                    <!-- Nutrition Program -->
-                    <div class="group relative rounded-2xl bg-white p-8 shadow-lg transition-all hover:shadow-xl" data-animate="fade-in-up" data-delay="300">
-                        <div class="mb-5 inline-flex h-14 w-14 items-center justify-center rounded-xl bg-primary-100 text-primary-600 transition-colors group-hover:bg-primary-500 group-hover:text-white">
-                            <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H15m0 0a1 1 0 011 1v1a1 1 0 01-1 1H9.414a1 1 0 01-.707-.293L7 16m8-3h4M3 21h18"></path>
-                            </svg>
-                        </div>
-                        <h3 class="text-xl font-semibold text-gray-900">Nutrition & Meals</h3>
-                        <p class="mt-3 text-gray-600">
-                            Three nutritious meals daily, with special dietary accommodations. We also teach children about healthy eating and cooking skills.
-                        </p>
-                        <a href="#" class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary-600 transition-colors hover:text-primary-700">
-                            Learn More
-                            <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                            </svg>
-                        </a>
-                    </div>
-                    
-                    <!-- Recreation Program -->
-                    <div class="group relative rounded-2xl bg-white p-8 shadow-lg transition-all hover:shadow-xl" data-animate="fade-in-up" data-delay="400">
-                        <div class="mb-5 inline-flex h-14 w-14 items-center justify-center rounded-xl bg-primary-100 text-primary-600 transition-colors group-hover:bg-primary-500 group-hover:text-white">
-                            <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                            </svg>
-                        </div>
-                        <h3 class="text-xl font-semibold text-gray-900">Recreation & Arts</h3>
-                        <p class="mt-3 text-gray-600">
-                            Sports, music, arts and crafts, and cultural activities to develop creativity, teamwork, and personal interests.
-                        </p>
-                        <a href="#" class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary-600 transition-colors hover:text-primary-700">
-                            Learn More
-                            <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                            </svg>
-                        </a>
-                    </div>
+                <!-- Programs Container (dynamically populated by programs.js) -->
+                <div id="programs-container" class="mt-16 grid gap-8 sm:grid-cols-2">
+                    <!-- Loading skeleton will be shown while data loads -->
                 </div>
             </div>
         </section>
@@ -642,168 +519,30 @@
                     </p>
                 </div>
                 
-                <div class="mx-auto mt-16 max-w-3xl">
-                    <div class="divide-y divide-gray-200">
-                        <!-- FAQ 1 -->
-                        <div class="py-6" data-animate="fade-in-up" data-delay="100">
-                            <button type="button" data-faq-toggle class="flex w-full items-center justify-between text-left">
-                                <span class="text-lg font-semibold text-gray-900">How can I donate to the orphanage?</span>
-                                <span class="ml-4 flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-gray-100 text-gray-600 transition-transform duration-200" data-faq-icon>
-                                    <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v12M6 12h12"></path>
-                                    </svg>
-                                </span>
-                            </button>
-                            <div class="overflow-hidden transition-all duration-300" style="max-height: 0; opacity: 0;">
-                                <p class="pt-4 text-gray-600">You can donate online through our secure donation platform, via bank transfer, or in person at our facility. We accept one-time donations as well as monthly recurring contributions. All donations are tax-deductible.</p>
-                            </div>
-                        </div>
-                        
-                        <!-- FAQ 2 -->
-                        <div class="py-6" data-animate="fade-in-up" data-delay="150">
-                            <button type="button" data-faq-toggle class="flex w-full items-center justify-between text-left">
-                                <span class="text-lg font-semibold text-gray-900">Can I volunteer at the orphanage?</span>
-                                <span class="ml-4 flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-gray-100 text-gray-600 transition-transform duration-200" data-faq-icon>
-                                    <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v12M6 12h12"></path>
-                                    </svg>
-                                </span>
-                            </button>
-                            <div class="overflow-hidden transition-all duration-300" style="max-height: 0; opacity: 0;">
-                                <p class="pt-4 text-gray-600">Yes! We welcome volunteers with various skills. You can help with teaching, mentoring, organizing activities, administrative work, or maintenance. Please contact us to learn about current opportunities and the application process.</p>
-                            </div>
-                        </div>
-                        
-                        <!-- FAQ 3 -->
-                        <div class="py-6" data-animate="fade-in-up" data-delay="200">
-                            <button type="button" data-faq-toggle class="flex w-full items-center justify-between text-left">
-                                <span class="text-lg font-semibold text-gray-900">How are donations used?</span>
-                                <span class="ml-4 flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-gray-100 text-gray-600 transition-transform duration-200" data-faq-icon>
-                                    <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v12M6 12h12"></path>
-                                    </svg>
-                                </span>
-                            </button>
-                            <div class="overflow-hidden transition-all duration-300" style="max-height: 0; opacity: 0;">
-                                <p class="pt-4 text-gray-600">Approximately 85% of donations go directly to programs supporting the children - education, healthcare, nutrition, and daily care. The remaining 15% covers essential operational costs. We publish annual reports detailing how funds are allocated.</p>
-                            </div>
-                        </div>
-                        
-                        <!-- FAQ 4 -->
-                        <div class="py-6" data-animate="fade-in-up" data-delay="250">
-                            <button type="button" data-faq-toggle class="flex w-full items-center justify-between text-left">
-                                <span class="text-lg font-semibold text-gray-900">Can I sponsor a specific child?</span>
-                                <span class="ml-4 flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-gray-100 text-gray-600 transition-transform duration-200" data-faq-icon>
-                                    <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v12M6 12h12"></path>
-                                    </svg>
-                                </span>
-                            </button>
-                            <div class="overflow-hidden transition-all duration-300" style="max-height: 0; opacity: 0;">
-                                <p class="pt-4 text-gray-600">Yes, we offer a child sponsorship program where you can support a specific child's education and care. You'll receive regular updates on their progress and can even exchange letters. Contact us to learn more about sponsorship opportunities.</p>
-                            </div>
-                        </div>
-                        
-                        <!-- FAQ 5 -->
-                        <div class="py-6" data-animate="fade-in-up" data-delay="300">
-                            <button type="button" data-faq-toggle class="flex w-full items-center justify-between text-left">
-                                <span class="text-lg font-semibold text-gray-900">Is my donation tax-deductible?</span>
-                                <span class="ml-4 flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-gray-100 text-gray-600 transition-transform duration-200" data-faq-icon>
-                                    <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v12M6 12h12"></path>
-                                    </svg>
-                                </span>
-                            </button>
-                            <div class="overflow-hidden transition-all duration-300" style="max-height: 0; opacity: 0;">
-                                <p class="pt-4 text-gray-600">Yes, Progressive Ideal Trust Orphanage is a registered charitable organization. All donations are tax-deductible to the full extent allowed by law. You will receive a receipt for your donation that can be used for tax purposes.</p>
-                            </div>
-                        </div>
-                    </div>
+                <!-- FAQ Container (dynamically populated by faq.js) -->
+                <div id="faq-container" class="mx-auto mt-16 max-w-3xl">
+                    <!-- Loading skeleton will be shown while data loads -->
                 </div>
             </div>
         </section>
         
-        <!-- Donate CTA Section -->
-        <section id="donate" class="relative overflow-hidden bg-gradient-to-br from-primary-500 to-primary-700 py-20 lg:py-28">
-            <div class="absolute inset-0 z-0 overflow-hidden" aria-hidden="true">
-                <div class="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-white/10 blur-3xl"></div>
-                <div class="absolute -bottom-20 -left-20 h-64 w-64 rounded-full bg-white/10 blur-3xl"></div>
-                <div class="absolute left-1/2 top-1/2 h-96 w-96 -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent-500/10 blur-3xl"></div>
-            </div>
-            
-            <div class="container relative z-10 mx-auto px-4 lg:px-8">
-                <div class="mx-auto max-w-3xl text-center">
-                    <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl" data-animate="fade-in-up">
-                        Every Dollar Makes a Difference
-                    </h2>
-                    <p class="mx-auto mt-6 max-w-xl text-lg text-primary-100" data-animate="fade-in-up" data-delay="100">
-                        Your generosity directly supports children in need, providing them with food, shelter, education, and hope for a brighter future.
-                    </p>
-                    
-                    <!-- Impact examples -->
-                    <div class="mt-8 flex flex-wrap items-center justify-center gap-6" data-animate="fade-in-up" data-delay="150">
-                        <div class="flex items-center gap-2 text-sm text-primary-100">
-                            <span class="font-bold text-white">$25</span>
-                            <span>=</span>
-                            <span>School supplies for a child</span>
-                        </div>
-                        <div class="flex items-center gap-2 text-sm text-primary-100">
-                            <span class="font-bold text-white">$50</span>
-                            <span>=</span>
-                            <span>Monthly food for a child</span>
-                        </div>
-                        <div class="flex items-center gap-2 text-sm text-primary-100">
-                            <span class="font-bold text-white">$100</span>
-                            <span>=</span>
-                            <span>Healthcare for a month</span>
-                        </div>
-                    </div>
-                    
-                    <!-- CTA Button -->
-                    <div class="mt-10" data-animate="fade-in-up" data-delay="200">
-                        <a href="https://example.com/donate" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 rounded-full bg-accent-500 px-10 py-4 text-lg font-bold text-white shadow-lg shadow-accent-500/30 transition-all hover:bg-accent-600 hover:shadow-xl hover:shadow-accent-500/40">
-                            Donate Now
-                            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
-                            </svg>
-                        </a>
-                    </div>
-                    
-                    <!-- Trust badges -->
-                    <div class="mt-10 flex flex-wrap items-center justify-center gap-8" data-animate="fade-in-up" data-delay="300">
-                        <div class="flex items-center gap-2 text-sm text-primary-200">
-                            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
-                            </svg>
-                            <span>100% Tax Deductible</span>
-                        </div>
-                        <div class="flex items-center gap-2 text-sm text-primary-200">
-                            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                            </svg>
-                            <span>Verified Organization</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <!-- Donate CTA Section (dynamically rendered by cta-donate.js) -->
+        <div id="donate" data-cta-donate='{"buttonUrl":"https://example.com/donate"}'></div>
     </main>
     
     <!-- Footer Placeholder (will be replaced by component) -->
     <div id="footer-placeholder"></div>
     
-    <!-- Back to Top -->
-    <button type="button" id="back-to-top" class="fixed bottom-6 right-6 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-primary-500 text-white shadow-lg shadow-primary-500/25 transition-all duration-300 hover:bg-primary-600 hover:shadow-xl hover:shadow-primary-500/30 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2" style="opacity: 0; pointer-events: none; transform: translateY(16px);" aria-label="Back to top">
-        <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path>
-        </svg>
-    </button>
-    
     <!-- Component Scripts -->
+    <script src="js/components/scroll-progress.js"></script>
+    <script src="js/components/back-to-top.js"></script>
     <script src="js/components/header.js"></script>
     <script src="js/components/footer.js"></script>
     <script src="js/components/mobile-cta.js"></script>
     <script src="js/components/updates.js"></script>
+    <script src="js/components/cta-donate.js"></script>
+    <script src="js/components/programs.js"></script>
+    <script src="js/components/faq.js"></script>
     <!-- JavaScript -->
     <script src="js/main.js"></script>
 </body>

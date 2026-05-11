@@ -5,14 +5,13 @@
 
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize all components
+    // Note: back-to-top and scroll-progress are now handled by their own component scripts
     initScrollAnimations();
     initCounterAnimations();
     initProgressBars();
     initCarousel();
     initFAQ();
     initMobileMenu();
-    initBackToTop();
-    initScrollProgress();
     initHeaderScroll();
     initNewsletterForm();
     initSmoothScroll();
@@ -308,44 +307,6 @@ function initMobileMenu() {
             mobileMenu.classList.add('hidden');
             toggleBtn.setAttribute('aria-expanded', 'false');
         }
-    });
-}
-
-/**
- * Back to Top Button
- */
-function initBackToTop() {
-    const backToTopBtn = document.getElementById('back-to-top');
-    if (!backToTopBtn) return;
-    
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 500) {
-            backToTopBtn.classList.add('visible');
-        } else {
-            backToTopBtn.classList.remove('visible');
-        }
-    });
-    
-    backToTopBtn.addEventListener('click', () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    });
-}
-
-/**
- * Scroll Progress Bar
- */
-function initScrollProgress() {
-    const progressBar = document.getElementById('scroll-progress');
-    if (!progressBar) return;
-    
-    window.addEventListener('scroll', () => {
-        const scrollTop = window.scrollY;
-        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-        const scrollPercent = (scrollTop / docHeight) * 100;
-        progressBar.style.width = scrollPercent + '%';
     });
 }
 
