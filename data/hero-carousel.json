@@ -1,0 +1,21 @@
+{
+  "images": [
+    {
+      "src": "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1920&h=1080&fit=crop",
+      "alt": "Children smiling and learning together at Progressive Ideal Trust Orphanage"
+    },
+    {
+      "src": "https://images.unsplash.com/photo-1509099836639-18ba1795216d?w=1920&h=1080&fit=crop",
+      "alt": "Children playing happily at the orphanage"
+    },
+    {
+      "src": "https://images.unsplash.com/photo-1594708767771-a7502f8bbd8e?w=1920&h=1080&fit=crop",
+      "alt": "Children studying together in the classroom"
+    },
+    {
+      "src": "https://images.unsplash.com/photo-1504384308090-c894fdcc538a?w=1920&h=1080&fit=crop",
+      "alt": "Children enjoying outdoor activities"
+    }
+  ],
+  "interval": 5000
+}

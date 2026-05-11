@@ -178,11 +178,11 @@
             setTimeout(() => {
                 button.textContent = 'Message Sent!';
                 button.classList.remove('bg-primary-500');
-                button.classList.add('bg-green-500');
+                button.classList.add('bg-accent-500');
                 
                 setTimeout(() => {
                     button.textContent = originalText;
-                    button.classList.remove('bg-green-500');
+                    button.classList.remove('bg-accent-500');
                     button.classList.add('bg-primary-500');
                     button.disabled = false;
                     this.reset();

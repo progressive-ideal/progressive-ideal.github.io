@@ -22,22 +22,20 @@
     
     <main id="main-content">
         <!-- Hero Section -->
-        <section class="relative overflow-hidden bg-gradient-to-b from-primary-50 to-white">
-            <div class="absolute inset-0 -z-10 overflow-hidden" aria-hidden="true">
-                <div class="animate-hero-float absolute -top-40 left-1/2 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-primary-200/50 blur-3xl"></div>
-                <div class="animate-hero-float-reverse absolute right-0 top-0 h-[400px] w-[400px] rounded-full bg-accent-200/30 blur-3xl"></div>
-            </div>
+        <section class="relative min-h-[90vh] flex items-center overflow-hidden">
+            <!-- Hero Carousel Container -->
+            <div data-hero-carousel-container class="absolute inset-0"></div>
             
-            <div class="container mx-auto px-4 py-20 lg:px-8 lg:py-32">
+            <div class="container mx-auto px-4 py-20 lg:px-8 lg:py-32 relative z-10">
                 <div class="mx-auto max-w-4xl text-center">
-                    <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-primary-200 bg-primary-50 px-4 py-1.5 text-sm font-medium text-primary-700" data-animate="fade-in-up">
+                    <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 backdrop-blur-sm px-4 py-1.5 text-sm font-medium text-white" data-animate="fade-in-up">
                         <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
                         </svg>
                         Building Brighter Futures
                     </div>
                     
-                    <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl lg:text-6xl" data-animate="fade-in-up" data-delay="100">
+                    <h1 class="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl" data-animate="fade-in-up" data-delay="100">
                         Every Child Deserves
                         <br>
                         <span class="text-rotator">
@@ -48,7 +46,7 @@
                         </span>
                     </h1>
                     
-                    <p class="mx-auto mt-6 max-w-2xl text-lg text-gray-600 sm:text-xl" data-animate="fade-in-up" data-delay="200">
+                    <p class="mx-auto mt-6 max-w-2xl text-lg text-white/90 sm:text-xl" data-animate="fade-in-up" data-delay="200">
                         Progressive Ideal Trust Orphanage provides a safe haven for children in need, offering education, healthcare, and a nurturing environment to help them thrive.
                     </p>
                     
@@ -59,20 +57,12 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
                             </svg>
                         </a>
-                        <a href="#about" class="inline-flex items-center justify-center gap-2 rounded-full border border-gray-300 bg-white px-8 py-3.5 text-base font-semibold text-gray-700 transition-colors hover:bg-gray-50">
+                        <a href="#about" class="inline-flex items-center justify-center gap-2 rounded-full border border-white/30 bg-white/10 backdrop-blur-sm px-8 py-3.5 text-base font-semibold text-white transition-colors hover:bg-white/20">
                             Learn More
                             <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                             </svg>
                         </a>
-                    </div>
-                </div>
-                
-                <!-- Hero Image -->
-                <div class="mt-16 lg:mt-24" data-animate="fade-in-up" data-delay="500">
-                    <div class="relative mx-auto max-w-5xl overflow-hidden rounded-2xl shadow-2xl ring-1 ring-gray-200">
-                        <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1200&h=600&fit=crop" alt="Children smiling and learning together at Progressive Ideal Trust Orphanage" class="w-full" loading="eager">
-                        <div class="absolute inset-0 bg-gradient-to-t from-primary-900/20 to-transparent"></div>
                     </div>
                 </div>
             </div>
@@ -373,6 +363,7 @@
     <script src="js/components/header.js"></script>
     <script src="js/components/footer.js"></script>
     <script src="js/components/mobile-cta.js"></script>
+    <script src="js/components/hero-carousel.js"></script>
     <script src="js/components/updates.js"></script>
     <script src="js/components/cta-donate.js"></script>
     <script src="js/components/programs.js"></script>
