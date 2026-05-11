@@ -30,6 +30,9 @@
         }
     </script>
     <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- lightGallery CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.7.2/css/lightgallery-bundle.min.css">
 </head>
 <body class="min-h-screen font-sans antialiased">
     <!-- Header -->
@@ -100,7 +103,7 @@
                 <!-- Gallery Grid -->
                 <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3" id="gallery-grid">
                     <!-- Image 1 -->
-                    <div class="gallery-item group relative overflow-hidden rounded-2xl shadow-lg" data-category="education" data-animate="fade-in-up">
+                    <div class="gallery-item group relative cursor-pointer overflow-hidden rounded-2xl shadow-lg" data-category="education" data-src="https://images.unsplash.com/photo-1503676260728-1c44da0abc54?w=1200&h=800&fit=crop" data-sub-html="<h4 class='text-lg font-semibold'>Classroom Learning</h4><p class='text-sm opacity-80'>Education</p>" data-description="Children engaged in focused learning during their daily classroom sessions. Our dedicated teachers ensure every child receives quality education tailored to their needs." data-animate="fade-in-up">
                         <img src="https://images.unsplash.com/photo-1503676260728-1c44da0abc54?w=600&h=400&fit=crop" alt="Children learning in classroom" class="h-64 w-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy">
                         <div class="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-gray-900/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
                         <div class="absolute bottom-0 left-0 right-0 translate-y-full p-4 transition-transform duration-300 group-hover:translate-y-0">
@@ -110,7 +113,7 @@
                     </div>
                     
                     <!-- Image 2 -->
-                    <div class="gallery-item group relative overflow-hidden rounded-2xl shadow-lg" data-category="activities" data-animate="fade-in-up" data-delay="100">
+                    <div class="gallery-item group relative cursor-pointer overflow-hidden rounded-2xl shadow-lg" data-category="activities" data-src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1200&h=800&fit=crop" data-sub-html="<h4 class='text-lg font-semibold'>Play Time</h4><p class='text-sm opacity-80'>Activities</p>" data-description="Children enjoying their play time together, building friendships and developing social skills through fun outdoor activities." data-animate="fade-in-up" data-delay="100">
                         <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=600&h=400&fit=crop" alt="Children playing together" class="h-64 w-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy">
                         <div class="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-gray-900/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
                         <div class="absolute bottom-0 left-0 right-0 translate-y-full p-4 transition-transform duration-300 group-hover:translate-y-0">
@@ -120,7 +123,7 @@
                     </div>
                     
                     <!-- Image 3 -->
-                    <div class="gallery-item group relative overflow-hidden rounded-2xl shadow-lg" data-category="events" data-animate="fade-in-up" data-delay="200">
+                    <div class="gallery-item group relative cursor-pointer overflow-hidden rounded-2xl shadow-lg" data-category="events" data-src="https://images.unsplash.com/photo-1529156035906-325a5dd27c19?w=1200&h=800&fit=crop" data-sub-html="<h4 class='text-lg font-semibold'>Birthday Celebration</h4><p class='text-sm opacity-80'>Events</p>" data-description="Celebrating birthdays with cake, songs, and laughter. Every child deserves to feel special on their big day." data-animate="fade-in-up" data-delay="200">
                         <img src="https://images.unsplash.com/photo-1529156035906-325a5dd27c19?w=600&h=400&fit=crop" alt="Birthday celebration" class="h-64 w-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy">
                         <div class="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-gray-900/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
                         <div class="absolute bottom-0 left-0 right-0 translate-y-full p-4 transition-transform duration-300 group-hover:translate-y-0">
@@ -130,7 +133,7 @@
                     </div>
                     
                     <!-- Image 4 -->
-                    <div class="gallery-item group relative overflow-hidden rounded-2xl shadow-lg" data-category="facility" data-animate="fade-in-up" data-delay="100">
+                    <div class="gallery-item group relative cursor-pointer overflow-hidden rounded-2xl shadow-lg" data-category="facility" data-src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?w=1200&h=800&fit=crop" data-sub-html="<h4 class='text-lg font-semibold'>Our Facility</h4><p class='text-sm opacity-80'>Facility</p>" data-description="A look at our well-maintained orphanage building, providing a safe and comfortable home for the children in our care." data-animate="fade-in-up" data-delay="100">
                         <img src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?w=600&h=400&fit=crop" alt="Orphanage building" class="h-64 w-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy">
                         <div class="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-gray-900/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
                         <div class="absolute bottom-0 left-0 right-0 translate-y-full p-4 transition-transform duration-300 group-hover:translate-y-0">
@@ -140,7 +143,7 @@
                     </div>
                     
                     <!-- Image 5 -->
-                    <div class="gallery-item group relative overflow-hidden rounded-2xl shadow-lg" data-category="education" data-animate="fade-in-up" data-delay="200">
+                    <div class="gallery-item group relative cursor-pointer overflow-hidden rounded-2xl shadow-lg" data-category="education" data-src="https://images.unsplash.com/photo-1503676260728-1c44da0abc54?w=1200&h=800&fit=crop" data-sub-html="<h4 class='text-lg font-semibold'>Library Time</h4><p class='text-sm opacity-80'>Education</p>" data-description="Children exploring the world through books in our library. Reading opens doors to imagination and knowledge." data-animate="fade-in-up" data-delay="200">
                         <img src="https://images.unsplash.com/photo-1503676260728-1c44da0abc54?w=600&h=400&fit=crop" alt="Library time" class="h-64 w-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy">
                         <div class="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-gray-900/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
                         <div class="absolute bottom-0 left-0 right-0 translate-y-full p-4 transition-transform duration-300 group-hover:translate-y-0">
@@ -150,7 +153,7 @@
                     </div>
                     
                     <!-- Image 6 -->
-                    <div class="gallery-item group relative overflow-hidden rounded-2xl shadow-lg" data-category="activities" data-animate="fade-in-up" data-delay="300">
+                    <div class="gallery-item group relative cursor-pointer overflow-hidden rounded-2xl shadow-lg" data-category="activities" data-src="https://images.unsplash.com/photo-1571260899304-425eee4c7cd4?w=1200&h=800&fit=crop" data-sub-html="<h4 class='text-lg font-semibold'>Arts & Crafts</h4><p class='text-sm opacity-80'>Activities</p>" data-description="Nurturing creativity through arts and crafts sessions. Children express themselves through painting, drawing, and handmade projects." data-animate="fade-in-up" data-delay="300">
                         <img src="https://images.unsplash.com/photo-1571260899304-425eee4c7cd4?w=600&h=400&fit=crop" alt="Art and crafts" class="h-64 w-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy">
                         <div class="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-gray-900/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
                         <div class="absolute bottom-0 left-0 right-0 translate-y-full p-4 transition-transform duration-300 group-hover:translate-y-0">
@@ -160,7 +163,7 @@
                     </div>
                     
                     <!-- Image 7 -->
-                    <div class="gallery-item group relative overflow-hidden rounded-2xl shadow-lg" data-category="events" data-animate="fade-in-up" data-delay="100">
+                    <div class="gallery-item group relative cursor-pointer overflow-hidden rounded-2xl shadow-lg" data-category="events" data-src="https://images.unsplash.com/photo-1527525443943-289a0b9f9b45?w=1200&h=800&fit=crop" data-sub-html="<h4 class='text-lg font-semibold'>Cultural Event</h4><p class='text-sm opacity-80'>Events</p>" data-description="Children showcasing their talents at our annual cultural event, performing traditional dances and songs for the community." data-animate="fade-in-up" data-delay="100">
                         <img src="https://images.unsplash.com/photo-1527525443943-289a0b9f9b45?w=600&h=400&fit=crop" alt="Cultural event" class="h-64 w-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy">
                         <div class="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-gray-900/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
                         <div class="absolute bottom-0 left-0 right-0 translate-y-full p-4 transition-transform duration-300 group-hover:translate-y-0">
@@ -170,7 +173,7 @@
                     </div>
                     
                     <!-- Image 8 -->
-                    <div class="gallery-item group relative overflow-hidden rounded-2xl shadow-lg" data-category="facility" data-animate="fade-in-up" data-delay="200">
+                    <div class="gallery-item group relative cursor-pointer overflow-hidden rounded-2xl shadow-lg" data-category="facility" data-src="https://images.unsplash.com/photo-1580582962707-520a8d6b6bba?w=1200&h=800&fit=crop" data-sub-html="<h4 class='text-lg font-semibold'>Garden Area</h4><p class='text-sm opacity-80'>Facility</p>" data-description="Our beautiful garden area where children learn about nature, grow vegetables, and enjoy the outdoors in a peaceful setting." data-animate="fade-in-up" data-delay="200">
                         <img src="https://images.unsplash.com/photo-1580582962707-520a8d6b6bba?w=600&h=400&fit=crop" alt="Garden area" class="h-64 w-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy">
                         <div class="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-gray-900/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
                         <div class="absolute bottom-0 left-0 right-0 translate-y-full p-4 transition-transform duration-300 group-hover:translate-y-0">
@@ -180,7 +183,7 @@
                     </div>
                     
                     <!-- Image 9 -->
-                    <div class="gallery-item group relative overflow-hidden rounded-2xl shadow-lg" data-category="activities" data-animate="fade-in-up" data-delay="300">
+                    <div class="gallery-item group relative cursor-pointer overflow-hidden rounded-2xl shadow-lg" data-category="activities" data-src="https://images.unsplash.com/photo-1506277886164-e25aa3f4ef7f?w=1200&h=800&fit=crop" data-sub-html="<h4 class='text-lg font-semibold'>Sports Day</h4><p class='text-sm opacity-80'>Activities</p>" data-description="Annual sports day bringing out the competitive spirit and teamwork in our children. Everyone participates and everyone wins." data-animate="fade-in-up" data-delay="300">
                         <img src="https://images.unsplash.com/photo-1506277886164-e25aa3f4ef7f?w=600&h=400&fit=crop" alt="Sports activities" class="h-64 w-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy">
                         <div class="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-gray-900/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
                         <div class="absolute bottom-0 left-0 right-0 translate-y-full p-4 transition-transform duration-300 group-hover:translate-y-0">
@@ -287,44 +290,187 @@
     </button>
     
     <script src="js/main.js"></script>
+    
+    <!-- lightGallery JS -->
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.2/lightgallery.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.2/plugins/thumbnail/lg-thumbnail.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.2/plugins/zoom/lg-zoom.umd.js"></script>
+    
     <script>
-        // Gallery filter functionality
-        const filterButtons = document.querySelectorAll('.gallery-filter');
-        const galleryItems = document.querySelectorAll('.gallery-item');
-        
-        filterButtons.forEach(button => {
-            button.addEventListener('click', function() {
-                const filter = this.getAttribute('data-filter');
+        // Gallery lightbox and filter functionality
+        (function() {
+            const galleryGrid = document.getElementById('gallery-grid');
+            const filterButtons = document.querySelectorAll('.gallery-filter');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            let lightGalleryInstance = null;
+            let eventListenersAttached = false;
+            
+            // Initialize lightGallery
+            function initLightGallery() {
+                if (lightGalleryInstance) {
+                    lightGalleryInstance.destroy();
+                }
                 
-                // Update active state
-                filterButtons.forEach(btn => {
-                    btn.classList.remove('active', 'bg-primary-500', 'text-white');
-                    btn.classList.add('bg-gray-100', 'text-gray-700');
-                });
-                this.classList.add('active', 'bg-primary-500', 'text-white');
-                this.classList.remove('bg-gray-100', 'text-gray-700');
-                
-                // Filter items
-                galleryItems.forEach(item => {
-                    const category = item.getAttribute('data-category');
-                    if (filter === 'all' || category === filter) {
-                        item.style.display = 'block';
-                        item.classList.add('animate-visible');
-                    } else {
-                        item.style.display = 'none';
+                lightGalleryInstance = lightGallery(galleryGrid, {
+                    selector: '.gallery-item:not([style*="display: none"])',
+                    plugins: [lgThumbnail, lgZoom],
+                    speed: 300,
+                    thumbnail: true,
+                    zoom: true,
+                    actualSize: false,
+                    showZoomInOutIcons: true,
+                    download: false,
+                    counter: true,
+                    mousewheel: true,
+                    getCaptionFromTitleOrAlt: false,
+                    mobileSettings: {
+                        controls: true,
+                        showCloseIcon: true,
+                        showZoomInOutIcons: true
                     }
                 });
-            });
-        });
-        
-        // Initialize active state
-        document.querySelector('.gallery-filter.active').classList.add('bg-primary-500', 'text-white');
-        document.querySelector('.gallery-filter.active').classList.remove('bg-gray-100', 'text-gray-700');
-        filterButtons.forEach(btn => {
-            if (!btn.classList.contains('active')) {
-                btn.classList.add('bg-gray-100', 'text-gray-700');
+                
+                // Attach event listeners only once
+                if (!eventListenersAttached) {
+                    galleryGrid.addEventListener('lgAfterOpen', addInfoButton);
+                    galleryGrid.addEventListener('lgAfterSlide', updateInfoPanel);
+                    galleryGrid.addEventListener('lgBeforeClose', closeInfoPanel);
+                    eventListenersAttached = true;
+                }
             }
-        });
+            
+            // Add custom info button to the lightbox
+            function addInfoButton() {
+                const toolbar = document.querySelector('.lg-toolbar');
+                if (!toolbar || toolbar.querySelector('.lg-info-btn')) return;
+                
+                const infoBtn = document.createElement('button');
+                infoBtn.type = 'button';
+                infoBtn.className = 'lg-info-btn lg-icon';
+                infoBtn.setAttribute('aria-label', 'Show info');
+                infoBtn.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>';
+                infoBtn.addEventListener('click', toggleInfoPanel);
+                toolbar.appendChild(infoBtn);
+                
+                // Add info panel to the lightbox
+                const outer = document.querySelector('.lg-outer');
+                if (outer && !outer.querySelector('.lg-info-panel')) {
+                    const panel = document.createElement('div');
+                    panel.className = 'lg-info-panel';
+                    panel.innerHTML = '<div class="lg-info-panel-content"></div>';
+                    outer.appendChild(panel);
+                }
+            }
+            
+            // Toggle info panel visibility
+            function toggleInfoPanel() {
+                const panel = document.querySelector('.lg-info-panel');
+                const infoBtn = document.querySelector('.lg-info-btn');
+                if (!panel) return;
+                
+                panel.classList.toggle('lg-info-panel-visible');
+                if (infoBtn) {
+                    infoBtn.classList.toggle('lg-info-btn-active');
+                }
+                
+                if (panel.classList.contains('lg-info-panel-visible')) {
+                    updateInfoPanelContent();
+                }
+            }
+            
+            // Close info panel when lightbox closes
+            function closeInfoPanel() {
+                const panel = document.querySelector('.lg-info-panel');
+                if (panel) {
+                    panel.classList.remove('lg-info-panel-visible');
+                }
+            }
+            
+            // Update info panel when slide changes
+            function updateInfoPanel() {
+                const panel = document.querySelector('.lg-info-panel');
+                if (panel && panel.classList.contains('lg-info-panel-visible')) {
+                    updateInfoPanelContent();
+                }
+            }
+            
+            // Update info panel content with current image description
+            function updateInfoPanelContent() {
+                const panelContent = document.querySelector('.lg-info-panel-content');
+                if (!panelContent) return;
+                
+                const currentIndex = lightGalleryInstance ? lightGalleryInstance.index : 0;
+                const visibleItems = getVisibleItems();
+                const currentItem = visibleItems[currentIndex];
+                
+                if (currentItem) {
+                    const description = currentItem.getAttribute('data-description') || '';
+                    const title = currentItem.querySelector('h3') ? currentItem.querySelector('h3').textContent : '';
+                    const category = currentItem.getAttribute('data-category') || '';
+                    
+                    let html = '';
+                    if (title) {
+                        html += '<h3 class="lg-info-title">' + title + '</h3>';
+                    }
+                    if (category) {
+                        html += '<span class="lg-info-category">' + category.charAt(0).toUpperCase() + category.slice(1) + '</span>';
+                    }
+                    if (description) {
+                        html += '<p class="lg-info-description">' + description + '</p>';
+                    }
+                    
+                    panelContent.innerHTML = html;
+                }
+            }
+            
+            // Get currently visible gallery items
+            function getVisibleItems() {
+                return Array.from(galleryItems).filter(function(item) {
+                    return item.style.display !== 'none';
+                });
+            }
+            
+            // Gallery filter functionality
+            filterButtons.forEach(function(button) {
+                button.addEventListener('click', function() {
+                    const filter = this.getAttribute('data-filter');
+                    
+                    // Update active state
+                    filterButtons.forEach(function(btn) {
+                        btn.classList.remove('active', 'bg-primary-500', 'text-white');
+                        btn.classList.add('bg-gray-100', 'text-gray-700');
+                    });
+                    this.classList.add('active', 'bg-primary-500', 'text-white');
+                    this.classList.remove('bg-gray-100', 'text-gray-700');
+                    
+                    // Filter items
+                    galleryItems.forEach(function(item) {
+                        const category = item.getAttribute('data-category');
+                        if (filter === 'all' || category === filter) {
+                            item.style.display = 'block';
+                            item.classList.add('animate-visible');
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                    
+                    // Reinitialize lightGallery with filtered items
+                    initLightGallery();
+                });
+            });
+            
+            // Initialize active state
+            document.querySelector('.gallery-filter.active').classList.add('bg-primary-500', 'text-white');
+            document.querySelector('.gallery-filter.active').classList.remove('bg-gray-100', 'text-gray-700');
+            filterButtons.forEach(function(btn) {
+                if (!btn.classList.contains('active')) {
+                    btn.classList.add('bg-gray-100', 'text-gray-700');
+                }
+            });
+            
+            // Initialize lightGallery on page load
+            initLightGallery();
+        })();
     </script>
 </body>
 </html>
