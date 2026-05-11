@@ -3,6 +3,32 @@
  * Handles all interactive functionality
  */
 
+/**
+ * Handle scrolling to hash target after dynamic content loads
+ * Uses timeout to wait for dynamic components to render
+ */
+function handleHashScroll() {
+    const hash = window.location.hash;
+    if (!hash || hash === '#') return;
+    
+    const targetId = hash.substring(1);
+    
+    // Wait for dynamic content to load
+    setTimeout(() => {
+        const target = document.getElementById(targetId);
+        if (target) {
+            const header = document.querySelector('header');
+            const headerHeight = header ? header.offsetHeight : 0;
+            const targetPosition = target.getBoundingClientRect().top + window.scrollY - headerHeight;
+            
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+            });
+        }
+    }, 800);
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize all components
     // Note: back-to-top and scroll-progress are now handled by their own component scripts
@@ -16,6 +42,9 @@ document.addEventListener('DOMContentLoaded', function() {
     initNewsletterForm();
     initSmoothScroll();
     initTextRotator();
+    
+    // Handle hash scroll after dynamic content loads
+    handleHashScroll();
 });
 
 /**
