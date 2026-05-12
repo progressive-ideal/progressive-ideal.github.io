@@ -1,66 +1,149 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A comprehensive health camp was organized with support from City Hospital for all children.">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A comprehensive health camp was organized with support from City Hospital for all children."
+    />
     <title>Health Camp for Children | Progressive Ideal Yatimkhana</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="../js/tailwind-config.js"></script>
-    
+
+    <!-- Site Configuration (must be loaded before other scripts) -->
+    <script src="../js/config.js"></script>
+
     <!-- Common Head Elements (Favicon, Google Fonts) -->
     <script src="../js/components/head-config.js"></script>
-    <link rel="stylesheet" href="../css/styles.css">
-    
+    <link rel="stylesheet" href="../css/styles.css" />
+
     <!-- lightGallery CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.7.2/css/lightgallery-bundle.min.css">
-</head>
-<body class="min-h-screen font-sans antialiased">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/lightgallery@2.7.2/css/lightgallery-bundle.min.css"
+    />
+  </head>
+  <body class="min-h-screen font-sans antialiased">
     <!-- Header Placeholder (will be replaced by component) -->
     <div id="header-placeholder"></div>
 
     <main id="main-content">
-        <section class="relative overflow-hidden bg-gradient-to-b from-primary-50 to-white py-16 lg:py-24">
-            <div class="absolute inset-0 -z-10 overflow-hidden" aria-hidden="true">
-                <div class="animate-hero-float absolute -top-40 left-1/2 h-[400px] w-[400px] -translate-x-1/2 rounded-full bg-primary-200/50 blur-3xl"></div>
+      <section
+        class="relative overflow-hidden bg-gradient-to-b from-primary-50 to-white py-16 lg:py-24"
+      >
+        <div class="absolute inset-0 -z-10 overflow-hidden" aria-hidden="true">
+          <div
+            class="animate-hero-float absolute -top-40 left-1/2 h-[400px] w-[400px] -translate-x-1/2 rounded-full bg-primary-200/50 blur-3xl"
+          ></div>
+        </div>
+        <div class="container mx-auto px-4 lg:px-8">
+          <div class="mx-auto max-w-3xl">
+            <a
+              href="./"
+              class="mb-6 inline-flex items-center gap-2 text-sm font-medium text-primary-600 transition-colors hover:text-primary-700"
+              data-animate="fade-in-up"
+            >
+              <svg
+                class="h-4 w-4"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M15 19l-7-7 7-7"
+                ></path>
+              </svg>
+              Back to Updates
+            </a>
+            <div
+              class="mb-4 flex items-center gap-3"
+              data-animate="fade-in-up"
+              data-delay="100"
+            >
+              <span
+                class="rounded-full bg-accent-100 px-3 py-0.5 text-xs font-semibold text-accent-700"
+                >Healthcare</span
+              >
+              <span class="text-sm text-gray-500">March 10, 2026</span>
             </div>
-            <div class="container mx-auto px-4 lg:px-8">
-                <div class="mx-auto max-w-3xl">
-                    <a href="/updates" class="mb-6 inline-flex items-center gap-2 text-sm font-medium text-primary-600 transition-colors hover:text-primary-700" data-animate="fade-in-up">
-                        <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
-                        Back to Updates
-                    </a>
-                    <div class="mb-4 flex items-center gap-3" data-animate="fade-in-up" data-delay="100">
-                        <span class="rounded-full bg-accent-100 px-3 py-0.5 text-xs font-semibold text-accent-700">Healthcare</span>
-                        <span class="text-sm text-gray-500">March 10, 2026</span>
-                    </div>
-                    <h1 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl lg:text-5xl" data-animate="fade-in-up" data-delay="150">Health Camp for Children</h1>
-                </div>
-            </div>
-        </section>
+            <h1
+              class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl lg:text-5xl"
+              data-animate="fade-in-up"
+              data-delay="150"
+            >
+              Health Camp for Children
+            </h1>
+          </div>
+        </div>
+      </section>
 
-        <section class="py-16 lg:py-24">
-            <div class="container mx-auto px-4 lg:px-8">
-                <article class="mx-auto max-w-3xl">
-                    <div id="blog-gallery" class="overflow-hidden rounded-2xl shadow-lg" data-animate="fade-in-up">
-                        <a href="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1200&h=800&fit=crop" data-sub-html="<h4 class='text-lg font-semibold'>Health Camp for Children</h4><p class='text-sm opacity-80'>Medical professionals providing health check-ups</p>" class="gallery-item block cursor-pointer">
-                            <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1200&h=600&fit=crop" alt="Health camp for children" class="w-full transition-transform duration-300 hover:scale-105" loading="lazy">
-                        </a>
-                    </div>
-                    <div class="mt-10 space-y-6 text-lg text-gray-600" data-animate="fade-in-up" data-delay="100">
-                        <p>On March 10th, we organized a comprehensive health camp in partnership with City Hospital, bringing a team of 15 medical professionals to our campus. All 150 children at our facility received thorough health check-ups, ensuring their continued well-being and early detection of any health concerns.</p>
-                        <p>The health camp covered a wide range of services including general physical examinations, dental check-ups, eye exams, hearing tests, and vaccination updates. Each child received a personalized health report card, and follow-up appointments have been scheduled for those needing additional care.</p>
-                        <p>Dr. Aisha Patel, who led the medical team, noted that the overall health of our children is excellent — a testament to our nutrition program and daily healthcare routines. A few children were identified as needing corrective lenses, and we've already arranged for them to receive glasses within the next two weeks.</p>
-                        <p>We're deeply grateful to City Hospital and all the medical professionals who volunteered their time for this camp. Regular health monitoring is essential for growing children, and events like these ensure that no health issue goes undetected. Our next health camp is planned for September 2026.</p>
-                    </div>
-                </article>
+      <section class="py-16 lg:py-24">
+        <div class="container mx-auto px-4 lg:px-8">
+          <article class="mx-auto max-w-3xl">
+            <div
+              id="blog-gallery"
+              class="overflow-hidden rounded-2xl shadow-lg"
+              data-animate="fade-in-up"
+            >
+              <a
+                href="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1200&h=800&fit=crop"
+                data-sub-html="<h4 class='text-lg font-semibold'>Health Camp for Children</h4><p class='text-sm opacity-80'>Medical professionals providing health check-ups</p>"
+                class="gallery-item block cursor-pointer"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1200&h=600&fit=crop"
+                  alt="Health camp for children"
+                  class="w-full transition-transform duration-300 hover:scale-105"
+                  loading="lazy"
+                />
+              </a>
             </div>
-        </section>
+            <div
+              class="mt-10 space-y-6 text-lg text-gray-600"
+              data-animate="fade-in-up"
+              data-delay="100"
+            >
+              <p>
+                On March 10th, we organized a comprehensive health camp in
+                partnership with City Hospital, bringing a team of 15 medical
+                professionals to our campus. All 150 children at our facility
+                received thorough health check-ups, ensuring their continued
+                well-being and early detection of any health concerns.
+              </p>
+              <p>
+                The health camp covered a wide range of services including
+                general physical examinations, dental check-ups, eye exams,
+                hearing tests, and vaccination updates. Each child received a
+                personalized health report card, and follow-up appointments have
+                been scheduled for those needing additional care.
+              </p>
+              <p>
+                Dr. Aisha Patel, who led the medical team, noted that the
+                overall health of our children is excellent — a testament to our
+                nutrition program and daily healthcare routines. A few children
+                were identified as needing corrective lenses, and we've already
+                arranged for them to receive glasses within the next two weeks.
+              </p>
+              <p>
+                We're deeply grateful to City Hospital and all the medical
+                professionals who volunteered their time for this camp. Regular
+                health monitoring is essential for growing children, and events
+                like these ensure that no health issue goes undetected. Our next
+                health camp is planned for September 2026.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
     </main>
 
     <!-- Footer Placeholder (will be replaced by component) -->
     <div id="footer-placeholder"></div>
-    
+
     <!-- Component Scripts -->
     <script src="../js/components/scroll-progress.js"></script>
     <script src="../js/components/back-to-top.js"></script>
@@ -69,20 +152,20 @@
     <script src="../js/components/mobile-cta.js"></script>
     <script src="../js/components/cta-donate.js"></script>
     <script src="../js/main.js"></script>
-    
+
     <!-- lightGallery JS -->
     <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.2/lightgallery.umd.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.2/plugins/zoom/lg-zoom.umd.js"></script>
-    
+
     <!-- Lightbox Component -->
     <script src="../js/components/lightbox.js"></script>
-    
+
     <script>
-        // Initialize lightGallery for blog images using the reusable component
-        initLightbox('#blog-gallery', {
-            plugins: [lgZoom],
-            selector: '.gallery-item'
-        });
+      // Initialize lightGallery for blog images using the reusable component
+      initLightbox("#blog-gallery", {
+        plugins: [lgZoom],
+        selector: ".gallery-item",
+      });
     </script>
-</body>
+  </body>
 </html>

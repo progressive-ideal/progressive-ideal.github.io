@@ -10,6 +10,9 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="../js/tailwind-config.js"></script>
     
+    <!-- Site Configuration (must be loaded before other scripts) -->
+    <script src="../js/config.js"></script>
+    
     <!-- Common Head Elements (Favicon, Google Fonts) -->
     <script src="../js/components/head-config.js"></script>
     
@@ -50,7 +53,7 @@
         <section class="py-20 lg:py-28">
             <div class="container mx-auto px-4 lg:px-8">
                 <div class="mx-auto max-w-4xl">
-                    <div id="updates-listing-container" data-updates-source="/updates/updates.json">
+                    <div id="updates-listing-container" data-updates-source="updates.json">
                         <!-- Dynamically populated by updates.js -->
                     </div>
                 </div>

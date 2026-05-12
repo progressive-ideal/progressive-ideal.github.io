@@ -7,6 +7,20 @@ const UpdatesComponent = (function () {
   let updatesCache = null;
 
   /**
+   * Helper to get URL with base path
+   */
+  function url(path) {
+    return window.SiteConfig ? window.SiteConfig.url(path) : path;
+  }
+
+  /**
+   * Helper to get nav URL with base path
+   */
+  function navUrl(path) {
+    return window.SiteConfig ? window.SiteConfig.navUrl(path) : path;
+  }
+
+  /**
    * Fetch updates data from JSON
    */
   async function fetchUpdates() {
@@ -16,8 +30,9 @@ const UpdatesComponent = (function () {
     const paths = ["/updates/updates.json", "updates/updates.json"];
 
     for (const jsonPath of paths) {
+      const fullPath = url(jsonPath);
       try {
-        const response = await fetch(jsonPath);
+        const response = await fetch(fullPath);
         if (!response.ok) continue;
         const updates = await response.json();
         updatesCache = updates;
@@ -81,7 +96,7 @@ const UpdatesComponent = (function () {
                    </svg>
                </div>`;
 
-    return `<a href="/updates/${update.slug}" class="group flex-shrink-0 w-80 snap-start rounded-2xl border border-gray-200 bg-white overflow-hidden shadow-sm transition-all hover:border-primary-200 hover:shadow-lg">
+    return `<a href="${navUrl("/updates/" + update.slug)}" class="group flex-shrink-0 w-80 snap-start rounded-2xl border border-gray-200 bg-white overflow-hidden shadow-sm transition-all hover:border-primary-200 hover:shadow-lg">
                    ${imageHtml}
                    <div class="p-5">
                        <div class="text-xs text-gray-500 mb-2">${formatDateShort(update.date)}</div>
@@ -111,7 +126,7 @@ const UpdatesComponent = (function () {
       ? "group block rounded-2xl border border-gray-200 bg-white p-5 shadow-sm transition-all hover:border-primary-200 hover:shadow-lg sm:flex sm:gap-6 sm:p-6"
       : "group block rounded-2xl border border-gray-200 bg-white p-5 shadow-sm transition-all hover:border-primary-200 hover:shadow-lg sm:p-6";
 
-    return `<a href="/updates/${update.slug}" class="${cardClasses}">
+    return `<a href="${navUrl("/updates/" + update.slug)}" class="${cardClasses}">
                    ${imageHtml}
                    <div class="flex flex-col justify-center">
                        <div class="mb-2 flex items-center gap-3">

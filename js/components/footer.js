@@ -28,12 +28,20 @@
     ];
     
     /**
+     * Helper to get URL with base path
+     */
+    function url(path) {
+        return window.SiteConfig ? window.SiteConfig.navUrl(path) : path;
+    }
+    
+    /**
      * Fetch JSON data with fallback
      */
     async function fetchJSON(paths, fallback) {
         for (const path of paths) {
+            const fullPath = window.SiteConfig ? window.SiteConfig.url(path) : path;
             try {
-                const response = await fetch(path);
+                const response = await fetch(fullPath);
                 if (!response.ok) continue;
                 return await response.json();
             } catch (error) {
@@ -63,6 +71,7 @@
         const contact = await fetchJSON(['/data/contact.json', 'data/contact.json'], defaultContact);
         const socialLinks = await fetchJSON(['/data/social-links.json', 'data/social-links.json'], defaultSocialLinks);
         
+        const homeUrl = url('/');
         const footerHTML = `
     <!-- Footer -->
     <footer class="bg-gray-900 pt-16 text-gray-300 lg:pt-24">
@@ -70,7 +79,7 @@
             <div class="grid gap-12 lg:grid-cols-12 lg:gap-8">
                 <!-- Brand Column -->
                 <div class="lg:col-span-4">
-                    <a href="/" class="inline-block">
+                    <a href="${homeUrl}" class="inline-block">
                         <div class="flex items-center gap-2">
                             <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-primary-500 text-white font-bold text-sm">
                                 PIY
@@ -91,20 +100,20 @@
                     <div>
                         <h3 class="text-sm font-semibold uppercase tracking-wider text-white">Quick Links</h3>
                         <ul class="mt-4 space-y-3">
-                            <li><a href="/" class="text-gray-400 transition-colors hover:text-white">Home</a></li>
-                            <li><a href="/about" class="text-gray-400 transition-colors hover:text-white">About Us</a></li>
-                            <li><a href="/#programs" class="text-gray-400 transition-colors hover:text-white">Programs</a></li>
-                            <li><a href="/gallery" class="text-gray-400 transition-colors hover:text-white">Gallery</a></li>
-                            <li><a href="/updates" class="text-gray-400 transition-colors hover:text-white">Updates</a></li>
+                            <li><a href="${url('/')}" class="text-gray-400 transition-colors hover:text-white">Home</a></li>
+                            <li><a href="${url('/about')}" class="text-gray-400 transition-colors hover:text-white">About Us</a></li>
+                            <li><a href="${url('/#programs')}" class="text-gray-400 transition-colors hover:text-white">Programs</a></li>
+                            <li><a href="${url('/gallery')}" class="text-gray-400 transition-colors hover:text-white">Gallery</a></li>
+                            <li><a href="${url('/updates')}" class="text-gray-400 transition-colors hover:text-white">Updates</a></li>
                         </ul>
                     </div>
                     <div>
                         <h3 class="text-sm font-semibold uppercase tracking-wider text-white">Get Involved</h3>
                         <ul class="mt-4 space-y-3">
-                            <li><a href="/#donate" class="text-gray-400 transition-colors hover:text-white">Donate</a></li>
-                            <li><a href="/#get-involved" class="text-gray-400 transition-colors hover:text-white">Volunteer</a></li>
-                            <li><a href="/contact" class="text-gray-400 transition-colors hover:text-white">Contact Us</a></li>
-                            <li><a href="/#faq" class="text-gray-400 transition-colors hover:text-white">FAQ</a></li>
+                            <li><a href="${url('/#donate')}" class="text-gray-400 transition-colors hover:text-white">Donate</a></li>
+                            <li><a href="${url('/#get-involved')}" class="text-gray-400 transition-colors hover:text-white">Volunteer</a></li>
+                            <li><a href="${url('/contact')}" class="text-gray-400 transition-colors hover:text-white">Contact Us</a></li>
+                            <li><a href="${url('/#faq')}" class="text-gray-400 transition-colors hover:text-white">FAQ</a></li>
                         </ul>
                     </div>
                     <div>

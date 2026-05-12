@@ -11,12 +11,20 @@
      */
     function getCurrentPage() {
         const path = window.location.pathname;
+        const basePath = window.SiteConfig ? window.SiteConfig.basePath : '';
+        
+        // Remove base path from the current path for comparison
+        let relativePath = path;
+        if (basePath && path.startsWith(basePath)) {
+            relativePath = path.substring(basePath.length) || '/';
+        }
+        
         // Handle both /about and /about.html formats
-        if (path === '/' || path === '/index.html') return 'home';
-        if (path.startsWith('/about')) return 'about';
-        if (path.startsWith('/contact')) return 'contact';
-        if (path.startsWith('/gallery')) return 'gallery';
-        if (path.startsWith('/updates')) return 'updates';
+        if (relativePath === '/' || relativePath === '/index.html') return 'home';
+        if (relativePath.startsWith('/about')) return 'about';
+        if (relativePath.startsWith('/contact')) return 'contact';
+        if (relativePath.startsWith('/gallery')) return 'gallery';
+        if (relativePath.startsWith('/updates')) return 'updates';
         return '';
     }
     
@@ -27,7 +35,8 @@
         const isActive = currentPage === pageName;
         const activeClass = isActive ? 'text-gray-900' : 'text-gray-600';
         const hoverClass = isActive ? 'hover:text-primary-600' : 'hover:text-gray-900';
-        return `<a href="${href}" class="text-sm font-medium ${activeClass} transition-colors ${hoverClass}">${text}</a>`;
+        const fullHref = window.SiteConfig ? window.SiteConfig.navUrl(href) : href;
+        return `<a href="${fullHref}" class="text-sm font-medium ${activeClass} transition-colors ${hoverClass}">${text}</a>`;
     }
     
     /**
@@ -36,7 +45,8 @@
     function mobileNavLink(href, text, currentPage, pageName) {
         const isActive = currentPage === pageName;
         const activeClass = isActive ? 'text-gray-900' : 'text-gray-600';
-        return `<a href="${href}" class="block py-3 text-base font-medium ${activeClass}">${text}</a>`;
+        const fullHref = window.SiteConfig ? window.SiteConfig.navUrl(href) : href;
+        return `<a href="${fullHref}" class="block py-3 text-base font-medium ${activeClass}">${text}</a>`;
     }
     
     /**
@@ -44,13 +54,15 @@
      */
     function renderHeader() {
         const currentPage = getCurrentPage();
+        const homeUrl = window.SiteConfig ? window.SiteConfig.url('/') : '/';
+        const donateUrl = window.SiteConfig ? window.SiteConfig.url('/#donate') : '/#donate';
         
         const headerHTML = `
     <!-- Header -->
     <header class="sticky top-0 z-50 w-full border-b border-gray-200 bg-white/80 backdrop-blur-lg transition-all" data-header>
         <div class="container mx-auto flex h-16 items-center justify-between px-4 lg:h-20 lg:px-8">
             <!-- Logo -->
-            <a href="/" class="flex items-center gap-2">
+            <a href="${homeUrl}" class="flex items-center gap-2">
                 <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-primary-500 text-white font-bold text-sm lg:h-12 lg:w-12 lg:text-base">
                     PIY
                 </div>
@@ -72,7 +84,7 @@
             
             <!-- Actions -->
             <div class="flex items-center gap-4">
-                <a href="/#donate" class="hidden rounded-full bg-primary-500 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-primary-600 sm:inline-flex shadow-lg shadow-primary-500/25">
+                <a href="${donateUrl}" class="hidden rounded-full bg-primary-500 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-primary-600 sm:inline-flex shadow-lg shadow-primary-500/25">
                     Donate Now
                 </a>
                 
@@ -96,7 +108,7 @@
                 ${mobileNavLink('/updates', 'Updates', currentPage, 'updates')}
                 ${mobileNavLink('/contact', 'Contact', currentPage, 'contact')}
                 <div class="mt-4 border-t border-gray-200 pt-4">
-                    <a href="/#donate" class="block w-full rounded-full bg-primary-500 px-5 py-3 text-center text-sm font-semibold text-white transition-colors hover:bg-primary-600">
+                    <a href="${donateUrl}" class="block w-full rounded-full bg-primary-500 px-5 py-3 text-center text-sm font-semibold text-white transition-colors hover:bg-primary-600">
                         Donate Now
                     </a>
                 </div>

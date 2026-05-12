@@ -9,6 +9,13 @@ const GalleryComponent = (function() {
     let galleryCache = null;
     
     /**
+     * Helper to get URL with base path
+     */
+    function url(path) {
+        return window.SiteConfig ? window.SiteConfig.url(path) : path;
+    }
+    
+    /**
      * Fetch gallery data from JSON
      */
     async function fetchGallery() {
@@ -17,8 +24,9 @@ const GalleryComponent = (function() {
         const paths = ['/data/gallery.json', 'data/gallery.json'];
         
         for (const jsonPath of paths) {
+            const fullPath = url(jsonPath);
             try {
-                const response = await fetch(jsonPath);
+                const response = await fetch(fullPath);
                 if (!response.ok) continue;
                 const gallery = await response.json();
                 galleryCache = gallery;

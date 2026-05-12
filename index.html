@@ -1,362 +1,739 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Progressive Ideal Yatimkhana - Providing hope, care, and a brighter future for children in need.">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Progressive Ideal Yatimkhana - Providing hope, care, and a brighter future for children in need."
+    />
     <title>Progressive Ideal Yatimkhana | Home</title>
-    
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="js/tailwind-config.js"></script>
-    
+
+    <!-- Site Configuration (must be loaded before other scripts) -->
+    <script src="js/config.js"></script>
+
     <!-- Common Head Elements (Favicon, Google Fonts) -->
     <script src="js/components/head-config.js"></script>
-    
+
     <!-- Custom Styles -->
-    <link rel="stylesheet" href="css/styles.css">
-</head>
-<body class="min-h-screen font-sans antialiased">
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body class="min-h-screen font-sans antialiased">
     <!-- Header Placeholder (will be replaced by component) -->
     <div id="header-placeholder"></div>
-    
+
     <main id="main-content">
-        <!-- Hero Section -->
-        <section class="relative min-h-[90vh] flex items-center overflow-hidden">
-            <!-- Hero Carousel Container -->
-            <div data-hero-carousel-container class="absolute inset-0"></div>
-            
-            <div class="container mx-auto px-4 py-20 lg:px-8 lg:py-32 relative z-10">
-                <div class="mx-auto max-w-4xl text-center">
-                    <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 backdrop-blur-sm px-4 py-1.5 text-sm font-medium text-white" data-animate="fade-in-up">
-                        <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
-                        </svg>
-                        Building Brighter Futures
-                    </div>
-                    
-                    <h1 class="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl" data-animate="fade-in-up" data-delay="100">
-                        Every Child Deserves
-                        <br>
-                        <span class="text-rotator">
-                            <span class="text-gradient text-rotator-item active">Love, Care & Hope</span>
-                            <span class="text-gradient text-rotator-item">Education & Opportunity</span>
-                            <span class="text-gradient text-rotator-item">A Safe Home</span>
-                            <span class="text-gradient text-rotator-item">A Brighter Future</span>
-                        </span>
-                    </h1>
-                    
-                    <p class="mx-auto mt-6 max-w-2xl text-lg text-white/90 sm:text-xl" data-animate="fade-in-up" data-delay="200">
-                        Progressive Ideal Yatimkhana provides a safe haven for children in need, offering education, healthcare, and a nurturing environment to help them thrive.
-                    </p>
-                    
-                    <div class="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row" data-animate="fade-in-up" data-delay="300">
-                        <a href="#donate" class="inline-flex items-center justify-center gap-2 rounded-full bg-primary-500 px-8 py-3.5 text-base font-semibold text-white shadow-lg shadow-primary-500/25 transition-all hover:bg-primary-600 hover:shadow-xl hover:shadow-primary-500/30">
-                            Donate Now
-                            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
-                            </svg>
-                        </a>
-                        <a href="#about" class="inline-flex items-center justify-center gap-2 rounded-full border border-white/30 bg-white/10 backdrop-blur-sm px-8 py-3.5 text-base font-semibold text-white transition-colors hover:bg-white/20">
-                            Learn More
-                            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
+      <!-- Hero Section -->
+      <section class="relative min-h-[90vh] flex items-center overflow-hidden">
+        <!-- Hero Carousel Container -->
+        <div data-hero-carousel-container class="absolute inset-0"></div>
+
+        <div
+          class="container mx-auto px-4 py-20 lg:px-8 lg:py-32 relative z-10"
+        >
+          <div class="mx-auto max-w-4xl text-center">
+            <div
+              class="mb-6 inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 backdrop-blur-sm px-4 py-1.5 text-sm font-medium text-white"
+              data-animate="fade-in-up"
+            >
+              <svg
+                class="h-4 w-4"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                ></path>
+              </svg>
+              Building Brighter Futures
             </div>
-        </section>
-        
-        <!-- Wave Divider -->
-        <div class="relative -mt-1 text-gray-50">
-            <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full" preserveAspectRatio="none">
-                <path d="M0 40C240 80 480 0 720 40C960 80 1200 0 1440 40V80H0V40Z" fill="currentColor"></path>
-            </svg>
+
+            <h1
+              class="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl"
+              data-animate="fade-in-up"
+              data-delay="100"
+            >
+              Every Child Deserves
+              <br />
+              <span class="text-rotator">
+                <span class="text-gradient text-rotator-item active"
+                  >Love, Care & Hope</span
+                >
+                <span class="text-gradient text-rotator-item"
+                  >Education & Opportunity</span
+                >
+                <span class="text-gradient text-rotator-item">A Safe Home</span>
+                <span class="text-gradient text-rotator-item"
+                  >A Brighter Future</span
+                >
+              </span>
+            </h1>
+
+            <p
+              class="mx-auto mt-6 max-w-2xl text-lg text-white/90 sm:text-xl"
+              data-animate="fade-in-up"
+              data-delay="200"
+            >
+              Progressive Ideal Yatimkhana provides a safe haven for children in
+              need, offering education, healthcare, and a nurturing environment
+              to help them thrive.
+            </p>
+
+            <div
+              class="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row"
+              data-animate="fade-in-up"
+              data-delay="300"
+            >
+              <a
+                href="#donate"
+                class="inline-flex items-center justify-center gap-2 rounded-full bg-primary-500 px-8 py-3.5 text-base font-semibold text-white shadow-lg shadow-primary-500/25 transition-all hover:bg-primary-600 hover:shadow-xl hover:shadow-primary-500/30"
+              >
+                Donate Now
+                <svg
+                  class="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                  ></path>
+                </svg>
+              </a>
+              <a
+                href="#about"
+                class="inline-flex items-center justify-center gap-2 rounded-full border border-white/30 bg-white/10 backdrop-blur-sm px-8 py-3.5 text-base font-semibold text-white transition-colors hover:bg-white/20"
+              >
+                Learn More
+                <svg
+                  class="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  ></path>
+                </svg>
+              </a>
+            </div>
+          </div>
         </div>
-        
-        <!-- Stats Section (dynamically populated by stats.js) -->
-        <section class="border-y border-gray-200 bg-gray-50 py-16 lg:py-20">
-            <div class="container mx-auto px-4 lg:px-8">
-                <div id="hero-stats-container">
-                    <!-- Loading skeleton will be shown while data loads -->
-                </div>
+      </section>
+
+      <!-- Wave Divider -->
+      <div class="relative -mt-1 text-gray-50">
+        <svg
+          viewBox="0 0 1440 80"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          class="w-full"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M0 40C240 80 480 0 720 40C960 80 1200 0 1440 40V80H0V40Z"
+            fill="currentColor"
+          ></path>
+        </svg>
+      </div>
+
+      <!-- Stats Section (dynamically populated by stats.js) -->
+      <section class="border-y border-gray-200 bg-gray-50 py-16 lg:py-20">
+        <div class="container mx-auto px-4 lg:px-8">
+          <div id="hero-stats-container">
+            <!-- Loading skeleton will be shown while data loads -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Latest Updates Section -->
+      <section id="latest-updates" class="py-16 lg:py-20">
+        <div class="container mx-auto px-4 lg:px-8">
+          <div
+            class="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center"
+          >
+            <div>
+              <div
+                class="mb-2 inline-flex items-center gap-2 rounded-full border border-primary-200 bg-primary-50 px-3 py-1 text-sm font-medium text-primary-700"
+                data-animate="fade-in-up"
+              >
+                <svg
+                  class="h-4 w-4"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"
+                  ></path>
+                </svg>
+                Latest Updates
+              </div>
+              <h2
+                class="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl"
+                data-animate="fade-in-up"
+                data-delay="100"
+              >
+                Recent News & Events
+              </h2>
             </div>
-        </section>
-        
-        <!-- Latest Updates Section -->
-        <section id="latest-updates" class="py-16 lg:py-20">
-            <div class="container mx-auto px-4 lg:px-8">
-                <div class="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
-                    <div>
-                        <div class="mb-2 inline-flex items-center gap-2 rounded-full border border-primary-200 bg-primary-50 px-3 py-1 text-sm font-medium text-primary-700" data-animate="fade-in-up">
-                            <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"></path>
-                            </svg>
-                            Latest Updates
-                        </div>
-                        <h2 class="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl" data-animate="fade-in-up" data-delay="100">Recent News & Events</h2>
-                    </div>
-                    <a href="/updates" class="inline-flex items-center gap-1 text-sm font-semibold text-primary-600 transition-colors hover:text-primary-700" data-animate="fade-in-up" data-delay="200">
-                        View all updates
-                        <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                        </svg>
-                    </a>
-                </div>
-                
-                <!-- Updates Scroller -->
-                <div class="relative mt-8" data-animate="fade-in-up" data-delay="200">
-                    <div class="overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide -mx-4 px-4">
-                        <div id="updates-container" class="flex gap-6" style="width: max-content;" data-updates-source="/updates/updates.json">
-                            <!-- Dynamically populated by updates.js -->
-                        </div>
-                    </div>
-                    
-                    <!-- Scroll Hint ( fades on larger screens ) -->
-                    <div class="pointer-events-none absolute right-0 top-0 flex h-full w-12 items-center justify-center bg-gradient-to-l from-gray-50 to-transparent sm:hidden"></div>
-                </div>
+            <a
+              href="updates/"
+              class="inline-flex items-center gap-1 text-sm font-semibold text-primary-600 transition-colors hover:text-primary-700"
+              data-animate="fade-in-up"
+              data-delay="200"
+            >
+              View all updates
+              <svg
+                class="h-4 w-4"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"
+                ></path>
+              </svg>
+            </a>
+          </div>
+
+          <!-- Updates Scroller -->
+          <div class="relative mt-8" data-animate="fade-in-up" data-delay="200">
+            <div
+              class="overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide -mx-4 px-4"
+            >
+              <div
+                id="updates-container"
+                class="flex gap-6"
+                style="width: max-content"
+                data-updates-source="updates/updates.json"
+              >
+                <!-- Dynamically populated by updates.js -->
+              </div>
             </div>
-        </section>
-        
-        <!-- About Section -->
-        <section id="about" class="py-20 lg:py-28">
-            <div class="container mx-auto px-4 lg:px-8">
-                <div class="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
-                    <!-- Content -->
-                    <div>
-                        <div class="mb-4 inline-flex items-center rounded-full bg-primary-100 px-3 py-1 text-sm font-medium text-primary-700" data-animate="fade-in-up">
-                            About Us
-                        </div>
-                        <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl" data-animate="fade-in-up" data-delay="100">
-                            Nurturing Hope, Building Futures
-                        </h2>
-                        <p class="mt-4 text-lg text-gray-600" data-animate="fade-in-up" data-delay="150">
-                            Progressive Ideal Yatimkhana was founded with a simple yet powerful vision: to provide every child with the love, care, and opportunities they deserve to thrive.
-                        </p>
-                        <p class="mt-4 text-lg text-gray-600" data-animate="fade-in-up" data-delay="200">
-                            For over 25 years, we have been a beacon of hope for children who have lost their families or cannot be cared for by their parents. We provide not just shelter, but a loving home where children can grow, learn, and dream.
-                        </p>
-                        
-                        <div class="mt-10 space-y-6">
-                            <div class="flex gap-4" data-animate="fade-in-up" data-delay="250">
-                                <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary-100 text-primary-600">
-                                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"></path>
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path>
-                                    </svg>
-                                </div>
-                                <div>
-                                    <h3 class="font-semibold text-gray-900">Quality Education</h3>
-                                    <p class="mt-1 text-gray-600">Providing access to quality education and skill development programs for every child.</p>
-                                </div>
-                            </div>
-                            <div class="flex gap-4" data-animate="fade-in-up" data-delay="350">
-                                <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary-100 text-primary-600">
-                                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
-                                    </svg>
-                                </div>
-                                <div>
-                                    <h3 class="font-semibold text-gray-900">Healthcare Support</h3>
-                                    <p class="mt-1 text-gray-600">Regular health check-ups, medical care, and nutritional support for all children.</p>
-                                </div>
-                            </div>
-                            <div class="flex gap-4" data-animate="fade-in-up" data-delay="450">
-                                <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary-100 text-primary-600">
-                                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
-                                    </svg>
-                                </div>
-                                <div>
-                                    <h3 class="font-semibold text-gray-900">Safe Shelter</h3>
-                                    <p class="mt-1 text-gray-600">A nurturing home environment with dedicated caregivers and modern facilities.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Image -->
-                    <div data-animate="fade-in-up" data-delay="200">
-                        <div class="relative overflow-hidden rounded-2xl shadow-2xl">
-                            <img src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?w=800&h=600&fit=crop" alt="Children playing happily at the orphanage" class="h-full w-full object-cover" loading="lazy">
-                            <div class="absolute inset-0 bg-gradient-to-t from-primary-900/20 to-transparent"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Programs Section -->
-        <section id="programs" class="bg-gray-50 py-20 lg:py-28">
-            <div class="container mx-auto px-4 lg:px-8">
-                <div class="mx-auto max-w-3xl text-center">
-                    <div class="mb-4 inline-flex items-center rounded-full bg-primary-100 px-3 py-1 text-sm font-medium text-primary-700" data-animate="fade-in-up">
-                        Our Programs
-                    </div>
-                    <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl" data-animate="fade-in-up" data-delay="100">
-                        How We Help
-                    </h2>
-                    <p class="mt-4 text-lg text-gray-600" data-animate="fade-in-up" data-delay="200">
-                        Our comprehensive programs address the physical, emotional, and educational needs of every child in our care.
+
+            <!-- Scroll Hint ( fades on larger screens ) -->
+            <div
+              class="pointer-events-none absolute right-0 top-0 flex h-full w-12 items-center justify-center bg-gradient-to-l from-gray-50 to-transparent sm:hidden"
+            ></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section id="about" class="py-20 lg:py-28">
+        <div class="container mx-auto px-4 lg:px-8">
+          <div class="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
+            <!-- Content -->
+            <div>
+              <div
+                class="mb-4 inline-flex items-center rounded-full bg-primary-100 px-3 py-1 text-sm font-medium text-primary-700"
+                data-animate="fade-in-up"
+              >
+                About Us
+              </div>
+              <h2
+                class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl"
+                data-animate="fade-in-up"
+                data-delay="100"
+              >
+                Nurturing Hope, Building Futures
+              </h2>
+              <p
+                class="mt-4 text-lg text-gray-600"
+                data-animate="fade-in-up"
+                data-delay="150"
+              >
+                Progressive Ideal Yatimkhana was founded with a simple yet
+                powerful vision: to provide every child with the love, care, and
+                opportunities they deserve to thrive.
+              </p>
+              <p
+                class="mt-4 text-lg text-gray-600"
+                data-animate="fade-in-up"
+                data-delay="200"
+              >
+                For over 25 years, we have been a beacon of hope for children
+                who have lost their families or cannot be cared for by their
+                parents. We provide not just shelter, but a loving home where
+                children can grow, learn, and dream.
+              </p>
+
+              <div class="mt-10 space-y-6">
+                <div
+                  class="flex gap-4"
+                  data-animate="fade-in-up"
+                  data-delay="250"
+                >
+                  <div
+                    class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary-100 text-primary-600"
+                  >
+                    <svg
+                      class="h-6 w-6"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M12 14l9-5-9-5-9 5 9 5z"
+                      ></path>
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 class="font-semibold text-gray-900">
+                      Quality Education
+                    </h3>
+                    <p class="mt-1 text-gray-600">
+                      Providing access to quality education and skill
+                      development programs for every child.
                     </p>
+                  </div>
                 </div>
-                
-                <!-- Programs Container (dynamically populated by programs.js) -->
-                <div id="programs-container" class="mt-16 grid gap-8 sm:grid-cols-2">
-                    <!-- Loading skeleton will be shown while data loads -->
-                </div>
-            </div>
-        </section>
-        
-        <!-- Impact Section -->
-        <section id="impact" class="py-20 lg:py-28">
-            <div class="container mx-auto px-4 lg:px-8">
-                <div class="mx-auto max-w-3xl text-center">
-                    <div class="mb-4 inline-flex items-center rounded-full bg-primary-100 px-3 py-1 text-sm font-medium text-primary-700" data-animate="fade-in-up">
-                        Our Impact
-                    </div>
-                    <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl" data-animate="fade-in-up" data-delay="100">
-                        Numbers That Matter
-                    </h2>
-                    <p class="mt-4 text-lg text-gray-600" data-animate="fade-in-up" data-delay="200">
-                        Every number represents a life changed, a dream nurtured, and a future made brighter.
+                <div
+                  class="flex gap-4"
+                  data-animate="fade-in-up"
+                  data-delay="350"
+                >
+                  <div
+                    class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary-100 text-primary-600"
+                  >
+                    <svg
+                      class="h-6 w-6"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 class="font-semibold text-gray-900">
+                      Healthcare Support
+                    </h3>
+                    <p class="mt-1 text-gray-600">
+                      Regular health check-ups, medical care, and nutritional
+                      support for all children.
                     </p>
+                  </div>
                 </div>
-                
-                <!-- Impact Stats Container (dynamically populated by stats.js) -->
-                <div id="impact-stats-container" class="mt-16">
-                    <!-- Loading skeleton will be shown while data loads -->
-                </div>
-                
-                <!-- Campaign Progress Bars (dynamically populated by stats.js) -->
-                <div id="campaigns-container" class="mx-auto mt-20 max-w-3xl space-y-8" data-animate="fade-in-up" data-delay="300">
-                    <!-- Loading skeleton will be shown while data loads -->
-                </div>
-            </div>
-        </section>
-        
-        <!-- Stories Section -->
-        <section id="stories" class="bg-gray-50 py-20 lg:py-28">
-            <div class="container mx-auto px-4 lg:px-8">
-                <div class="mx-auto max-w-3xl text-center">
-                    <div class="mb-4 inline-flex items-center rounded-full bg-primary-100 px-3 py-1 text-sm font-medium text-primary-700" data-animate="fade-in-up">
-                        Success Stories
-                    </div>
-                    <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl" data-animate="fade-in-up" data-delay="100">
-                        Lives Transformed
-                    </h2>
-                    <p class="mt-4 text-lg text-gray-600" data-animate="fade-in-up" data-delay="200">
-                        Meet some of the children whose lives have been changed through our programs.
+                <div
+                  class="flex gap-4"
+                  data-animate="fade-in-up"
+                  data-delay="450"
+                >
+                  <div
+                    class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary-100 text-primary-600"
+                  >
+                    <svg
+                      class="h-6 w-6"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+                      ></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 class="font-semibold text-gray-900">Safe Shelter</h3>
+                    <p class="mt-1 text-gray-600">
+                      A nurturing home environment with dedicated caregivers and
+                      modern facilities.
                     </p>
+                  </div>
                 </div>
-                
-                <!-- Stories Container (dynamically populated by stories.js) -->
-                <div id="stories-container" class="relative mt-16">
-                    <!-- Loading skeleton will be shown while data loads -->
-                </div>
+              </div>
             </div>
-        </section>
-        
-        <!-- Get Involved Section -->
-        <section id="get-involved" class="py-20 lg:py-28">
-            <div class="container mx-auto px-4 lg:px-8">
-                <div class="mx-auto max-w-3xl text-center">
-                    <div class="mb-4 inline-flex items-center rounded-full bg-primary-100 px-3 py-1 text-sm font-medium text-primary-700" data-animate="fade-in-up">
-                        Get Involved
-                    </div>
-                    <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl" data-animate="fade-in-up" data-delay="100">
-                        Join Our Mission
-                    </h2>
-                    <p class="mt-4 text-lg text-gray-600" data-animate="fade-in-up" data-delay="200">
-                        There are many ways to make a difference. Whether you give your time, your skills, or your support, every contribution matters.
-                    </p>
-                </div>
-                
-                <div class="mt-16 grid gap-8 lg:grid-cols-3">
-                    <!-- Volunteer -->
-                    <div class="group relative rounded-2xl border border-gray-200 bg-white p-8 text-center transition-all hover:border-primary-200 hover:shadow-lg" data-animate="fade-in-up" data-delay="100">
-                        <div class="mx-auto mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-primary-100 text-primary-600 transition-colors group-hover:bg-primary-500 group-hover:text-white">
-                            <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                            </svg>
-                        </div>
-                        <h3 class="text-xl font-semibold text-gray-900">Volunteer</h3>
-                        <p class="mt-3 text-gray-600">Give your time and skills to make a direct impact. Help with teaching, mentoring, or daily activities.</p>
-                        <a href="/contact" class="mt-6 inline-flex items-center justify-center gap-2 rounded-full border border-primary-500 px-6 py-2.5 text-sm font-semibold text-primary-600 transition-all hover:bg-primary-500 hover:text-white">
-                            Start Volunteering
-                            <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                            </svg>
-                        </a>
-                    </div>
-                    
-                    <!-- Donate -->
-                    <div class="group relative rounded-2xl border border-gray-200 bg-white p-8 text-center transition-all hover:border-primary-200 hover:shadow-lg" data-animate="fade-in-up" data-delay="200">
-                        <div class="mx-auto mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-primary-100 text-primary-600 transition-colors group-hover:bg-primary-500 group-hover:text-white">
-                            <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                            </svg>
-                        </div>
-                        <h3 class="text-xl font-semibold text-gray-900">Donate</h3>
-                        <p class="mt-3 text-gray-600">Your generous donations help us provide food, shelter, education, and healthcare to children in need.</p>
-                        <a href="#donate" class="mt-6 inline-flex items-center justify-center gap-2 rounded-full border border-primary-500 px-6 py-2.5 text-sm font-semibold text-primary-600 transition-all hover:bg-primary-500 hover:text-white">
-                            Make a Donation
-                            <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                            </svg>
-                        </a>
-                    </div>
-                    
-                    <!-- Partner -->
-                    <div class="group relative rounded-2xl border border-gray-200 bg-white p-8 text-center transition-all hover:border-primary-200 hover:shadow-lg" data-animate="fade-in-up" data-delay="300">
-                        <div class="mx-auto mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-primary-100 text-primary-600 transition-colors group-hover:bg-primary-500 group-hover:text-white">
-                            <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-                            </svg>
-                        </div>
-                        <h3 class="text-xl font-semibold text-gray-900">Partner</h3>
-                        <p class="mt-3 text-gray-600">Corporate and organizational partnerships amplify our impact. Join us in making a difference.</p>
-                        <a href="/contact" class="mt-6 inline-flex items-center justify-center gap-2 rounded-full border border-primary-500 px-6 py-2.5 text-sm font-semibold text-primary-600 transition-all hover:bg-primary-500 hover:text-white">
-                            Become a Partner
-                            <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
+
+            <!-- Image -->
+            <div data-animate="fade-in-up" data-delay="200">
+              <div class="relative overflow-hidden rounded-2xl shadow-2xl">
+                <img
+                  src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?w=800&h=600&fit=crop"
+                  alt="Children playing happily at the orphanage"
+                  class="h-full w-full object-cover"
+                  loading="lazy"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-primary-900/20 to-transparent"
+                ></div>
+              </div>
             </div>
-        </section>
-        
-        <!-- FAQ Section -->
-        <section id="faq" class="bg-gray-50 py-20 lg:py-28">
-            <div class="container mx-auto px-4 lg:px-8">
-                <div class="mx-auto max-w-3xl text-center">
-                    <div class="mb-4 inline-flex items-center rounded-full bg-primary-100 px-3 py-1 text-sm font-medium text-primary-700" data-animate="fade-in-up">
-                        FAQ
-                    </div>
-                    <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl" data-animate="fade-in-up" data-delay="100">
-                        Frequently Asked Questions
-                    </h2>
-                    <p class="mt-4 text-lg text-gray-600" data-animate="fade-in-up" data-delay="200">
-                        Find answers to common questions about our organization and how you can help.
-                    </p>
-                </div>
-                
-                <!-- FAQ Container (dynamically populated by faq.js) -->
-                <div id="faq-container" class="mx-auto mt-16 max-w-3xl">
-                    <!-- Loading skeleton will be shown while data loads -->
-                </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Programs Section -->
+      <section id="programs" class="bg-gray-50 py-20 lg:py-28">
+        <div class="container mx-auto px-4 lg:px-8">
+          <div class="mx-auto max-w-3xl text-center">
+            <div
+              class="mb-4 inline-flex items-center rounded-full bg-primary-100 px-3 py-1 text-sm font-medium text-primary-700"
+              data-animate="fade-in-up"
+            >
+              Our Programs
             </div>
-        </section>
-        
-        <!-- Donate CTA Section (dynamically rendered by cta-donate.js) -->
-        <div data-cta-donate='{"buttonUrl":"https://example.com/donate", "sectionId":"donate"}'></div>
+            <h2
+              class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl"
+              data-animate="fade-in-up"
+              data-delay="100"
+            >
+              How We Help
+            </h2>
+            <p
+              class="mt-4 text-lg text-gray-600"
+              data-animate="fade-in-up"
+              data-delay="200"
+            >
+              Our comprehensive programs address the physical, emotional, and
+              educational needs of every child in our care.
+            </p>
+          </div>
+
+          <!-- Programs Container (dynamically populated by programs.js) -->
+          <div id="programs-container" class="mt-16 grid gap-8 sm:grid-cols-2">
+            <!-- Loading skeleton will be shown while data loads -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Impact Section -->
+      <section id="impact" class="py-20 lg:py-28">
+        <div class="container mx-auto px-4 lg:px-8">
+          <div class="mx-auto max-w-3xl text-center">
+            <div
+              class="mb-4 inline-flex items-center rounded-full bg-primary-100 px-3 py-1 text-sm font-medium text-primary-700"
+              data-animate="fade-in-up"
+            >
+              Our Impact
+            </div>
+            <h2
+              class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl"
+              data-animate="fade-in-up"
+              data-delay="100"
+            >
+              Numbers That Matter
+            </h2>
+            <p
+              class="mt-4 text-lg text-gray-600"
+              data-animate="fade-in-up"
+              data-delay="200"
+            >
+              Every number represents a life changed, a dream nurtured, and a
+              future made brighter.
+            </p>
+          </div>
+
+          <!-- Impact Stats Container (dynamically populated by stats.js) -->
+          <div id="impact-stats-container" class="mt-16">
+            <!-- Loading skeleton will be shown while data loads -->
+          </div>
+
+          <!-- Campaign Progress Bars (dynamically populated by stats.js) -->
+          <div
+            id="campaigns-container"
+            class="mx-auto mt-20 max-w-3xl space-y-8"
+            data-animate="fade-in-up"
+            data-delay="300"
+          >
+            <!-- Loading skeleton will be shown while data loads -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Stories Section -->
+      <section id="stories" class="bg-gray-50 py-20 lg:py-28">
+        <div class="container mx-auto px-4 lg:px-8">
+          <div class="mx-auto max-w-3xl text-center">
+            <div
+              class="mb-4 inline-flex items-center rounded-full bg-primary-100 px-3 py-1 text-sm font-medium text-primary-700"
+              data-animate="fade-in-up"
+            >
+              Success Stories
+            </div>
+            <h2
+              class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl"
+              data-animate="fade-in-up"
+              data-delay="100"
+            >
+              Lives Transformed
+            </h2>
+            <p
+              class="mt-4 text-lg text-gray-600"
+              data-animate="fade-in-up"
+              data-delay="200"
+            >
+              Meet some of the children whose lives have been changed through
+              our programs.
+            </p>
+          </div>
+
+          <!-- Stories Container (dynamically populated by stories.js) -->
+          <div id="stories-container" class="relative mt-16">
+            <!-- Loading skeleton will be shown while data loads -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Get Involved Section -->
+      <section id="get-involved" class="py-20 lg:py-28">
+        <div class="container mx-auto px-4 lg:px-8">
+          <div class="mx-auto max-w-3xl text-center">
+            <div
+              class="mb-4 inline-flex items-center rounded-full bg-primary-100 px-3 py-1 text-sm font-medium text-primary-700"
+              data-animate="fade-in-up"
+            >
+              Get Involved
+            </div>
+            <h2
+              class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl"
+              data-animate="fade-in-up"
+              data-delay="100"
+            >
+              Join Our Mission
+            </h2>
+            <p
+              class="mt-4 text-lg text-gray-600"
+              data-animate="fade-in-up"
+              data-delay="200"
+            >
+              There are many ways to make a difference. Whether you give your
+              time, your skills, or your support, every contribution matters.
+            </p>
+          </div>
+
+          <div class="mt-16 grid gap-8 lg:grid-cols-3">
+            <!-- Volunteer -->
+            <div
+              class="group relative rounded-2xl border border-gray-200 bg-white p-8 text-center transition-all hover:border-primary-200 hover:shadow-lg"
+              data-animate="fade-in-up"
+              data-delay="100"
+            >
+              <div
+                class="mx-auto mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-primary-100 text-primary-600 transition-colors group-hover:bg-primary-500 group-hover:text-white"
+              >
+                <svg
+                  class="h-8 w-8"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                  ></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-semibold text-gray-900">Volunteer</h3>
+              <p class="mt-3 text-gray-600">
+                Give your time and skills to make a direct impact. Help with
+                teaching, mentoring, or daily activities.
+              </p>
+              <a
+                href="contact"
+                class="mt-6 inline-flex items-center justify-center gap-2 rounded-full border border-primary-500 px-6 py-2.5 text-sm font-semibold text-primary-600 transition-all hover:bg-primary-500 hover:text-white"
+              >
+                Start Volunteering
+                <svg
+                  class="h-4 w-4"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M17 8l4 4m0 0l-4 4m4-4H3"
+                  ></path>
+                </svg>
+              </a>
+            </div>
+
+            <!-- Donate -->
+            <div
+              class="group relative rounded-2xl border border-gray-200 bg-white p-8 text-center transition-all hover:border-primary-200 hover:shadow-lg"
+              data-animate="fade-in-up"
+              data-delay="200"
+            >
+              <div
+                class="mx-auto mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-primary-100 text-primary-600 transition-colors group-hover:bg-primary-500 group-hover:text-white"
+              >
+                <svg
+                  class="h-8 w-8"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                  ></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-semibold text-gray-900">Donate</h3>
+              <p class="mt-3 text-gray-600">
+                Your generous donations help us provide food, shelter,
+                education, and healthcare to children in need.
+              </p>
+              <a
+                href="#donate"
+                class="mt-6 inline-flex items-center justify-center gap-2 rounded-full border border-primary-500 px-6 py-2.5 text-sm font-semibold text-primary-600 transition-all hover:bg-primary-500 hover:text-white"
+              >
+                Make a Donation
+                <svg
+                  class="h-4 w-4"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M17 8l4 4m0 0l-4 4m4-4H3"
+                  ></path>
+                </svg>
+              </a>
+            </div>
+
+            <!-- Partner -->
+            <div
+              class="group relative rounded-2xl border border-gray-200 bg-white p-8 text-center transition-all hover:border-primary-200 hover:shadow-lg"
+              data-animate="fade-in-up"
+              data-delay="300"
+            >
+              <div
+                class="mx-auto mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-primary-100 text-primary-600 transition-colors group-hover:bg-primary-500 group-hover:text-white"
+              >
+                <svg
+                  class="h-8 w-8"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                  ></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-semibold text-gray-900">Partner</h3>
+              <p class="mt-3 text-gray-600">
+                Corporate and organizational partnerships amplify our impact.
+                Join us in making a difference.
+              </p>
+              <a
+                href="contact"
+                class="mt-6 inline-flex items-center justify-center gap-2 rounded-full border border-primary-500 px-6 py-2.5 text-sm font-semibold text-primary-600 transition-all hover:bg-primary-500 hover:text-white"
+              >
+                Become a Partner
+                <svg
+                  class="h-4 w-4"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M17 8l4 4m0 0l-4 4m4-4H3"
+                  ></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ Section -->
+      <section id="faq" class="bg-gray-50 py-20 lg:py-28">
+        <div class="container mx-auto px-4 lg:px-8">
+          <div class="mx-auto max-w-3xl text-center">
+            <div
+              class="mb-4 inline-flex items-center rounded-full bg-primary-100 px-3 py-1 text-sm font-medium text-primary-700"
+              data-animate="fade-in-up"
+            >
+              FAQ
+            </div>
+            <h2
+              class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl"
+              data-animate="fade-in-up"
+              data-delay="100"
+            >
+              Frequently Asked Questions
+            </h2>
+            <p
+              class="mt-4 text-lg text-gray-600"
+              data-animate="fade-in-up"
+              data-delay="200"
+            >
+              Find answers to common questions about our organization and how
+              you can help.
+            </p>
+          </div>
+
+          <!-- FAQ Container (dynamically populated by faq.js) -->
+          <div id="faq-container" class="mx-auto mt-16 max-w-3xl">
+            <!-- Loading skeleton will be shown while data loads -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Donate CTA Section (dynamically rendered by cta-donate.js) -->
+      <div
+        data-cta-donate='{"buttonUrl":"https://example.com/donate", "sectionId":"donate"}'
+      ></div>
     </main>
-    
+
     <!-- Footer Placeholder (will be replaced by component) -->
     <div id="footer-placeholder"></div>
-    
+
     <!-- Component Scripts -->
     <script src="js/components/scroll-progress.js"></script>
     <script src="js/components/back-to-top.js"></script>
@@ -372,5 +749,5 @@
     <script src="js/components/stats.js"></script>
     <!-- JavaScript -->
     <script src="js/main.js"></script>
-</body>
+  </body>
 </html>

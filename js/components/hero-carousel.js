@@ -18,12 +18,20 @@
     };
     
     /**
+     * Helper to get URL with base path
+     */
+    function url(path) {
+        return window.SiteConfig ? window.SiteConfig.url(path) : path;
+    }
+    
+    /**
      * Fetch JSON data with fallback
      */
     async function fetchJSON(paths, fallback) {
         for (const path of paths) {
+            const fullPath = url(path);
             try {
-                const response = await fetch(path);
+                const response = await fetch(fullPath);
                 if (!response.ok) continue;
                 return await response.json();
             } catch (error) {

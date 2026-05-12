@@ -9,6 +9,13 @@ const TeamComponent = (function() {
     let teamCache = null;
     
     /**
+     * Helper to get URL with base path
+     */
+    function url(path) {
+        return window.SiteConfig ? window.SiteConfig.url(path) : path;
+    }
+    
+    /**
      * Fetch team data from JSON
      */
     async function fetchTeam() {
@@ -17,8 +24,9 @@ const TeamComponent = (function() {
         const paths = ['/data/team.json', 'data/team.json'];
         
         for (const jsonPath of paths) {
+            const fullPath = url(jsonPath);
             try {
-                const response = await fetch(jsonPath);
+                const response = await fetch(fullPath);
                 if (!response.ok) continue;
                 const team = await response.json();
                 teamCache = team;

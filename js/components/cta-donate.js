@@ -34,6 +34,13 @@
     ];
     
     /**
+     * Helper to get nav URL with base path
+     */
+    function navUrl(path) {
+        return window.SiteConfig ? window.SiteConfig.navUrl(path) : path;
+    }
+    
+    /**
      * Get SVG icon by name
      */
     function getIcon(name) {
@@ -50,6 +57,9 @@
      */
     function generateCTAHTML(config) {
         const cfg = { ...defaultConfig, ...config };
+        
+        // Apply base path to button URL
+        const buttonUrl = navUrl(cfg.buttonUrl);
         
         let impactExamplesHTML = '';
         if (cfg.showImpactExamples) {
@@ -97,7 +107,7 @@
                 </p>
                 ${impactExamplesHTML}
                 <div class="mt-10" data-animate="fade-in-up" data-delay="200">
-                    <a href="${cfg.buttonUrl}" class="inline-flex items-center justify-center gap-2 rounded-full bg-accent-500 px-10 py-4 text-lg font-bold text-white shadow-lg shadow-accent-500/30 transition-all hover:bg-accent-600 hover:shadow-xl hover:shadow-accent-500/40">
+                    <a href="${buttonUrl}" class="inline-flex items-center justify-center gap-2 rounded-full bg-accent-500 px-10 py-4 text-lg font-bold text-white shadow-lg shadow-accent-500/30 transition-all hover:bg-accent-600 hover:shadow-xl hover:shadow-accent-500/40">
                         ${cfg.buttonText}
                         ${getIcon('heart')}
                     </a>

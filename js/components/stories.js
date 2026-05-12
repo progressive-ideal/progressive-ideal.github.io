@@ -20,12 +20,20 @@
     const quoteIcon = '<svg class="h-8 w-8 text-primary-300" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10H14.017zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10H0z"></path></svg>';
     
     /**
+     * Helper to get URL with base path
+     */
+    function url(path) {
+        return window.SiteConfig ? window.SiteConfig.url(path) : path;
+    }
+    
+    /**
      * Fetch JSON data with fallback
      */
     async function fetchJSON(paths) {
         for (const path of paths) {
+            const fullPath = url(path);
             try {
-                const response = await fetch(path);
+                const response = await fetch(fullPath);
                 if (!response.ok) continue;
                 return await response.json();
             } catch (error) {

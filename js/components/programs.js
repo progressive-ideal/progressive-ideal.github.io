@@ -17,6 +17,13 @@ const ProgramsComponent = (function() {
     };
     
     /**
+     * Helper to get URL with base path
+     */
+    function url(path) {
+        return window.SiteConfig ? window.SiteConfig.url(path) : path;
+    }
+    
+    /**
      * Fetch programs data from JSON
      */
     async function fetchPrograms() {
@@ -25,8 +32,9 @@ const ProgramsComponent = (function() {
         const paths = ['/data/programs.json', 'data/programs.json'];
         
         for (const jsonPath of paths) {
+            const fullPath = url(jsonPath);
             try {
-                const response = await fetch(jsonPath);
+                const response = await fetch(fullPath);
                 if (!response.ok) continue;
                 const programs = await response.json();
                 programsCache = programs;
@@ -45,6 +53,7 @@ const ProgramsComponent = (function() {
      */
     function renderProgramCard(program, index) {
         const icon = icons[program.icon] || icons.education;
+        const linkUrl = window.SiteConfig ? window.SiteConfig.navUrl(program.link) : program.link;
         
         return `
         <div class="group relative rounded-2xl bg-white p-8 shadow-lg transition-all hover:shadow-xl" data-animate="fade-in-up" data-delay="${(index + 1) * 100}">
@@ -53,7 +62,7 @@ const ProgramsComponent = (function() {
             </div>
             <h3 class="text-xl font-semibold text-gray-900">${program.title}</h3>
             <p class="mt-3 text-gray-600">${program.description}</p>
-            <a href="${program.link}" class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary-600 transition-colors hover:text-primary-700">
+            <a href="${linkUrl}" class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary-600 transition-colors hover:text-primary-700">
                 Learn More
                 <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
