@@ -33,7 +33,7 @@
         const favicon = document.createElement('link');
         favicon.rel = 'icon';
         favicon.type = 'image/svg+xml';
-        favicon.href = "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏠</text></svg>";
+        favicon.href = "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%233b82f6'/><text x='50' y='68' font-family='system-ui, sans-serif' font-size='45' font-weight='bold' text-anchor='middle' fill='white'>PIY</text></svg>";
         head.appendChild(favicon);
         
         // 2. Google Fonts - Preconnect
