@@ -217,25 +217,14 @@
             </a>
           </div>
 
-          <!-- Updates Scroller -->
+          <!-- Updates Marquee Carousel -->
           <div class="relative mt-8" data-animate="fade-in-up" data-delay="200">
             <div
-              class="overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide -mx-4 px-4"
+              id="updates-container"
+              data-updates-source="updates/updates.json"
             >
-              <div
-                id="updates-container"
-                class="flex gap-6"
-                style="width: max-content"
-                data-updates-source="updates/updates.json"
-              >
-                <!-- Dynamically populated by updates.js -->
-              </div>
+              <!-- Dynamically populated by updates.js -->
             </div>
-
-            <!-- Scroll Hint ( fades on larger screens ) -->
-            <div
-              class="pointer-events-none absolute right-0 top-0 flex h-full w-12 items-center justify-center bg-gradient-to-l from-gray-50 to-transparent sm:hidden"
-            ></div>
           </div>
         </div>
       </section>

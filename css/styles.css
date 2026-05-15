@@ -481,6 +481,25 @@ select:focus {
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6));
 }
 
+/* Updates Marquee Carousel */
+.updates-marquee {
+    overflow: hidden;
+    position: relative;
+}
+
+.updates-marquee-track {
+    display: flex;
+    gap: 1.5rem;
+    width: max-content;
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+    .updates-marquee-track {
+        animation: none !important;
+    }
+}
+
 /* Dark mode support (if needed in future) */
 @media (prefers-color-scheme: dark) {
     /* Dark mode styles can be added here */

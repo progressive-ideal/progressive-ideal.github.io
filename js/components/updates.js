@@ -176,7 +176,7 @@ const UpdatesComponent = (function () {
   }
 
   /**
-   * Initialize homepage highlights
+   * Initialize homepage highlights with marquee carousel
    */
   async function initHighlights() {
     const container = document.getElementById("updates-container");
@@ -192,13 +192,146 @@ const UpdatesComponent = (function () {
       return;
     }
 
-    // Sort by date (newest first) and take top 5
+    // Sort by date (newest first) and take top items
     const sorted = [...updates].sort(
       (a, b) => new Date(b.date) - new Date(a.date),
     );
-    const highlights = sorted.slice(0, 5);
+    const highlights = sorted.slice(0, 6);
 
-    container.innerHTML = highlights.map(renderHighlightCard).join("");
+    // Render cards
+    const cardsHtml = highlights.map(renderHighlightCard).join("");
+
+    // Calculate how many times to duplicate to fill screen
+    // We need at least 2x the visible width for seamless looping
+    const duplicateCount = calculateDuplicateCount(highlights.length);
+
+    // Create duplicated content for seamless loop
+    let duplicatedCards = "";
+    for (let i = 0; i < duplicateCount; i++) {
+      duplicatedCards += cardsHtml;
+    }
+
+    // Create marquee structure with duplicated content for seamless loop
+    container.innerHTML = `
+      <div class="updates-marquee">
+        <div class="updates-marquee-track">
+          ${duplicatedCards}
+        </div>
+      </div>
+    `;
+
+    // Start the marquee animation using JavaScript
+    startMarqueeAnimation(container, highlights.length);
+  }
+
+  // Store reference to dynamically created stylesheet for cleanup
+  let marqueeStyleSheet = null;
+
+  /**
+   * Calculate how many times to duplicate the items
+   * We need enough items to fill at least 2x the screen width
+   */
+  function calculateDuplicateCount(itemCount) {
+    // Get viewport width
+    const viewportWidth = window.innerWidth || 1200;
+    
+    // Estimate card width based on viewport (w-80 = 320px on mobile, larger on desktop)
+    // Use a conservative estimate that works across screen sizes
+    const estimatedCardWidth = viewportWidth < 640 ? 320 : 344; // 320px card + 24px gap on larger screens
+    
+    // Calculate how many cards fit on screen
+    const cardsPerScreen = Math.ceil(viewportWidth / estimatedCardWidth);
+    
+    // We need at least 2x the cards that fit on screen for seamless loop
+    const minCardsNeeded = cardsPerScreen * 2;
+    
+    // Calculate how many times to duplicate
+    // If we have 2 items and need 8 cards, we need to duplicate 4 times
+    const duplicateCount = Math.ceil(minCardsNeeded / itemCount);
+    
+    // Ensure at least 2 duplicates (for seamless loop)
+    return Math.max(duplicateCount, 2);
+  }
+
+  /**
+   * Start JavaScript-based marquee animation
+   * Uses CSS animation for smooth performance with JS control for pause/resume
+   */
+  function startMarqueeAnimation(container, itemCount) {
+    const track = container.querySelector(".updates-marquee-track");
+    if (!track) return;
+
+    // Check for reduced motion preference
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion) return;
+
+    // Wait for layout to settle, then measure and start animation
+    setTimeout(() => {
+      // Get all cards in the track
+      const cards = track.querySelectorAll('a');
+      if (cards.length === 0) return;
+
+      // Measure the actual width of one set of items
+      // We measure from the left edge of the first card to the left edge of the card at position itemCount
+      // This gives us exactly one set width including all gaps
+      const firstCard = cards[0];
+      const nextSetFirstCard = cards[itemCount];
+      
+      if (!firstCard) return;
+
+      let oneSetWidth;
+      if (nextSetFirstCard) {
+        // Measure from first card to the first card of the next set
+        const firstRect = firstCard.getBoundingClientRect();
+        const nextSetFirstRect = nextSetFirstCard.getBoundingClientRect();
+        oneSetWidth = nextSetFirstRect.left - firstRect.left;
+      } else {
+        // Fallback: calculate based on card width and gap
+        const firstRect = firstCard.getBoundingClientRect();
+        oneSetWidth = (firstRect.width + 24) * itemCount; // 24px gap
+      }
+
+      // Duration per item (in seconds) - adjust for speed
+      const durationPerItem = 5;
+      const totalDuration = itemCount * durationPerItem;
+
+      // Create a unique keyframe name for this marquee
+      const keyframeName = `marquee-${Date.now()}`;
+
+      // Clean up old stylesheet if it exists
+      if (marqueeStyleSheet && marqueeStyleSheet.parentNode) {
+        marqueeStyleSheet.parentNode.removeChild(marqueeStyleSheet);
+      }
+
+      // Create the keyframe animation dynamically
+      marqueeStyleSheet = document.createElement('style');
+      marqueeStyleSheet.textContent = `
+        @keyframes ${keyframeName} {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-${oneSetWidth}px);
+          }
+        }
+      `;
+      document.head.appendChild(marqueeStyleSheet);
+
+      // Apply the animation to the track
+      track.style.animation = `${keyframeName} ${totalDuration}s linear infinite`;
+
+      // Handle pause on hover
+      track.addEventListener('mouseenter', () => {
+        track.style.animationPlayState = 'paused';
+      });
+
+      track.addEventListener('mouseleave', () => {
+        track.style.animationPlayState = 'running';
+      });
+
+      // Clean up stylesheet when no longer needed (optional, for memory management)
+      // The stylesheet will be removed when the page unloads
+    }, 100);
   }
 
   /**
