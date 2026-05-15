@@ -22,6 +22,7 @@
         // Handle both /about and /about.html formats
         if (relativePath === '/' || relativePath === '/index.html') return 'home';
         if (relativePath.startsWith('/about')) return 'about';
+        if (relativePath.startsWith('/programs')) return 'programs';
         if (relativePath.startsWith('/contact')) return 'contact';
         if (relativePath.startsWith('/gallery')) return 'gallery';
         if (relativePath.startsWith('/updates')) return 'updates';
@@ -75,7 +76,7 @@
             <nav class="hidden lg:flex lg:items-center lg:gap-8" aria-label="Main navigation">
                 ${navLink('/', 'Home', currentPage, 'home')}
                 ${navLink('/about', 'About', currentPage, 'about')}
-                ${navLink('/#programs', 'Programs', currentPage, 'programs')}
+                ${navLink('/programs', 'Programs', currentPage, 'programs')}
                 ${navLink('/#impact', 'Impact', currentPage, 'impact')}
                 ${navLink('/gallery', 'Gallery', currentPage, 'gallery')}
                 ${navLink('/updates', 'Updates', currentPage, 'updates')}
@@ -102,7 +103,7 @@
             <nav class="border-t border-gray-200 bg-white px-4 py-4">
                 ${mobileNavLink('/', 'Home', currentPage, 'home')}
                 ${mobileNavLink('/about', 'About', currentPage, 'about')}
-                ${mobileNavLink('/#programs', 'Programs', currentPage, 'programs')}
+                ${mobileNavLink('/programs', 'Programs', currentPage, 'programs')}
                 ${mobileNavLink('/#impact', 'Impact', currentPage, 'impact')}
                 ${mobileNavLink('/gallery', 'Gallery', currentPage, 'gallery')}
                 ${mobileNavLink('/updates', 'Updates', currentPage, 'updates')}
