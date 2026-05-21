@@ -39,7 +39,6 @@ document.addEventListener('DOMContentLoaded', function() {
     initFAQ();
     initMobileMenu();
     initHeaderScroll();
-    initNewsletterForm();
     initSmoothScroll();
     initTextRotator();
     
@@ -435,34 +434,6 @@ function initHeaderScroll() {
         } else {
             header.classList.remove('scrolled');
         }
-    });
-}
-
-/**
- * Newsletter Form
- */
-function initNewsletterForm() {
-    const form = document.querySelector('[data-newsletter-form]');
-    if (!form) return;
-    
-    form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        const email = this.querySelector('input[type="email"]').value;
-        
-        // Here you would typically send the email to your backend
-        console.log('Newsletter signup:', email);
-        
-        // Show success message
-        const button = this.querySelector('button');
-        const originalText = button.textContent;
-        button.textContent = 'Subscribed!';
-        button.disabled = true;
-        
-        setTimeout(() => {
-            button.textContent = originalText;
-            button.disabled = false;
-            this.reset();
-        }, 2000);
     });
 }
 

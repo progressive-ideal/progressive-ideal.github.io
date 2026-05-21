@@ -96,13 +96,13 @@
                 </div>
                 
                 <!-- Link Columns -->
-                <div class="grid gap-8 sm:grid-cols-3 lg:col-span-5">
+                <div class="grid gap-8 sm:grid-cols-3 lg:col-span-8">
                     <div>
                         <h3 class="text-sm font-semibold uppercase tracking-wider text-white">Quick Links</h3>
                         <ul class="mt-4 space-y-3">
                             <li><a href="${url('/')}" class="text-gray-400 transition-colors hover:text-white">Home</a></li>
                             <li><a href="${url('/about')}" class="text-gray-400 transition-colors hover:text-white">About Us</a></li>
-                            <li><a href="${url('/#programs')}" class="text-gray-400 transition-colors hover:text-white">Programs</a></li>
+                            <li><a href="${url('/programs')}" class="text-gray-400 transition-colors hover:text-white">Programs</a></li>
                             <li><a href="${url('/gallery')}" class="text-gray-400 transition-colors hover:text-white">Gallery</a></li>
                             <li><a href="${url('/updates')}" class="text-gray-400 transition-colors hover:text-white">Updates</a></li>
                         </ul>
@@ -125,18 +125,6 @@
                             <li><a href="mailto:${contact.email}" class="text-gray-400 transition-colors hover:text-white">${contact.email}</a></li>
                         </ul>
                     </div>
-                </div>
-                
-                <!-- Newsletter -->
-                <div class="lg:col-span-3">
-                    <h3 class="text-sm font-semibold uppercase tracking-wider text-white">Stay Updated</h3>
-                    <p class="mt-4 text-gray-400">Get updates on our programs and the children we serve.</p>
-                    <form class="mt-4" data-newsletter-form>
-                        <div class="flex gap-2">
-                            <input type="email" placeholder="Enter your email" required class="flex-1 rounded-lg border border-gray-700 bg-gray-800 px-4 py-2.5 text-white placeholder-gray-500 focus:border-primary-500 focus:outline-none focus:ring-1 focus:ring-primary-500">
-                            <button type="submit" class="rounded-lg bg-primary-500 px-4 py-2.5 font-medium text-white transition-colors hover:bg-primary-600">Subscribe</button>
-                        </div>
-                    </form>
                 </div>
             </div>
             

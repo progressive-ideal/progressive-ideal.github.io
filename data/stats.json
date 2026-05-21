@@ -1,9 +1,9 @@
 {
   "stats": [
-    { "value": 50000, "label": "Funds Raised", "prefix": "$", "suffix": "+", "showInHero": true },
-    { "value": 150, "label": "Children Helped", "suffix": "+", "showInHero": true },
-    { "value": 50, "label": "Active Volunteers", "suffix": "+", "showInHero": true },
-    { "value": 25, "label": "Years of Service", "showInHero": true },
+    { "value": 50000, "label": "Funds Raised", "prefix": "$", "suffix": "+" },
+    { "value": 150, "label": "Children Helped", "suffix": "+" },
+    { "value": 50, "label": "Active Volunteers", "suffix": "+" },
+    { "value": 25, "label": "Years of Service" },
     { "value": 200, "label": "Meals Served Monthly" }
   ],
   "campaigns": [

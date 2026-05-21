@@ -25,7 +25,7 @@
     
     <main id="main-content">
         <!-- Page Header -->
-        <section class="relative overflow-hidden bg-gradient-to-b from-primary-50 to-white py-20 lg:py-28">
+        <section class="relative overflow-hidden bg-gradient-to-b from-primary-50 to-white pt-20 pb-8 lg:pt-28 lg:pb-12">
             <div class="absolute inset-0 -z-10 overflow-hidden" aria-hidden="true">
                 <div class="animate-hero-float absolute -top-40 left-1/2 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-primary-200/50 blur-3xl"></div>
                 <div class="animate-hero-float-reverse absolute right-0 top-0 h-[400px] w-[400px] rounded-full bg-accent-200/30 blur-3xl"></div>
@@ -47,68 +47,15 @@
         </section>
         
         <!-- Contact Section -->
-        <section class="py-20 lg:py-28">
+        <section class="pb-20 pt-8 lg:pb-28 lg:pt-12">
             <div class="container mx-auto px-4 lg:px-8">
-                <div class="grid gap-12 lg:grid-cols-2 lg:gap-20">
-                    <!-- Contact Form -->
-                    <div data-animate="fade-in-up">
-                        <h2 class="text-2xl font-bold text-gray-900">Send Us a Message</h2>
-                        <p class="mt-2 text-gray-600">Fill out the form below and we'll get back to you as soon as possible.</p>
-                        
-                        <form class="mt-8 space-y-6" id="contact-form">
-                            <div class="grid gap-6 sm:grid-cols-2">
-                                <div>
-                                    <label for="firstName" class="block text-sm font-medium text-gray-700">First Name</label>
-                                    <input type="text" id="firstName" name="firstName" required class="mt-1 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-500 focus:border-primary-500 focus:outline-none focus:ring-1 focus:ring-primary-500" placeholder="John">
-                                </div>
-                                <div>
-                                    <label for="lastName" class="block text-sm font-medium text-gray-700">Last Name</label>
-                                    <input type="text" id="lastName" name="lastName" required class="mt-1 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-500 focus:border-primary-500 focus:outline-none focus:ring-1 focus:ring-primary-500" placeholder="Doe">
-                                </div>
-                            </div>
-                            
-                            <div>
-                                <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
-                                <input type="email" id="email" name="email" required class="mt-1 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-500 focus:border-primary-500 focus:outline-none focus:ring-1 focus:ring-primary-500" placeholder="john@example.com">
-                            </div>
-                            
-                            <div>
-                                <label for="phone" class="block text-sm font-medium text-gray-700">Phone (Optional)</label>
-                                <input type="tel" id="phone" name="phone" class="mt-1 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-500 focus:border-primary-500 focus:outline-none focus:ring-1 focus:ring-primary-500" placeholder="+1 (555) 123-4567">
-                            </div>
-                            
-                            <div>
-                                <label for="subject" class="block text-sm font-medium text-gray-700">Subject</label>
-                                <select id="subject" name="subject" required class="mt-1 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 focus:border-primary-500 focus:outline-none focus:ring-1 focus:ring-primary-500">
-                                    <option value="">Select a subject</option>
-                                    <option value="volunteer">Volunteer Opportunities</option>
-                                    <option value="donation">Donation Inquiry</option>
-                                    <option value="partnership">Partnership Inquiry</option>
-                                    <option value="visit">Schedule a Visit</option>
-                                    <option value="other">Other</option>
-                                </select>
-                            </div>
-                            
-                            <div>
-                                <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
-                                <textarea id="message" name="message" rows="5" required class="mt-1 block w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-500 focus:border-primary-500 focus:outline-none focus:ring-1 focus:ring-primary-500" placeholder="Tell us how we can help..."></textarea>
-                            </div>
-                            
-                            <div>
-                                <button type="submit" class="w-full rounded-lg bg-primary-500 px-6 py-3.5 text-base font-semibold text-white shadow-lg shadow-primary-500/25 transition-all hover:bg-primary-600 hover:shadow-xl hover:shadow-primary-500/30 sm:w-auto">
-                                    Send Message
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-                    
-                    <!-- Contact Info (dynamically populated by contact-info.js) -->
-                    <div data-animate="fade-in-up" data-delay="100">
+                <div class="mx-auto max-w-4xl" data-animate="fade-in-up">
+                    <div class="text-center">
                         <h2 class="text-2xl font-bold text-gray-900">Contact Information</h2>
                         <p class="mt-2 text-gray-600">Reach out to us through any of the following channels.</p>
-                        <div id="contact-info-container">
-                            <!-- Loading skeleton will be shown while data loads -->
-                        </div>
+                    </div>
+                    <div id="contact-info-container" class="mt-8">
+                        <!-- Loading skeleton will be shown while data loads -->
                     </div>
                 </div>
             </div>
@@ -168,30 +115,5 @@
     <script src="js/components/contact-info.js"></script>
     <!-- JavaScript -->
     <script src="js/main.js"></script>
-    <script>
-        // Contact form handling
-        document.getElementById('contact-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const button = this.querySelector('button[type="submit"]');
-            const originalText = button.textContent;
-            button.textContent = 'Sending...';
-            button.disabled = true;
-            
-            // Simulate form submission
-            setTimeout(() => {
-                button.textContent = 'Message Sent!';
-                button.classList.remove('bg-primary-500');
-                button.classList.add('bg-accent-500');
-                
-                setTimeout(() => {
-                    button.textContent = originalText;
-                    button.classList.remove('bg-accent-500');
-                    button.classList.add('bg-primary-500');
-                    button.disabled = false;
-                    this.reset();
-                }, 2000);
-            }, 1500);
-        });
-    </script>
 </body>
 </html>

@@ -3,7 +3,6 @@
  * Renders statistics sections from JSON data
  * 
  * Usage: 
- * - Add placeholder with id="hero-stats-container" for hero stats
  * - Add placeholder with id="impact-stats-container" for impact stats
  * - Add placeholder with id="campaigns-container" for campaign progress bars
  */
@@ -71,28 +70,12 @@
     }
     
     /**
-     * Render hero stats section
-     */
-    function renderHeroStats(stats) {
-        const placeholder = document.getElementById('hero-stats-container');
-        if (!placeholder || !stats) return;
-        
-        const heroStats = stats.filter(stat => stat.showInHero);
-        const statsHTML = heroStats.map((stat, index) => generateStatHTML(stat, index)).join('\n');
-        
-        placeholder.innerHTML = `<div class="flex flex-wrap justify-center gap-8">
-                    ${statsHTML}
-                </div>`;
-    }
-    
-    /**
-     * Render impact stats section (shows ALL stats)
+     * Render impact stats section
      */
     function renderImpactStats(stats) {
         const placeholder = document.getElementById('impact-stats-container');
         if (!placeholder || !stats) return;
         
-        // Impact shows all stats, not just non-hero ones
         const statsHTML = stats.map((stat, index) => generateStatHTML(stat, index)).join('\n');
         
         placeholder.innerHTML = `<div class="mt-16 flex flex-wrap justify-center gap-8">
@@ -116,7 +99,7 @@
      * Initialize counter animations for dynamically added counters
      */
     function initDynamicCounters() {
-        const counters = document.querySelectorAll('#hero-stats-container [data-counter], #impact-stats-container [data-counter]');
+        const counters = document.querySelectorAll('#impact-stats-container [data-counter]');
         
         if (!counters.length) return;
         
@@ -201,7 +184,6 @@
         }
         
         // Render each section
-        renderHeroStats(data.stats);
         renderImpactStats(data.stats);
         renderCampaigns(data.campaigns);
         
