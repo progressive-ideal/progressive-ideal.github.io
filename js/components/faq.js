@@ -44,17 +44,21 @@ const FAQComponent = (function() {
      * Render a single FAQ item
      */
     function renderFAQItem(item, index, delay) {
+        const questionId = `faq-question-${index + 1}`;
+        const answerId = `faq-answer-${index + 1}`;
         return `
         <div class="py-6" data-animate="fade-in-up" data-delay="${delay}">
-            <button type="button" data-faq-toggle class="flex w-full items-center justify-between text-left">
+            <h3>
+            <button type="button" id="${questionId}" data-faq-toggle aria-expanded="false" aria-controls="${answerId}" class="flex w-full items-center justify-between text-left">
                 <span class="text-lg font-semibold text-gray-900">${item.question}</span>
-                <span class="ml-4 flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-gray-100 text-gray-600 transition-transform duration-200" data-faq-icon>
+                <span class="ml-4 flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-gray-100 text-gray-600 transition-transform duration-200" data-faq-icon aria-hidden="true">
                     <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v12M6 12h12"></path>
                     </svg>
                 </span>
             </button>
-            <div class="overflow-hidden transition-all duration-300" style="max-height: 0; opacity: 0;">
+            </h3>
+            <div id="${answerId}" data-faq-panel role="region" aria-labelledby="${questionId}" aria-hidden="true" inert class="overflow-hidden transition-all duration-300" style="max-height: 0; opacity: 0;">
                 <p class="pt-4 text-gray-600">${item.answer}</p>
             </div>
         </div>`;

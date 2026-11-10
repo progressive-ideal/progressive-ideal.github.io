@@ -75,14 +75,14 @@ html {
 }
 
 /* FAQ Accordion */
-[data-faq-toggle] + div {
+[data-faq-panel] {
     max-height: 0;
     opacity: 0;
     overflow: hidden;
     transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
 }
 
-[data-faq-toggle].active + div {
+[data-faq-panel][aria-hidden="false"] {
     max-height: 500px;
     opacity: 1;
 }

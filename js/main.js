@@ -349,31 +349,33 @@ function initCarousel() {
  */
 function initFAQ() {
     const faqToggles = document.querySelectorAll('[data-faq-toggle]');
+
+    function setExpanded(toggle, expanded) {
+        const content = document.getElementById(toggle.getAttribute('aria-controls'));
+        toggle.classList.toggle('active', expanded);
+        toggle.setAttribute('aria-expanded', String(expanded));
+        content.setAttribute('aria-hidden', String(!expanded));
+        content.toggleAttribute('inert', !expanded);
+        content.style.maxHeight = expanded ? content.scrollHeight + 'px' : '0';
+        content.style.opacity = expanded ? '1' : '0';
+    }
     
     faqToggles.forEach(toggle => {
+        // Dynamic components can request initialization more than once.
+        if (toggle.dataset.faqInitialized) return;
+        toggle.dataset.faqInitialized = 'true';
         toggle.addEventListener('click', function() {
-            const content = this.nextElementSibling;
-            const isActive = this.classList.contains('active');
+            const isExpanded = this.getAttribute('aria-expanded') === 'true';
             
             // Close all other FAQs
             faqToggles.forEach(otherToggle => {
                 if (otherToggle !== this) {
-                    otherToggle.classList.remove('active');
-                    otherToggle.nextElementSibling.style.maxHeight = '0';
-                    otherToggle.nextElementSibling.style.opacity = '0';
+                    setExpanded(otherToggle, false);
                 }
             });
             
             // Toggle current FAQ
-            if (isActive) {
-                this.classList.remove('active');
-                content.style.maxHeight = '0';
-                content.style.opacity = '0';
-            } else {
-                this.classList.add('active');
-                content.style.maxHeight = content.scrollHeight + 'px';
-                content.style.opacity = '1';
-            }
+            setExpanded(this, !isExpanded);
         });
     });
 }
