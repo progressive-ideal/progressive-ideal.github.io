@@ -7,6 +7,7 @@ const FAQComponent = (function() {
     'use strict';
     
     let faqCache = null;
+    let fallbackHTML = null;
     
     /**
      * Helper to get URL with base path
@@ -85,14 +86,17 @@ const FAQComponent = (function() {
     async function initFAQ() {
         const container = document.getElementById('faq-container');
         if (!container) return;
+
+        // Keep the static fallback for disabled scripts and failed JSON requests.
+        if (fallbackHTML === null) fallbackHTML = container.innerHTML;
         
         // Show loading skeleton
         container.innerHTML = renderSkeleton();
         
         const faq = await fetchFAQ();
         
-        if (!faq) {
-            container.innerHTML = '<div class="py-8 text-center text-gray-500">Unable to load FAQ. Please try again later.</div>';
+        if (!Array.isArray(faq) || faq.length === 0) {
+            container.innerHTML = fallbackHTML;
             return;
         }
         
