@@ -66,7 +66,7 @@
             impactExamplesHTML = `
                     <div class="mt-8 flex flex-wrap items-center justify-center gap-6" data-animate="fade-in-up" data-delay="150">
                         ${impactExamples.map(item => `
-                        <div class="flex items-center gap-2 text-sm text-primary-100">
+                        <div class="flex items-center gap-2 text-sm text-white">
                             <span class="font-bold text-white">${item.amount}</span>
                             <span>=</span>
                             <span>${item.description}</span>
@@ -80,7 +80,7 @@
             trustBadgesHTML = `
                     <div class="mt-10 flex flex-wrap items-center justify-center gap-8" data-animate="fade-in-up" data-delay="300">
                         ${trustBadges.map(item => `
-                        <div class="flex items-center gap-2 text-sm text-primary-200">
+                        <div class="flex items-center gap-2 text-sm text-white">
                             ${getIcon(item.icon)}
                             <span>${item.text}</span>
                         </div>
@@ -90,11 +90,11 @@
         
         return `
     <!-- CTA Section -->
-    <section ${cfg.sectionId ? `id="${cfg.sectionId}"` : ''} class="relative overflow-hidden bg-gradient-to-br from-primary-500 to-primary-700 py-20 lg:py-28">
+    <section ${cfg.sectionId ? `id="${cfg.sectionId}"` : ''} class="relative overflow-hidden bg-gradient-to-br from-primary-800 to-primary-900 py-20 lg:py-28">
         <div class="absolute inset-0 z-0 overflow-hidden" aria-hidden="true">
             <div class="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-white/10 blur-3xl"></div>
             <div class="absolute -bottom-20 -left-20 h-64 w-64 rounded-full bg-white/10 blur-3xl"></div>
-            <div class="absolute left-1/2 top-1/2 h-96 w-96 -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent-500/10 blur-3xl"></div>
+            <div class="absolute left-1/2 top-1/2 h-96 w-96 -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent-700/10 blur-3xl"></div>
         </div>
         
         <div class="container relative z-10 mx-auto px-4 lg:px-8">
@@ -102,12 +102,12 @@
                 <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl" data-animate="fade-in-up">
                     ${cfg.title}
                 </h2>
-                <p class="mx-auto mt-6 max-w-xl text-lg text-primary-100" data-animate="fade-in-up" data-delay="100">
+                <p class="mx-auto mt-6 max-w-xl text-lg text-white" data-animate="fade-in-up" data-delay="100">
                     ${cfg.description}
                 </p>
                 ${impactExamplesHTML}
                 <div class="mt-10" data-animate="fade-in-up" data-delay="200">
-                    <a href="${buttonUrl}" class="inline-flex items-center justify-center gap-2 rounded-full bg-accent-500 px-10 py-4 text-lg font-bold text-white shadow-lg shadow-accent-500/30 transition-all hover:bg-accent-600 hover:shadow-xl hover:shadow-accent-500/40">
+                    <a href="${buttonUrl}" class="inline-flex items-center justify-center gap-2 rounded-full bg-accent-700 px-10 py-4 text-lg font-bold text-white shadow-lg shadow-accent-500/30 transition-all hover:bg-accent-800 hover:shadow-xl hover:shadow-accent-500/40">
                         ${cfg.buttonText}
                         ${getIcon('heart')}
                     </a>

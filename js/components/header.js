@@ -5,20 +5,20 @@
 
 (function() {
     'use strict';
-    
+
     /**
      * Get the current page path for active navigation state
      */
     function getCurrentPage() {
         const path = window.location.pathname;
         const basePath = window.SiteConfig ? window.SiteConfig.basePath : '';
-        
+
         // Remove base path from the current path for comparison
         let relativePath = path;
         if (basePath && path.startsWith(basePath)) {
             relativePath = path.substring(basePath.length) || '/';
         }
-        
+
         // Handle both /about and /about.html formats
         if (relativePath === '/' || relativePath === '/index.html') return 'home';
         if (relativePath.startsWith('/about')) return 'about';
@@ -28,7 +28,7 @@
         if (relativePath.startsWith('/updates')) return 'updates';
         return '';
     }
-    
+
     /**
      * Mark the current page, treating clean URLs and HTML filenames equally.
      * Section links and parent listings on article pages are not current pages.
@@ -49,7 +49,7 @@
         const fullHref = window.SiteConfig ? window.SiteConfig.navUrl(href) : href;
         return `<a href="${fullHref}"${currentPageAttribute(fullHref)} class="text-sm font-medium ${activeClass} transition-colors ${hoverClass}">${text}</a>`;
     }
-    
+
     /**
      * Generate mobile navigation link with active state
      */
@@ -59,7 +59,45 @@
         const fullHref = window.SiteConfig ? window.SiteConfig.navUrl(href) : href;
         return `<a href="${fullHref}"${currentPageAttribute(fullHref)} class="block py-3 text-base font-medium ${activeClass}">${text}</a>`;
     }
-    
+
+    /**
+     * Mobile Menu
+     */
+    function initMobileMenu() {
+        const toggleBtn = document.querySelector('[data-mobile-toggle]');
+        const mobileMenu = document.querySelector('[data-mobile-menu]');
+
+        if (!toggleBtn || !mobileMenu) return;
+
+        function setMenuOpen(isOpen) {
+            mobileMenu.classList.toggle('open', isOpen);
+            mobileMenu.classList.toggle('hidden', !isOpen);
+            toggleBtn.setAttribute('aria-expanded', String(isOpen));
+            toggleBtn.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+        }
+
+        toggleBtn.addEventListener('click', function() {
+            setMenuOpen(!mobileMenu.classList.contains('open'));
+        });
+
+        // Close menu when clicking on a link
+        const menuLinks = mobileMenu.querySelectorAll('a');
+        menuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                setMenuOpen(false);
+            });
+        });
+
+        // Close menu on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
+                e.preventDefault();
+                setMenuOpen(false);
+                toggleBtn.focus();
+            }
+        });
+    }
+
     /**
      * Render the header component
      */
@@ -68,7 +106,7 @@
         const logoUrl = window.SiteConfig ? window.SiteConfig.url('/assets/logo.png') : '/assets/logo.png';
         const homeUrl = window.SiteConfig ? window.SiteConfig.url('/') : '/';
         const donateUrl = window.SiteConfig ? window.SiteConfig.url('/donate') : '/donate';
-        
+
         const headerHTML = `
     <!-- Header -->
     <header class="sticky top-0 z-50 w-full border-b border-gray-200 bg-white/80 backdrop-blur-lg transition-all" data-header>
@@ -80,7 +118,7 @@
                     Progressive Ideal Yatimkhana
                 </span>
             </a>
-            
+
             <!-- Desktop Navigation -->
             <nav class="hidden lg:flex lg:items-center lg:gap-8" aria-label="Main navigation">
                 ${navLink('/', 'Home', currentPage, 'home')}
@@ -91,13 +129,13 @@
                 ${navLink('/updates', 'Updates', currentPage, 'updates')}
                 ${navLink('/contact', 'Contact', currentPage, 'contact')}
             </nav>
-            
+
             <!-- Actions -->
             <div class="flex items-center gap-4">
-                <a href="${donateUrl}" class="hidden rounded-full bg-primary-500 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-primary-600 sm:inline-flex shadow-lg shadow-primary-500/25">
+                <a href="${donateUrl}" class="hidden rounded-full bg-primary-600 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-primary-700 sm:inline-flex shadow-lg shadow-primary-500/25">
                     Donate Now
                 </a>
-                
+
                 <!-- Mobile Menu Button -->
                 <button type="button" data-mobile-toggle class="rounded-lg p-2 text-gray-600 transition-colors hover:bg-gray-100 lg:hidden" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
                     <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -106,7 +144,7 @@
                 </button>
             </div>
         </div>
-        
+
         <!-- Mobile Navigation -->
         <div id="mobile-menu" class="hidden lg:hidden" data-mobile-menu>
             <nav class="border-t border-gray-200 bg-white px-4 py-4" aria-label="Main navigation">
@@ -118,14 +156,14 @@
                 ${mobileNavLink('/updates', 'Updates', currentPage, 'updates')}
                 ${mobileNavLink('/contact', 'Contact', currentPage, 'contact')}
                 <div class="mt-4 border-t border-gray-200 pt-4">
-                    <a href="${donateUrl}" class="block w-full rounded-full bg-primary-500 px-5 py-3 text-center text-sm font-semibold text-white transition-colors hover:bg-primary-600">
+                    <a href="${donateUrl}" class="block w-full rounded-full bg-primary-600 px-5 py-3 text-center text-sm font-semibold text-white transition-colors hover:bg-primary-700">
                         Donate Now
                     </a>
                 </div>
             </nav>
         </div>
     </header>`;
-        
+
         // Find the header placeholder or insert at beginning of body
         const placeholder = document.getElementById('header-placeholder');
         if (placeholder) {
@@ -139,11 +177,13 @@
                 document.body.insertAdjacentHTML('afterbegin', headerHTML);
             }
         }
+
+        initMobileMenu();
     }
-    
+
     // Expose render function globally
     window.renderHeader = renderHeader;
-    
+
     // Auto-render if document is ready
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', renderHeader);

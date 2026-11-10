@@ -12,7 +12,7 @@
     function renderBackToTop() {
         const backToTopHTML = `
     <!-- Back to Top -->
-    <button type="button" id="back-to-top" class="fixed bottom-6 right-6 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-primary-500 text-white shadow-lg shadow-primary-500/25 transition-all duration-300 hover:bg-primary-600 hover:shadow-xl hover:shadow-primary-500/30 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2" style="opacity: 0; pointer-events: none; transform: translateY(16px);" aria-label="Back to top">
+    <button type="button" id="back-to-top" class="fixed bottom-6 right-6 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-primary-600 text-white shadow-lg shadow-primary-500/25 transition-all duration-300 hover:bg-primary-700 hover:shadow-xl hover:shadow-primary-500/30 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2" style="opacity: 0; pointer-events: none; transform: translateY(16px);" aria-label="Back to top" inert>
         <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path>
         </svg>
@@ -34,6 +34,7 @@
         
         // Show/hide button based on scroll position
         function toggleButton() {
+            backToTopBtn.toggleAttribute('inert', window.scrollY <= 500);
             if (window.scrollY > 500) {
                 backToTopBtn.classList.add('visible');
             } else {

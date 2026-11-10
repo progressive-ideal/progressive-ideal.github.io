@@ -5,25 +5,25 @@
 
 const FAQComponent = (function() {
     'use strict';
-    
+
     let faqCache = null;
     let fallbackHTML = null;
-    
+
     /**
      * Helper to get URL with base path
      */
     function url(path) {
         return window.SiteConfig ? window.SiteConfig.url(path) : path;
     }
-    
+
     /**
      * Fetch FAQ data from JSON
      */
     async function fetchFAQ() {
         if (faqCache) return faqCache;
-        
+
         const paths = ['/data/faq.json', 'data/faq.json'];
-        
+
         for (const jsonPath of paths) {
             const fullPath = url(jsonPath);
             try {
@@ -36,11 +36,11 @@ const FAQComponent = (function() {
                 continue;
             }
         }
-        
+
         console.error('Error loading FAQ: all paths failed');
         return null;
     }
-    
+
     /**
      * Render a single FAQ item
      */
@@ -64,7 +64,7 @@ const FAQComponent = (function() {
             </div>
         </div>`;
     }
-    
+
     /**
      * Render loading skeleton
      */
@@ -79,7 +79,43 @@ const FAQComponent = (function() {
         }
         return html;
     }
-    
+
+    /**
+     * FAQ Accordion
+     */
+    function bindFAQ() {
+        const faqToggles = document.querySelectorAll('[data-faq-toggle]');
+
+        function setExpanded(toggle, expanded) {
+            const content = document.getElementById(toggle.getAttribute('aria-controls'));
+            toggle.classList.toggle('active', expanded);
+            toggle.setAttribute('aria-expanded', String(expanded));
+            content.setAttribute('aria-hidden', String(!expanded));
+            content.toggleAttribute('inert', !expanded);
+            content.style.maxHeight = expanded ? content.scrollHeight + 'px' : '0';
+            content.style.opacity = expanded ? '1' : '0';
+        }
+
+        faqToggles.forEach(toggle => {
+            // Dynamic components can request initialization more than once.
+            if (toggle.dataset.faqInitialized) return;
+            toggle.dataset.faqInitialized = 'true';
+            toggle.addEventListener('click', function() {
+                const isExpanded = this.getAttribute('aria-expanded') === 'true';
+
+                // Close all other FAQs
+                faqToggles.forEach(otherToggle => {
+                    if (otherToggle !== this) {
+                        setExpanded(otherToggle, false);
+                    }
+                });
+
+                // Toggle current FAQ
+                setExpanded(this, !isExpanded);
+            });
+        });
+    }
+
     /**
      * Initialize FAQ section
      */
@@ -89,37 +125,35 @@ const FAQComponent = (function() {
 
         // Keep the static fallback for disabled scripts and failed JSON requests.
         if (fallbackHTML === null) fallbackHTML = container.innerHTML;
-        
+
         // Show loading skeleton
         container.innerHTML = renderSkeleton();
-        
+
         const faq = await fetchFAQ();
-        
+
         if (!Array.isArray(faq) || faq.length === 0) {
             container.innerHTML = fallbackHTML;
             return;
         }
-        
+
         // Render FAQ items
         let html = '<div class="divide-y divide-gray-200">';
         faq.forEach((item, index) => {
             html += renderFAQItem(item, index, (index + 1) * 100);
         });
         html += '</div>';
-        
+
         container.innerHTML = html;
-        
-        // Re-initialize FAQ accordion functionality (call global initFAQ from main.js)
-        if (typeof window.initFAQ === 'function') {
-            window.initFAQ();
-        }
-        
+
+        // Bind controls locally so a failed main.js does not disable the FAQ.
+        bindFAQ();
+
         // Re-initialize scroll animations
         if (typeof initScrollAnimations === 'function') {
             initScrollAnimations();
         }
     }
-    
+
     // Public API
     return {
         initFAQ,

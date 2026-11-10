@@ -83,7 +83,7 @@ const UpdatesComponent = (function () {
    */
   function renderHighlightCard(update) {
     const badgeColor =
-      update.categoryColor === "accent" ? "bg-accent-500" : "bg-primary-500";
+      update.categoryColor === "accent" ? "bg-accent-700" : "bg-primary-600";
     const imageHtml = update.image
       ? `<div class="relative h-40 overflow-hidden">
                    <img src="${navUrl(update.image)}" alt="${update.title}" class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" loading="lazy">

@@ -105,13 +105,14 @@
             
             // Initialize lightGallery using the reusable component
             function initLightGallery() {
+                if (typeof initLightbox !== 'function') return;
                 if (lightGalleryInstance) {
                     lightGalleryInstance.destroy();
                 }
                 
                 lightGalleryInstance = initLightbox(galleryGrid, {
                     selector: '.gallery-item:not([style*="display: none"])',
-                    plugins: [lgThumbnail, lgZoom],
+                    plugins: [window.lgThumbnail, window.lgZoom].filter(Boolean),
                     thumbnail: true
                 });
             }
@@ -123,10 +124,12 @@
                     
                     // Update active state
                     filterButtons.forEach(function(btn) {
-                        btn.classList.remove('active', 'bg-primary-500', 'text-white');
+                        btn.setAttribute('aria-pressed', 'false');
+                        btn.classList.remove('active', 'bg-primary-600', 'text-white');
                         btn.classList.add('bg-gray-100', 'text-gray-700');
                     });
-                    this.classList.add('active', 'bg-primary-500', 'text-white');
+                    this.setAttribute('aria-pressed', 'true');
+                    this.classList.add('active', 'bg-primary-600', 'text-white');
                     this.classList.remove('bg-gray-100', 'text-gray-700');
                     
                     // Filter items
@@ -146,9 +149,10 @@
             });
             
             // Initialize active state
-            document.querySelector('.gallery-filter.active').classList.add('bg-primary-500', 'text-white');
+            document.querySelector('.gallery-filter.active').classList.add('bg-primary-600', 'text-white');
             document.querySelector('.gallery-filter.active').classList.remove('bg-gray-100', 'text-gray-700');
             filterButtons.forEach(function(btn) {
+                btn.setAttribute('aria-pressed', String(btn.classList.contains('active')));
                 if (!btn.classList.contains('active')) {
                     btn.classList.add('bg-gray-100', 'text-gray-700');
                 }

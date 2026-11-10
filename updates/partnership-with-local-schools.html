@@ -92,8 +92,8 @@
     
     <script>
         // Initialize lightGallery for blog images using the reusable component
-        initLightbox('#blog-gallery', {
-            plugins: [lgZoom],
+        window.initLightbox?.('#blog-gallery', {
+            plugins: [window.lgZoom].filter(Boolean),
             selector: '.gallery-item'
         });
     </script>

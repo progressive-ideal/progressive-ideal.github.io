@@ -125,7 +125,7 @@
                             <div class="mt-4 flex justify-center gap-4">
                                 ${socialLinks.map(link => {
                                     const icon = socialIcons[link.icon] || socialIcons.facebook;
-                                    return `<a href="${link.url}" target="_blank" rel="noopener noreferrer" class="flex h-12 w-12 items-center justify-center rounded-xl bg-gray-100 text-gray-600 transition-colors hover:bg-primary-500 hover:text-white">
+                                    return `<a href="${link.url}" target="_blank" rel="noopener noreferrer" aria-label="${link.platform}" class="flex h-12 w-12 items-center justify-center rounded-xl bg-gray-100 text-gray-600 transition-colors hover:bg-primary-600 hover:text-white">
                                     ${icon}
                                 </a>`;
                                 }).join('')}

@@ -36,8 +36,6 @@ document.addEventListener('DOMContentLoaded', function() {
     initCounterAnimations();
     initProgressBars();
     initCarousel();
-    initFAQ();
-    initMobileMenu();
     initHeaderScroll();
     initSmoothScroll();
     initTextRotator();
@@ -349,80 +347,6 @@ function initCarousel() {
 }
 
 /**
- * FAQ Accordion
- */
-function initFAQ() {
-    const faqToggles = document.querySelectorAll('[data-faq-toggle]');
-
-    function setExpanded(toggle, expanded) {
-        const content = document.getElementById(toggle.getAttribute('aria-controls'));
-        toggle.classList.toggle('active', expanded);
-        toggle.setAttribute('aria-expanded', String(expanded));
-        content.setAttribute('aria-hidden', String(!expanded));
-        content.toggleAttribute('inert', !expanded);
-        content.style.maxHeight = expanded ? content.scrollHeight + 'px' : '0';
-        content.style.opacity = expanded ? '1' : '0';
-    }
-    
-    faqToggles.forEach(toggle => {
-        // Dynamic components can request initialization more than once.
-        if (toggle.dataset.faqInitialized) return;
-        toggle.dataset.faqInitialized = 'true';
-        toggle.addEventListener('click', function() {
-            const isExpanded = this.getAttribute('aria-expanded') === 'true';
-            
-            // Close all other FAQs
-            faqToggles.forEach(otherToggle => {
-                if (otherToggle !== this) {
-                    setExpanded(otherToggle, false);
-                }
-            });
-            
-            // Toggle current FAQ
-            setExpanded(this, !isExpanded);
-        });
-    });
-}
-
-/**
- * Mobile Menu
- */
-function initMobileMenu() {
-    const toggleBtn = document.querySelector('[data-mobile-toggle]');
-    const mobileMenu = document.querySelector('[data-mobile-menu]');
-    
-    if (!toggleBtn || !mobileMenu) return;
-
-    function setMenuOpen(isOpen) {
-        mobileMenu.classList.toggle('open', isOpen);
-        mobileMenu.classList.toggle('hidden', !isOpen);
-        toggleBtn.setAttribute('aria-expanded', String(isOpen));
-        toggleBtn.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
-    }
-    
-    toggleBtn.addEventListener('click', function() {
-        setMenuOpen(!mobileMenu.classList.contains('open'));
-    });
-    
-    // Close menu when clicking on a link
-    const menuLinks = mobileMenu.querySelectorAll('a');
-    menuLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            setMenuOpen(false);
-        });
-    });
-    
-    // Close menu on escape key
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
-            e.preventDefault();
-            setMenuOpen(false);
-            toggleBtn.focus();
-        }
-    });
-}
-
-/**
  * Header Shadow on Scroll
  */
 function initHeaderScroll() {
@@ -451,7 +375,7 @@ function initSmoothScroll() {
             const target = document.querySelector(href);
             if (target) {
                 e.preventDefault();
-                const headerHeight = document.querySelector('header').offsetHeight;
+                const headerHeight = document.querySelector('header')?.offsetHeight || 0;
                 const targetPosition = target.getBoundingClientRect().top + window.scrollY - headerHeight;
                 
                 window.scrollTo({
@@ -541,5 +465,4 @@ function initTextRotator() {
 
 // Expose functions globally for dynamic content components
 window.initCarousels = initCarousel;
-window.initFAQ = initFAQ;
 window.initScrollAnimations = initScrollAnimations;

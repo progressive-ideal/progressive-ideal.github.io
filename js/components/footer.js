@@ -81,7 +81,7 @@
                 <div class="lg:col-span-4">
                     <a href="${homeUrl}" class="inline-block">
                         <div class="flex items-center gap-2">
-                            <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-primary-500 text-white font-bold text-sm">
+                            <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-primary-600 text-white font-bold text-sm">
                                 PIY
                             </div>
                             <span class="text-lg font-bold text-white">${contact.organization}</span>
@@ -130,7 +130,7 @@
             
             <!-- Bottom Bar -->
             <div class="mt-16 flex flex-col items-center justify-between gap-4 border-t border-gray-800 py-8 sm:flex-row">
-                <p class="text-sm text-gray-500">© ${new Date().getFullYear()} ${contact.organization}. All rights reserved.</p>
+                <p class="text-sm text-gray-400">© ${new Date().getFullYear()} ${contact.organization}. All rights reserved.</p>
             </div>
         </div>
     </footer>`;

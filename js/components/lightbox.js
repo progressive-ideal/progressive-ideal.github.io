@@ -49,9 +49,12 @@ function initLightbox(selector, options = {}) {
         return null;
     }
     
+    // Native image links remain available if the library could not load.
+    if (typeof lightGallery !== 'function') return null;
+
     // Default configuration
     const defaultOptions = {
-        plugins: typeof lgThumbnail !== 'undefined' ? [lgThumbnail, lgZoom] : [lgZoom],
+        plugins: [window.lgThumbnail, window.lgZoom].filter(Boolean),
         speed: 300,
         thumbnail: typeof lgThumbnail !== 'undefined',
         zoom: true,
@@ -89,6 +92,10 @@ function setupInfoPanel(galleryElement, lightGalleryInstance) {
     // Attach event listeners only once per gallery element
     if (!eventListenersAttached) {
         galleryElement.addEventListener('lgAfterOpen', function() {
+            const dialog = document.querySelector('.lg-container.lg-show');
+            if (dialog && !dialog.hasAttribute('aria-labelledby')) {
+                dialog.setAttribute('aria-label', 'Photo viewer');
+            }
             addInfoButton(lightGalleryInstance);
         });
         galleryElement.addEventListener('lgAfterSlide', function() {
