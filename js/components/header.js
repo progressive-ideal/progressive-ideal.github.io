@@ -64,8 +64,8 @@
     <header class="sticky top-0 z-50 w-full border-b border-gray-200 bg-white/80 backdrop-blur-lg transition-all" data-header>
         <div class="container mx-auto flex h-16 items-center justify-between px-4 lg:h-20 lg:px-8">
             <!-- Logo -->
-            <a href="${homeUrl}" class="flex items-center gap-2">
-                <img src="${logoUrl}" style="height:2.5em;"/>
+            <a href="${homeUrl}" class="flex items-center gap-2" aria-label="Progressive Ideal Yatimkhana home">
+                <img src="${logoUrl}" alt="Progressive Ideal Yatimkhana logo" style="height:2.5em;"/>
                 <span class="hidden sm:block text-lg font-bold text-gray-900">
                     Progressive Ideal Yatimkhana
                 </span>
