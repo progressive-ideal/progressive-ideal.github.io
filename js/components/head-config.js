@@ -5,9 +5,10 @@
  * Usage: Include this script in the <head> section
  * <script src="js/components/head-config.js"></script>
  *
- * Note: Tailwind CSS and config should be included separately via:
- * <script src="https://cdn.tailwindcss.com"></script>
- * <script src="js/tailwind-config.js"></script>
+ * Note: Include the generated Tailwind stylesheet before custom styles:
+ * <link rel="stylesheet" href="css/tailwind.css">
+ * <link rel="stylesheet" href="css/styles.css">
+ * Use ../css/ on nested update pages.
  */
 
 (function () {

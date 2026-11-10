@@ -101,7 +101,8 @@ html {
     transition: transform 0.3s ease-out;
 }
 
-[data-carousel-slide] {
+/* Keep default sizing below responsive Tailwind width utilities. */
+:where([data-carousel-slide]) {
     flex-shrink: 0;
     width: 100%;
     padding-top: 1rem;
@@ -316,7 +317,7 @@ select:focus {
     left: 0;
     top: 0;
     width: 100%;
-    line-height: 1.4em;
+    /* Line height comes from the responsive Tailwind typography classes. */
 }
 
 .text-rotator-item.active {

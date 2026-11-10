@@ -2,6 +2,27 @@
 
 A modern, responsive static website for Progressive Ideal Yatimkhana, an orphanage organization dedicated to providing hope, care, and a brighter future for children in need.
 
+## Website TODOs
+
+Work through these items one by one. This is still a template site; organization-specific content will be updated when the orphanage's actual data is provided. Keep the existing HTML/CSS/JavaScript approach.
+
+- [ ] **1. Complete the donation process — deferred until later.** The Donate page at `/donate` is created and existing donation buttons and sections link to it. Add confirmed payment methods and account details, explain how to request a receipt, and provide a donation contact. The page currently directs visitors to Contact for instructions; payment integration remains pending.
+- [ ] **2. Replace template content with actual orphanage data — awaiting data.** Review every page, JSON file, and shared component. Replace sample history, team members, testimonials, statistics, campaign goals/progress, social links, and contact details. Include tax-deductibility, verification, and spending-percentage claims only when supported by confirmed information.
+- [x] **3. Fix navigation and asset paths for deployment.** Keep extensionless navigation links and the existing page structure for root-domain hosting on GitHub Pages and the future custom domain. Fixed the header logo, favicon paths on nested update pages, and JSON-loaded image paths. Automated asset checks passed, and live navigation was verified by the site owner. Subfolder deployment is tracked separately in task 15.
+- [ ] **4. Complete the Contact page.** Replace the map placeholder with real directions or a map, remove the hardcoded sample address, use one source for contact details, and verify phone, email, and directions links.
+- [ ] **5. Add a practical homepage introduction.** Explain where the orphanage is, whom it supports, and what care it provides, using the actual information supplied.
+- [ ] **6. Replace stock imagery with approved photographs.** Update About, Programs, Gallery, and Updates with photos approved for public use. Ensure captions and alternative text accurately describe each image and do not present stock photos as the orphanage's own facility or children.
+- [ ] **7. Make branding consistent.** Match the footer's current PIY text badge to the header branding and check logo sizing and presentation across screen sizes.
+- [ ] **8. Simplify animations and add motion controls.** Review the hero slideshow, rotating text, counters, and moving updates; reduce competing movement, provide pause controls for autoplay, and make JavaScript animations respect reduced-motion preferences.
+- [ ] **9. Improve accessibility and content resilience.** Add alternative text to the header logo, expose FAQ expanded states and answer relationships, and keep essential content readable if JavaScript fails. Review keyboard navigation, focus visibility, and text contrast.
+- [x] **10. Prepare CSS for production.** All pages load generated `css/tailwind.css` instead of the browser Tailwind script. The existing theme is in `tailwind.config.cjs`, custom CSS remains in `css/styles.css`, and npm scripts provide production builds and watch mode. Commit generated CSS when styling changes; see the CSS build instructions below.
+- [x] **11. Finalize the page structure.** Home, About, Programs, Gallery, Updates, Donate, and Contact are agreed and implemented. Updates will be maintained by the site owner. Existing donation buttons and sections remain and link to the Donate page. Impact and FAQ remain homepage sections. Content updates are tracked in task 2, donation details in task 1, and a possible Reports/Transparency page in task 16.
+- [ ] **12. Decide on language support.** Confirm whether the intended audience needs English, Bangla, or both, then implement the agreed language setup.
+- [ ] **13. Clarify content maintenance and update this README.** Document which content lives in JSON, HTML, and JavaScript; consolidate repeated details where useful. Correct the claim that all content is in JSON and bring the documented project structure into line with the repository.
+- [ ] **14. Complete browser and launch verification.** Check desktop and mobile layouts, navigation, nested pages, donation links, FAQ behavior, gallery/lightbox interactions, autoplay controls, loading/error states, and console errors. Repeat JavaScript syntax, JSON validity, and duplicate-ID checks after implementation.
+- [ ] **15. Support subfolder deployment — deferred; not needed for the current hosting setup.** Audit navigation, asset paths, JSON requests, and homepage section links with a nonempty `basePath`. Fix paths that bypass configuration and verify direct visits and refreshes on root and nested pages under a subfolder.
+- [ ] **16. Consider a Reports/Transparency page — deferred; not needed for now.** Revisit whether to publish a dedicated page for reports, supporting documents, and financial summaries when suitable material is available.
+
 ## 📁 Project Structure
 
 ```
@@ -9,18 +30,23 @@ progressive-ideal.github.io/
 ├── index.html                    # Homepage
 ├── about.html                    # About page
 ├── contact.html                  # Contact page
+├── donate.html                   # Donation information page
 ├── gallery.html                  # Gallery page
 ├── serve.json                    # Local dev server config
+├── package.json                  # CSS build and watch commands
+├── package-lock.json             # Locked build dependencies
+├── tailwind.config.cjs           # Tailwind theme and source scanning
 ├── README.md                     # Project documentation
 ├── prompt.md                     # Development notes
 ├── .gitignore                    # Git ignore rules
 │
 ├── css/
-│   └── styles.css                # Custom styles
+│   ├── tailwind.input.css        # Tailwind build input
+│   ├── tailwind.css              # Generated styles (committed)
+│   └── styles.css                # Custom styles, loaded after Tailwind
 │
 ├── js/
 │   ├── main.js                   # Main JavaScript file
-│   ├── tailwind-config.js        # Tailwind CSS configuration
 │   └── components/               # JavaScript components
 │       ├── back-to-top.js        # Back to top button
 │       ├── contact-info.js       # Contact information loader
@@ -128,9 +154,37 @@ Add a new entry to `data/gallery.json`:
 
 ## 🎨 Customization
 
+### CSS build
+
+The site uses Tailwind CSS 3.4.17 to generate a static stylesheet. Node.js and npm are needed only for development; GitHub Pages serves the committed CSS without running a build.
+
+Install the locked dependencies on first setup or after `package-lock.json` changes:
+
+```bash
+npm ci
+```
+
+Generate the minified production stylesheet:
+
+```bash
+npm run build:css
+```
+
+During development, automatically rebuild when HTML, JavaScript, the Tailwind configuration, or the input stylesheet changes:
+
+```bash
+npm run watch:css
+```
+
+Stop watch mode with Ctrl+C. Run `npm run build:css` before committing styling changes so the committed output is minified. Commit `css/tailwind.css` alongside its source changes; do not edit the generated file directly. Ordinary text, image, or JSON content updates do not require rebuilding unless they introduce new Tailwind classes.
+
+The build scans root HTML pages, all update HTML pages, and JavaScript under `js/`, including shared components. Write complete class names in conditional branches (for example, `isActive ? 'bg-primary-600' : 'bg-gray-300'`) rather than assembling fragments such as `'bg-' + color + '-600'`. If a future component needs assembled classes or classes supplied by unscanned data, add the complete possibilities to `safelist` in `tailwind.config.cjs`. The saved example website is excluded from scanning.
+
+Pages load `css/tailwind.css` first, followed by `css/styles.css`; nested update pages use `../css/`. Keep using an HTTP server for previewing the website because components fetch JSON.
+
 ### Colors
 
-Colors are defined in `js/tailwind-config.js`:
+Colors are defined in `tailwind.config.cjs`. Rebuild CSS after changing them:
 
 ```javascript
 colors: {
@@ -148,7 +202,7 @@ colors: {
 
 ### Typography
 
-Fonts are configured in `js/components/head-config.js`. The default font is **Inter** from Google Fonts.
+Google Fonts are loaded in `js/components/head-config.js`. The default font is **Manrope**, selected in `tailwind.config.cjs`.
 
 ### Styling
 
@@ -173,7 +227,9 @@ Custom CSS is in `css/styles.css`. This file contains:
 
 ### GitHub Pages
 
-1. Push changes to the main branch:
+1. If styling or Tailwind classes changed, run `npm run build:css` and include the generated `css/tailwind.css` in your commit.
+
+2. Push changes to the main branch:
 
    ```bash
    git add .
@@ -181,7 +237,7 @@ Custom CSS is in `css/styles.css`. This file contains:
    git push
    ```
 
-2. The site will automatically deploy via GitHub Pages.
+3. The site will automatically deploy via GitHub Pages. No npm build is required on the host because generated CSS is committed.
 
 ### Other Static Hosts
 

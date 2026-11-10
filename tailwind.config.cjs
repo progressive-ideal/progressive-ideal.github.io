@@ -1,12 +1,12 @@
 /**
- * Shared Tailwind Configuration
- * Include this script immediately after Tailwind CDN
- * 
- * Usage:
- * <script src="https://cdn.tailwindcss.com"></script>
- * <script src="js/tailwind-config.js"></script>
+ * Tailwind build configuration. Run npm run build:css after changing this file.
+ * Scan complete class names in HTML and JavaScript, including dynamic components.
  */
-tailwind.config = {
+module.exports = {
+    content: {
+        relative: true,
+        files: ['./*.html', './updates/**/*.html', './js/**/*.js'],
+    },
     theme: {
         extend: {
             fontFamily: {
