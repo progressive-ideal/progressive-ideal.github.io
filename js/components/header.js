@@ -55,6 +55,7 @@
      */
     function renderHeader() {
         const currentPage = getCurrentPage();
+        const logoUrl = window.SiteConfig ? window.SiteConfig.url('/assets/logo.png') : '/assets/logo.png';
         const homeUrl = window.SiteConfig ? window.SiteConfig.url('/') : '/';
         const donateUrl = window.SiteConfig ? window.SiteConfig.url('/#donate') : '/#donate';
         
@@ -64,7 +65,7 @@
         <div class="container mx-auto flex h-16 items-center justify-between px-4 lg:h-20 lg:px-8">
             <!-- Logo -->
             <a href="${homeUrl}" class="flex items-center gap-2">
-                <img src='/assets/logo.png' style='height:2.5em;'/>
+                <img src="${logoUrl}" style="height:2.5em;"/>
                 <span class="hidden sm:block text-lg font-bold text-gray-900">
                     Progressive Ideal Yatimkhana
                 </span>

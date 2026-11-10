@@ -21,7 +21,7 @@
      * Helper to get URL with base path
      */
     function url(path) {
-        return window.SiteConfig ? window.SiteConfig.url(path) : path;
+        return window.SiteConfig ? window.SiteConfig.navUrl(path) : path;
     }
     
     /**
@@ -47,7 +47,7 @@
     function createCarouselHTML(images) {
         const slidesHTML = images.map((image, index) => `
             <div class="hero-carousel-slide ${index === 0 ? 'active' : ''}" data-slide-index="${index}">
-                <img src="${image.src}" alt="${image.alt}" class="w-full h-full object-cover" loading="${index === 0 ? 'eager' : 'lazy'}">
+                <img src="${url(image.src)}" alt="${image.alt}" class="w-full h-full object-cover" loading="${index === 0 ? 'eager' : 'lazy'}">
             </div>
         `).join('');
         

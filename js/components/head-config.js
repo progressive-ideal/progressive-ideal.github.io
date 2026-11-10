@@ -33,7 +33,7 @@
     const favicon = document.createElement("link");
     favicon.rel = "icon";
     favicon.type = "image/png";
-    favicon.href = "assets/favicon.png";
+    favicon.href = window.SiteConfig ? window.SiteConfig.url("/assets/favicon.png") : "/assets/favicon.png";
     head.appendChild(favicon);
 
     // 2. Google Fonts - Preconnect

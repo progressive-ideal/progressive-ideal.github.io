@@ -86,7 +86,7 @@ const UpdatesComponent = (function () {
       update.categoryColor === "accent" ? "bg-accent-500" : "bg-primary-500";
     const imageHtml = update.image
       ? `<div class="relative h-40 overflow-hidden">
-                   <img src="${update.image}" alt="${update.title}" class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" loading="lazy">
+                   <img src="${navUrl(update.image)}" alt="${update.title}" class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" loading="lazy">
                    <span class="absolute left-3 top-3 rounded-full ${badgeColor} px-2.5 py-1 text-xs font-semibold text-white">${update.category}</span>
                </div>`
       : `<div class="relative h-40 overflow-hidden bg-gradient-to-br from-primary-100 to-accent-100 flex items-center justify-center">
@@ -118,7 +118,7 @@ const UpdatesComponent = (function () {
         : "text-primary-700";
     const imageHtml = update.image
       ? `<div class="mb-4 shrink-0 overflow-hidden rounded-xl sm:mb-0 sm:h-36 sm:w-52">
-                   <img src="${update.image.replace("w=400&h=200", "w=400&h=300")}" alt="${update.title}" class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" loading="lazy">
+                   <img src="${navUrl(update.image.replace("w=400&h=200", "w=400&h=300"))}" alt="${update.title}" class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" loading="lazy">
                </div>`
       : "";
 

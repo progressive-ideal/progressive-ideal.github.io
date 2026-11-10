@@ -23,7 +23,7 @@
      * Helper to get URL with base path
      */
     function url(path) {
-        return window.SiteConfig ? window.SiteConfig.url(path) : path;
+        return window.SiteConfig ? window.SiteConfig.navUrl(path) : path;
     }
     
     /**
@@ -60,7 +60,7 @@
                                         "${story.quote}"
                                     </blockquote>
                                     <div class="mt-6 flex items-center gap-4">
-                                        <img src="${story.image}" alt="${story.author}" class="h-12 w-12 rounded-full object-cover" loading="lazy">
+                                        <img src="${url(story.image)}" alt="${story.author}" class="h-12 w-12 rounded-full object-cover" loading="lazy">
                                         <div>
                                             <div class="font-semibold text-gray-900">${story.author}</div>
                                             <div class="flex items-center gap-1 text-sm text-gray-600">
