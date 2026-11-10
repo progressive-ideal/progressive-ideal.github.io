@@ -30,6 +30,16 @@
     }
     
     /**
+     * Mark the current page, treating clean URLs and HTML filenames equally.
+     * Section links and parent listings on article pages are not current pages.
+     */
+    function currentPageAttribute(href) {
+        if (href.includes('#')) return '';
+        const normalize = path => path.replace(/\/index\.html$/, '/').replace(/\.html$/, '').replace(/\/$/, '') || '/';
+        return normalize(window.location.pathname) === normalize(href) ? ' aria-current="page"' : '';
+    }
+
+    /**
      * Generate navigation link with active state
      */
     function navLink(href, text, currentPage, pageName) {
@@ -37,7 +47,7 @@
         const activeClass = isActive ? 'text-gray-900' : 'text-gray-600';
         const hoverClass = isActive ? 'hover:text-primary-600' : 'hover:text-gray-900';
         const fullHref = window.SiteConfig ? window.SiteConfig.navUrl(href) : href;
-        return `<a href="${fullHref}" class="text-sm font-medium ${activeClass} transition-colors ${hoverClass}">${text}</a>`;
+        return `<a href="${fullHref}"${currentPageAttribute(fullHref)} class="text-sm font-medium ${activeClass} transition-colors ${hoverClass}">${text}</a>`;
     }
     
     /**
@@ -47,7 +57,7 @@
         const isActive = currentPage === pageName;
         const activeClass = isActive ? 'text-gray-900' : 'text-gray-600';
         const fullHref = window.SiteConfig ? window.SiteConfig.navUrl(href) : href;
-        return `<a href="${fullHref}" class="block py-3 text-base font-medium ${activeClass}">${text}</a>`;
+        return `<a href="${fullHref}"${currentPageAttribute(fullHref)} class="block py-3 text-base font-medium ${activeClass}">${text}</a>`;
     }
     
     /**
@@ -99,7 +109,7 @@
         
         <!-- Mobile Navigation -->
         <div class="hidden lg:hidden" data-mobile-menu>
-            <nav class="border-t border-gray-200 bg-white px-4 py-4">
+            <nav class="border-t border-gray-200 bg-white px-4 py-4" aria-label="Main navigation">
                 ${mobileNavLink('/', 'Home', currentPage, 'home')}
                 ${mobileNavLink('/about', 'About', currentPage, 'about')}
                 ${mobileNavLink('/programs', 'Programs', currentPage, 'programs')}
