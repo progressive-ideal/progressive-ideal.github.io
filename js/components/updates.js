@@ -320,14 +320,18 @@ const UpdatesComponent = (function () {
       // Apply the animation to the track
       track.style.animation = `${keyframeName} ${totalDuration}s linear infinite`;
 
-      // Handle pause on hover
-      track.addEventListener('mouseenter', () => {
-        track.style.animationPlayState = 'paused';
-      });
+      // Keep links stationary while hovered or focused with the keyboard.
+      function updatePlayback() {
+        track.style.animationPlayState = track.matches(':hover, :focus-within') ? 'paused' : 'running';
+      }
 
-      track.addEventListener('mouseleave', () => {
-        track.style.animationPlayState = 'running';
+      track.addEventListener('mouseenter', updatePlayback);
+      track.addEventListener('mouseleave', updatePlayback);
+      track.addEventListener('focusin', updatePlayback);
+      track.addEventListener('focusout', event => {
+        if (!track.contains(event.relatedTarget)) updatePlayback();
       });
+      updatePlayback();
 
       // Clean up stylesheet when no longer needed (optional, for memory management)
       // The stylesheet will be removed when the page unloads

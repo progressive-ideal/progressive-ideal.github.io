@@ -152,7 +152,7 @@ function initProgressBars() {
 }
 
 /**
- * Carousel - Testimonials slider with responsive visible slides
+ * Carousel - Manual testimonials slider with responsive visible slides
  */
 function initCarousel() {
     const carousel = document.querySelector('[data-carousel]');
@@ -168,7 +168,6 @@ function initCarousel() {
     
     let currentIndex = 0;
     const totalSlides = slides.length;
-    let autoPlayInterval;
     let visibleSlides = 1;
     
     /**
@@ -231,7 +230,6 @@ function initCarousel() {
         // Ensure we don't go beyond the last slide
         currentIndex = Math.min(currentIndex, totalSlides - 1);
         updateCarousel();
-        resetAutoPlay();
     }
     
     /**
@@ -253,7 +251,6 @@ function initCarousel() {
             currentIndex++;
         }
         updateCarousel();
-        resetAutoPlay();
     }
     
     /**
@@ -266,16 +263,6 @@ function initCarousel() {
             currentIndex--;
         }
         updateCarousel();
-        resetAutoPlay();
-    }
-    
-    function startAutoPlay() {
-        autoPlayInterval = setInterval(nextSlide, 3500);
-    }
-    
-    function resetAutoPlay() {
-        clearInterval(autoPlayInterval);
-        startAutoPlay();
     }
     
     /**
@@ -337,13 +324,6 @@ function initCarousel() {
         clearTimeout(resizeTimeout);
         resizeTimeout = setTimeout(handleResize, 150);
     });
-    
-    // Start autoplay
-    startAutoPlay();
-    
-    // Pause on hover
-    carousel.addEventListener('mouseenter', () => clearInterval(autoPlayInterval));
-    carousel.addEventListener('mouseleave', startAutoPlay);
 }
 
 /**
