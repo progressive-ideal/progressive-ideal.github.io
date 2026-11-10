@@ -441,7 +441,8 @@ function initSmoothScroll() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             const href = this.getAttribute('href');
-            if (href === '#') return;
+            // Keep native fragment navigation and focus transfer for skip links.
+            if (href === '#' || this.classList.contains('skip-link')) return;
             
             const target = document.querySelector(href);
             if (target) {
