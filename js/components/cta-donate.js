@@ -3,7 +3,7 @@
  * Reusable call-to-action section for donation/support
  * 
  * Usage: Add data-cta-donate attribute with optional config:
- * <div data-cta-donate='{"title":"Custom Title","description":"Custom description","buttonText":"Donate Now","buttonUrl":"/#donate"}'></div>
+ * <div data-cta-donate='{"title":"Custom Title","description":"Custom description","buttonText":"Donate Now","buttonUrl":"/donate"}'></div>
  */
 
 (function() {
@@ -14,7 +14,7 @@
         title: 'Every Dollar Makes a Difference',
         description: 'Your generosity directly supports children in need, providing them with food, shelter, education, and hope for a brighter future.',
         buttonText: 'Donate Now',
-        buttonUrl: '/#donate',
+        buttonUrl: '/donate',
         sectionId: '',
         showImpactExamples: true,
         showTrustBadges: true

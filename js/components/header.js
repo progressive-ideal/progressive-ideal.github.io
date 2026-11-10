@@ -57,7 +57,7 @@
         const currentPage = getCurrentPage();
         const logoUrl = window.SiteConfig ? window.SiteConfig.url('/assets/logo.png') : '/assets/logo.png';
         const homeUrl = window.SiteConfig ? window.SiteConfig.url('/') : '/';
-        const donateUrl = window.SiteConfig ? window.SiteConfig.url('/#donate') : '/#donate';
+        const donateUrl = window.SiteConfig ? window.SiteConfig.url('/donate') : '/donate';
         
         const headerHTML = `
     <!-- Header -->

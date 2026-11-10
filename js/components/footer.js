@@ -110,7 +110,7 @@
                     <div>
                         <h3 class="text-sm font-semibold uppercase tracking-wider text-white">Get Involved</h3>
                         <ul class="mt-4 space-y-3">
-                            <li><a href="${url('/#donate')}" class="text-gray-400 transition-colors hover:text-white">Donate</a></li>
+                            <li><a href="${url('/donate')}" class="text-gray-400 transition-colors hover:text-white">Donate</a></li>
                             <li><a href="${url('/#get-involved')}" class="text-gray-400 transition-colors hover:text-white">Volunteer</a></li>
                             <li><a href="${url('/contact')}" class="text-gray-400 transition-colors hover:text-white">Contact Us</a></li>
                             <li><a href="${url('/#faq')}" class="text-gray-400 transition-colors hover:text-white">FAQ</a></li>
