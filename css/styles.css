@@ -46,11 +46,16 @@ html {
     animation: hero-float-reverse 10s ease-in-out infinite reverse;
 }
 
-/* Fade in up animation */
+/* Content stays readable unless JavaScript has attached a scroll observer. */
 [data-animate="fade-in-up"] {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+[data-animate="fade-in-up"].animate-pending {
     opacity: 0;
     transform: translateY(20px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
 [data-animate="fade-in-up"].animate-visible {

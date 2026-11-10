@@ -50,13 +50,14 @@ document.addEventListener('DOMContentLoaded', function() {
  * Scroll Animations - Fade in up effect when elements enter viewport
  */
 function initScrollAnimations() {
-    const animatedElements = document.querySelectorAll('[data-animate="fade-in-up"]');
+    const animatedElements = document.querySelectorAll('[data-animate="fade-in-up"]:not(.animate-visible):not(.animate-pending)');
     
-    if (!animatedElements.length) return;
+    if (!animatedElements.length || typeof IntersectionObserver === 'undefined') return;
     
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
+                entry.target.classList.remove('animate-pending');
                 entry.target.classList.add('animate-visible');
                 observer.unobserve(entry.target);
             }
@@ -66,7 +67,10 @@ function initScrollAnimations() {
         rootMargin: '0px 0px -50px 0px'
     });
     
-    animatedElements.forEach(el => observer.observe(el));
+    animatedElements.forEach(el => {
+        observer.observe(el);
+        el.classList.add('animate-pending');
+    });
 }
 
 /**
