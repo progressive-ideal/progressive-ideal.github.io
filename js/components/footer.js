@@ -72,6 +72,7 @@
         const socialLinks = await fetchJSON(['/data/social-links.json', 'data/social-links.json'], defaultSocialLinks);
         
         const homeUrl = url('/');
+        const logoUrl = url('/assets/logo.png');
         const footerHTML = `
     <!-- Footer -->
     <footer class="bg-gray-900 pt-16 text-gray-300 lg:pt-24">
@@ -79,13 +80,11 @@
             <div class="grid gap-12 lg:grid-cols-12 lg:gap-8">
                 <!-- Brand Column -->
                 <div class="lg:col-span-4">
-                    <a href="${homeUrl}" class="inline-block">
-                        <div class="flex items-center gap-2">
-                            <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-primary-600 text-white font-bold text-sm">
-                                PIY
-                            </div>
-                            <span class="text-lg font-bold text-white">${contact.organization}</span>
-                        </div>
+                    <a href="${homeUrl}" class="inline-flex max-w-full items-center gap-2" aria-label="${contact.organization} home">
+                        <span class="flex shrink-0 items-center justify-center rounded-lg bg-white p-1">
+                            <img src="${logoUrl}" alt="${contact.organization} logo" width="40" height="40" class="h-10 w-10 object-contain">
+                        </span>
+                        <span class="min-w-0 text-lg font-bold text-white">${contact.organization}</span>
                     </a>
                     <p class="mt-4 max-w-xs text-gray-400">
                         Providing hope, care, and a brighter future for children in need since 1999.

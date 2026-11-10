@@ -124,7 +124,7 @@
         <div class="container mx-auto flex h-16 items-center justify-between gap-4 px-4 lg:h-20 lg:px-8 xl:gap-8">
             <!-- Logo -->
             <a href="${homeUrl}" class="flex shrink-0 items-center gap-2" aria-label="Progressive Ideal Yatimkhana home">
-                <img src="${logoUrl}" alt="Progressive Ideal Yatimkhana logo" style="height:2.5em;"/>
+                <img src="${logoUrl}" alt="Progressive Ideal Yatimkhana logo" width="40" height="40" class="h-10 w-10 shrink-0 object-contain"/>
                 <span class="hidden whitespace-nowrap sm:block text-lg font-bold text-gray-900">
                     Progressive Ideal Yatimkhana
                 </span>
