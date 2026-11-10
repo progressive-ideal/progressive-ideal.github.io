@@ -131,10 +131,6 @@
             <!-- Bottom Bar -->
             <div class="mt-16 flex flex-col items-center justify-between gap-4 border-t border-gray-800 py-8 sm:flex-row">
                 <p class="text-sm text-gray-500">© ${new Date().getFullYear()} ${contact.organization}. All rights reserved.</p>
-                <div class="flex gap-6">
-                    <a href="#" class="text-sm text-gray-500 transition-colors hover:text-gray-300">Privacy Policy</a>
-                    <a href="#" class="text-sm text-gray-500 transition-colors hover:text-gray-300">Terms of Service</a>
-                </div>
             </div>
         </div>
     </footer>`;

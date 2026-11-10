@@ -64,9 +64,7 @@
         <div class="container mx-auto flex h-16 items-center justify-between px-4 lg:h-20 lg:px-8">
             <!-- Logo -->
             <a href="${homeUrl}" class="flex items-center gap-2">
-                <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-primary-500 text-white font-bold text-sm lg:h-12 lg:w-12 lg:text-base">
-                    PIY
-                </div>
+                <img src='/assets/logo.png' style='height:2.5em;'/>
                 <span class="hidden sm:block text-lg font-bold text-gray-900">
                     Progressive Ideal Yatimkhana
                 </span>
