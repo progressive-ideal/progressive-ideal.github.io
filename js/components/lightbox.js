@@ -15,6 +15,31 @@
  * </script>
  */
 
+// Keep focus listeners unique when gallery filters recreate lightGallery.
+const lightboxFocusGalleries = new WeakSet();
+
+function setupLightboxFocus(galleryElement) {
+    if (lightboxFocusGalleries.has(galleryElement)) return;
+    lightboxFocusGalleries.add(galleryElement);
+
+    let openingThumbnail = null;
+
+    // Native links emit click for both pointer and keyboard activation.
+    galleryElement.addEventListener('click', function(event) {
+        const thumbnail = event.target.closest('.gallery-item');
+        if (thumbnail && galleryElement.contains(thumbnail)) {
+            openingThumbnail = thumbnail;
+        }
+    }, true);
+
+    galleryElement.addEventListener('lgAfterClose', function() {
+        if (openingThumbnail && openingThumbnail.isConnected && openingThumbnail.getClientRects().length) {
+            openingThumbnail.focus({ preventScroll: true });
+        }
+        openingThumbnail = null;
+    });
+}
+
 // Initialize lightGallery with custom info panel
 function initLightbox(selector, options = {}) {
     const galleryElement = typeof selector === 'string' ? document.querySelector(selector) : selector;
@@ -45,6 +70,8 @@ function initLightbox(selector, options = {}) {
     
     // Merge options
     const config = { ...defaultOptions, ...options };
+
+    setupLightboxFocus(galleryElement);
     
     // Initialize lightGallery
     const lightGalleryInstance = lightGallery(galleryElement, config);
