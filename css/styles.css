@@ -474,6 +474,15 @@ select:focus {
     cursor: pointer;
 }
 
+/* Reveal the same image details for keyboard focus as for pointer hover. */
+.gallery-item:focus-visible [data-gallery-overlay] {
+    opacity: 1;
+}
+
+.gallery-item:focus-visible [data-gallery-caption] {
+    transform: translateY(0);
+}
+
 /* Hero Carousel Styles */
 .hero-carousel {
     position: absolute;

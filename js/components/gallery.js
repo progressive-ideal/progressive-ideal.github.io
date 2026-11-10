@@ -45,14 +45,14 @@ const GalleryComponent = (function() {
      */
     function renderGalleryItem(item, index) {
         return `
-        <div class="gallery-item group relative cursor-pointer overflow-hidden rounded-2xl shadow-lg" data-category="${item.category}" data-src="${url(item.fullSize)}" data-sub-html="<h4 class='text-lg font-semibold'>${item.title}</h4><p class='text-sm opacity-80'>${item.category.charAt(0).toUpperCase() + item.category.slice(1)}</p>" data-description="${item.description}" data-animate="fade-in-up" data-delay="${(index % 3) * 100}">
+        <a href="${url(item.fullSize)}" aria-label="View image: ${item.title}" class="gallery-item group relative block cursor-pointer overflow-hidden rounded-2xl shadow-lg" data-category="${item.category}" data-src="${url(item.fullSize)}" data-sub-html="<h4 class='text-lg font-semibold'>${item.title}</h4><p class='text-sm opacity-80'>${item.category.charAt(0).toUpperCase() + item.category.slice(1)}</p>" data-description="${item.description}" data-animate="fade-in-up" data-delay="${(index % 3) * 100}">
             <img src="${url(item.thumbnail)}" alt="${item.title}" class="h-64 w-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy">
-            <div class="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-gray-900/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
-            <div class="absolute bottom-0 left-0 right-0 translate-y-full p-4 transition-transform duration-300 group-hover:translate-y-0">
+            <div data-gallery-overlay class="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-gray-900/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+            <div data-gallery-caption class="absolute bottom-0 left-0 right-0 translate-y-full p-4 transition-transform duration-300 group-hover:translate-y-0">
                 <h3 class="text-lg font-semibold text-white">${item.title}</h3>
                 <p class="text-sm text-gray-300">${item.category.charAt(0).toUpperCase() + item.category.slice(1)}</p>
             </div>
-        </div>`;
+        </a>`;
     }
     
     /**
