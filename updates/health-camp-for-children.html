@@ -26,7 +26,17 @@
   <body class="min-h-screen font-sans antialiased">
     <a href="#main-content" class="skip-link">Skip to content</a>
     <!-- Header Placeholder (will be replaced by component) -->
-    <div id="header-placeholder"></div>
+    <div id="header-placeholder">
+        <nav class="fallback-navigation" aria-label="Main navigation">
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/programs">Programs</a>
+            <a href="/gallery">Gallery</a>
+            <a href="/updates">Updates</a>
+            <a href="/donate">Donate</a>
+            <a href="/contact">Contact</a>
+        </nav>
+    </div>
 
     <main id="main-content" tabindex="-1">
       <section

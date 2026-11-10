@@ -192,6 +192,26 @@ html {
     scroll-margin-top: 6rem;
 }
 
+/* Replaced by the full header when its JavaScript component loads. */
+.fallback-navigation {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem 1.5rem;
+    padding: 1rem;
+    border-bottom: 1px solid #e5e7eb;
+    background: white;
+}
+
+.fallback-navigation a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.75rem;
+    color: #1d4ed8;
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+}
+
 /* Button hover effects */
 .btn-primary {
     position: relative;
