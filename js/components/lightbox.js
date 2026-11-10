@@ -102,25 +102,44 @@ function setupInfoPanel(galleryElement, lightGalleryInstance) {
 // Add custom info button to the lightbox toolbar
 function addInfoButton(lightGalleryInstance) {
     const toolbar = document.querySelector('.lg-toolbar');
-    if (!toolbar || toolbar.querySelector('.lg-info-btn')) return;
+    const outer = document.querySelector('.lg-outer');
+    if (!toolbar || !outer || toolbar.querySelector('.lg-info-btn')) return;
+    const panelId = `${outer.id}-info-panel`;
     
     const infoBtn = document.createElement('button');
     infoBtn.type = 'button';
     infoBtn.className = 'lg-info-btn lg-icon';
     infoBtn.setAttribute('aria-label', 'Show info');
-    infoBtn.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>';
+    infoBtn.setAttribute('aria-expanded', 'false');
+    infoBtn.setAttribute('aria-controls', panelId);
+    infoBtn.innerHTML = '<svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>';
     infoBtn.addEventListener('click', function() {
         toggleInfoPanel(lightGalleryInstance);
     });
     toolbar.appendChild(infoBtn);
     
     // Add info panel to the lightbox
-    const outer = document.querySelector('.lg-outer');
     if (outer && !outer.querySelector('.lg-info-panel')) {
         const panel = document.createElement('div');
+        panel.id = panelId;
         panel.className = 'lg-info-panel';
+        panel.setAttribute('role', 'region');
+        panel.setAttribute('aria-label', 'Image information');
+        panel.setAttribute('aria-hidden', 'true');
+        panel.setAttribute('inert', '');
         panel.innerHTML = '<div class="lg-info-panel-content"></div>';
         outer.appendChild(panel);
+    }
+}
+
+function setInfoPanelExpanded(panel, infoBtn, expanded) {
+    panel.classList.toggle('lg-info-panel-visible', expanded);
+    panel.setAttribute('aria-hidden', String(!expanded));
+    panel.toggleAttribute('inert', !expanded);
+    if (infoBtn) {
+        infoBtn.classList.toggle('lg-info-btn-active', expanded);
+        infoBtn.setAttribute('aria-expanded', String(expanded));
+        infoBtn.setAttribute('aria-label', expanded ? 'Hide info' : 'Show info');
     }
 }
 
@@ -130,12 +149,10 @@ function toggleInfoPanel(lightGalleryInstance) {
     const infoBtn = document.querySelector('.lg-info-btn');
     if (!panel) return;
     
-    panel.classList.toggle('lg-info-panel-visible');
-    if (infoBtn) {
-        infoBtn.classList.toggle('lg-info-btn-active');
-    }
+    const expanded = !panel.classList.contains('lg-info-panel-visible');
+    setInfoPanelExpanded(panel, infoBtn, expanded);
     
-    if (panel.classList.contains('lg-info-panel-visible')) {
+    if (expanded) {
         updateInfoPanelContent(lightGalleryInstance);
     }
 }
@@ -144,7 +161,7 @@ function toggleInfoPanel(lightGalleryInstance) {
 function closeInfoPanel() {
     const panel = document.querySelector('.lg-info-panel');
     if (panel) {
-        panel.classList.remove('lg-info-panel-visible');
+        setInfoPanelExpanded(panel, document.querySelector('.lg-info-btn'), false);
     }
 }
 
