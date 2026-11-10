@@ -99,7 +99,7 @@
                 </a>
                 
                 <!-- Mobile Menu Button -->
-                <button type="button" data-mobile-toggle class="rounded-lg p-2 text-gray-600 transition-colors hover:bg-gray-100 lg:hidden" aria-label="Open menu" aria-expanded="false">
+                <button type="button" data-mobile-toggle class="rounded-lg p-2 text-gray-600 transition-colors hover:bg-gray-100 lg:hidden" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
                     <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                     </svg>
@@ -108,7 +108,7 @@
         </div>
         
         <!-- Mobile Navigation -->
-        <div class="hidden lg:hidden" data-mobile-menu>
+        <div id="mobile-menu" class="hidden lg:hidden" data-mobile-menu>
             <nav class="border-t border-gray-200 bg-white px-4 py-4" aria-label="Main navigation">
                 ${mobileNavLink('/', 'Home', currentPage, 'home')}
                 ${mobileNavLink('/about', 'About', currentPage, 'about')}
