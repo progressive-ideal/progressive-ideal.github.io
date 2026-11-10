@@ -96,6 +96,17 @@
                 toggleBtn.focus();
             }
         });
+
+        // Reset the compact menu when switching to the full desktop navigation.
+        const desktopLayout = window.matchMedia('(min-width: 1280px)');
+        desktopLayout.addEventListener('change', event => {
+            if (!event.matches) return;
+            const restoreFocus = mobileMenu.contains(document.activeElement) || document.activeElement === toggleBtn;
+            setMenuOpen(false);
+            if (restoreFocus) {
+                document.querySelector('[data-header] a')?.focus({ preventScroll: true });
+            }
+        });
     }
 
     /**
@@ -110,17 +121,17 @@
         const headerHTML = `
     <!-- Header -->
     <header class="sticky top-0 z-50 w-full border-b border-gray-200 bg-white/80 backdrop-blur-lg transition-all" data-header>
-        <div class="container mx-auto flex h-16 items-center justify-between px-4 lg:h-20 lg:px-8">
+        <div class="container mx-auto flex h-16 items-center justify-between gap-4 px-4 lg:h-20 lg:px-8 xl:gap-8">
             <!-- Logo -->
-            <a href="${homeUrl}" class="flex items-center gap-2" aria-label="Progressive Ideal Yatimkhana home">
+            <a href="${homeUrl}" class="flex shrink-0 items-center gap-2" aria-label="Progressive Ideal Yatimkhana home">
                 <img src="${logoUrl}" alt="Progressive Ideal Yatimkhana logo" style="height:2.5em;"/>
-                <span class="hidden sm:block text-lg font-bold text-gray-900">
+                <span class="hidden whitespace-nowrap sm:block text-lg font-bold text-gray-900">
                     Progressive Ideal Yatimkhana
                 </span>
             </a>
 
             <!-- Desktop Navigation -->
-            <nav class="hidden lg:flex lg:items-center lg:gap-8" aria-label="Main navigation">
+            <nav class="hidden shrink-0 xl:flex xl:items-center xl:gap-8" aria-label="Main navigation">
                 ${navLink('/', 'Home', currentPage, 'home')}
                 ${navLink('/about', 'About', currentPage, 'about')}
                 ${navLink('/programs', 'Programs', currentPage, 'programs')}
@@ -131,13 +142,13 @@
             </nav>
 
             <!-- Actions -->
-            <div class="flex items-center gap-4">
+            <div class="flex shrink-0 items-center gap-4">
                 <a href="${donateUrl}" class="hidden rounded-full bg-primary-600 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-primary-700 sm:inline-flex shadow-lg shadow-primary-500/25">
                     Donate Now
                 </a>
 
                 <!-- Mobile Menu Button -->
-                <button type="button" data-mobile-toggle class="rounded-lg p-2 text-gray-600 transition-colors hover:bg-gray-100 lg:hidden" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+                <button type="button" data-mobile-toggle class="rounded-lg p-2 text-gray-600 transition-colors hover:bg-gray-100 xl:hidden" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
                     <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                     </svg>
@@ -146,7 +157,7 @@
         </div>
 
         <!-- Mobile Navigation -->
-        <div id="mobile-menu" class="hidden lg:hidden" data-mobile-menu>
+        <div id="mobile-menu" class="hidden xl:hidden" data-mobile-menu>
             <nav class="border-t border-gray-200 bg-white px-4 py-4" aria-label="Main navigation">
                 ${mobileNavLink('/', 'Home', currentPage, 'home')}
                 ${mobileNavLink('/about', 'About', currentPage, 'about')}

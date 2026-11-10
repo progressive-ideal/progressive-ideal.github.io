@@ -22,7 +22,7 @@ Work through these items one by one. This is still a template site; organization
 - [ ] **14. Complete browser and launch verification.** Check desktop and mobile layouts, navigation, nested pages, donation links, FAQ behavior, gallery/lightbox interactions, autoplay controls, loading/error states, and console errors. Repeat JavaScript syntax, JSON validity, and duplicate-ID checks after implementation.
 - [ ] **15. Support subfolder deployment — deferred; not needed for the current hosting setup.** Audit navigation, asset paths, JSON requests, and homepage section links with a nonempty `basePath`. Fix paths that bypass configuration and verify direct visits and refreshes on root and nested pages under a subfolder.
 - [ ] **16. Consider a Reports/Transparency page — deferred; not needed for now.** Revisit whether to publish a dedicated page for reports, supporting documents, and financial summaries when suitable material is available.
-- [ ] **17. Improve header spacing at narrower desktop widths.** Investigate the reported crowding below approximately 1280px, where the logo/title, navigation links, and Donate button sit too close together. Adjust spacing, title sizing, or the navigation breakpoint as needed, and verify that the header remains readable without overlap at intermediate widths.
+- [x] **17. Improve header spacing at narrower desktop widths.** Full navigation now appears from 1280px; narrower widths use the menu button. Added explicit gaps between header groups, kept branding and actions from shrinking, and reset the compact menu when resizing to desktop. Verified all 13 pages at 12 widths from 320px to 1536px, including keyboard controls and focus during breakpoint changes.
 
 ## 📁 Project Structure
 
