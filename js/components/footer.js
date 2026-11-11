@@ -15,18 +15,26 @@
     
     // Default data (fallback)
     const defaultContact = {
-        organization: "Progressive Ideal Yatimkhana",
-        address: { street: "123 Charity Lane", city: "City", country: "Country", postalCode: "12345" },
-        phone: "+1 (555) 123-4567",
-        email: "info@progressiveidealyatimkhana.org"
+        "organization": "Progressive Ideal Yatimkhana",
+        "alternateName": "Candemir Orphanage",
+        "address": {
+            "street": "Kurapara, Pangsha",
+            "city": "Rajbari",
+            "country": "Bangladesh",
+            "postalCode": ""
+        },
+        "phone": "+880 1720-550728",
+        "additionalPhones": [
+            "+880 1711-421957"
+        ],
+        "email": "pitypangsha@gmail.com",
+        "visitNote": "Please call ahead to arrange a visit and ask for directions.",
+        "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Kurapara%2C+Pangsha%2C+Rajbari%2C+Bangladesh",
+        "source": "Orphanage brochure; contact details awaiting confirmation."
     };
-    
-    const defaultSocialLinks = [
-        { platform: "Facebook", url: "https://facebook.com", icon: "facebook" },
-        { platform: "YouTube", url: "https://youtube.com", icon: "youtube" },
-        { platform: "Instagram", url: "https://instagram.com", icon: "instagram" }
-    ];
-    
+
+    const defaultSocialLinks = [];
+
     /**
      * Helper to get URL with base path
      */
@@ -87,11 +95,9 @@
                         <span class="min-w-0 text-lg font-bold text-white">${contact.organization}</span>
                     </a>
                     <p class="mt-4 max-w-xs text-gray-400">
-                        Providing hope, care, and a brighter future for children in need since 1999.
+                        Providing hope, care, and a brighter future for children in need since 2013.
                     </p>
-                    <div class="mt-6 flex gap-4">
-                        ${renderSocialLinks(socialLinks)}
-                    </div>
+                    ${socialLinks.length ? `<div class="mt-6 flex gap-4">${renderSocialLinks(socialLinks)}</div>` : ''}
                 </div>
                 
                 <!-- Link Columns -->
@@ -119,8 +125,8 @@
                         <h3 class="text-sm font-semibold uppercase tracking-wider text-white">Contact</h3>
                         <ul class="mt-4 space-y-3">
                             <li class="text-gray-400">${contact.address.street}</li>
-                            <li class="text-gray-400">${contact.address.city}, ${contact.address.country} ${contact.address.postalCode}</li>
-                            <li><a href="tel:${contact.phone}" class="text-gray-400 transition-colors hover:text-white">${contact.phone}</a></li>
+                            <li class="text-gray-400">${contact.address.city}, ${contact.address.country} ${contact.address.postalCode || ''}</li>
+                            ${[contact.phone, ...(contact.additionalPhones || [])].map(phone => `<li><a href="tel:${phone.replace(/[^0-9+]/g, '')}" class="text-gray-400 transition-colors hover:text-white">${phone}</a></li>`).join('')}
                             <li><a href="mailto:${contact.email}" class="text-gray-400 transition-colors hover:text-white">${contact.email}</a></li>
                         </ul>
                     </div>

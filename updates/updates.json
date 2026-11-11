@@ -1,56 +1,29 @@
 [
   {
-    "slug": "new-classroom-building-progress",
-    "title": "New Classroom Building Progress",
-    "date": "2026-04-18",
-    "category": "Construction",
-    "categoryColor": "primary",
-    "image": "https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=400&h=200&fit=crop",
-    "excerpt": "Our new classroom building is taking shape! The foundation and walls are complete."
-  },
-  {
-    "slug": "volunteer-appreciation-day",
-    "title": "Volunteer Appreciation Day",
-    "date": "2026-04-05",
-    "category": "Community",
-    "categoryColor": "accent",
-    "image": "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=400&h=200&fit=crop",
-    "excerpt": "We celebrated our incredible volunteers who dedicate their time to our children."
-  },
-  {
-    "slug": "annual-sports-day-celebration",
-    "title": "Annual Sports Day Celebration",
-    "date": "2026-03-22",
-    "category": "Events",
-    "categoryColor": "primary",
-    "image": "https://images.unsplash.com/photo-1461896836934-bd45ba7e4cac?w=400&h=200&fit=crop",
-    "excerpt": "Our children showcased their athletic talents at the annual sports day."
-  },
-  {
-    "slug": "health-camp-for-children",
-    "title": "Health Camp for Children",
-    "date": "2026-03-10",
-    "category": "Healthcare",
-    "categoryColor": "accent",
-    "image": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=400&h=200&fit=crop",
-    "excerpt": "A comprehensive health camp was organized with support from City Hospital."
-  },
-  {
-    "slug": "partnership-with-local-schools",
-    "title": "Partnership with Local Schools",
-    "date": "2026-02-20",
+    "slug": "seerah-and-hifz-achievements-2026",
+    "title": "Seerah and Hifz Achievements",
+    "date": "2026",
     "category": "Education",
     "categoryColor": "primary",
-    "image": "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=400&h=200&fit=crop",
-    "excerpt": "We're thrilled to announce a new partnership with three local schools."
+    "image": null,
+    "excerpt": "The January–June 2026 report records a district first-place Seerah result and a student completing Hifz."
   },
   {
-    "slug": "winter-clothing-drive-success",
-    "title": "Winter Clothing Drive Success",
-    "date": "2026-02-05",
-    "category": "Outreach",
-    "categoryColor": "accent",
+    "slug": "academic-achievements-2025",
+    "title": "2025 Academic Achievements",
+    "date": "2025",
+    "category": "Education",
+    "categoryColor": "primary",
     "image": null,
-    "excerpt": "Our winter clothing drive collected over 500 jackets, 300 pairs of shoes, and countless warm accessories."
+    "excerpt": "The 2026 report records 48 students passing all subjects in their 2025 annual examinations."
+  },
+  {
+    "slug": "campus-inauguration-2023",
+    "title": "Our Building Was Inaugurated in April 2023",
+    "date": "2023-04-08",
+    "category": "Campus",
+    "categoryColor": "accent",
+    "image": "assets/home-hero-1.jpg",
+    "excerpt": "The orphanage building, constructed in 2021, was inaugurated on 8 April 2023."
   }
 ]

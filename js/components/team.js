@@ -47,11 +47,11 @@ const TeamComponent = (function() {
         return `
         <div class="group text-center" data-animate="fade-in-up" data-delay="${(index + 1) * 100}">
             <div class="relative mx-auto mb-4 h-48 w-48 overflow-hidden rounded-2xl">
-                <img src="${url(member.image)}" alt="${member.name}" class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" loading="lazy">
+                ${member.image ? `<img src="${url(member.image)}" alt="${member.name}" class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" loading="lazy">` : ''}
             </div>
             <h3 class="text-lg font-semibold text-gray-900">${member.name}</h3>
             <p class="text-primary-600">${member.role}</p>
-            <p class="mt-2 text-sm text-gray-600">${member.bio}</p>
+            <p class="mt-2 text-sm text-gray-600">${member.bio || ''}</p>
         </div>`;
     }
     

@@ -1,17 +1,7 @@
 [
-  {
+{
     "platform": "Facebook",
-    "url": "https://facebook.com/pit",
+    "url": "https://facebook.com/profile.php?id=100076972202159",
     "icon": "facebook"
-  },
-  {
-    "platform": "YouTube",
-    "url": "https://youtube.com/@pit",
-    "icon": "youtube"
-  },
-  {
-    "platform": "Instagram",
-    "url": "https://instagram.com/pit",
-    "icon": "instagram"
   }
 ]

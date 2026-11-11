@@ -50,6 +50,8 @@ const UpdatesComponent = (function () {
    * Format a date string (YYYY-MM-DD) into a human-readable format
    */
   function formatDate(dateStr) {
+    // Some source records provide only a year; do not invent a day or month.
+    if (/^\d{4}$/.test(dateStr)) return dateStr;
     const date = new Date(dateStr + "T00:00:00");
     return date.toLocaleDateString("en-US", {
       year: "numeric",
@@ -62,6 +64,8 @@ const UpdatesComponent = (function () {
    * Format a date string into a short format (e.g., "April 18, 2026")
    */
   function formatDateShort(dateStr) {
+    // Some source records provide only a year; do not invent a day or month.
+    if (/^\d{4}$/.test(dateStr)) return dateStr;
     const date = new Date(dateStr + "T00:00:00");
     return date.toLocaleDateString("en-US", {
       month: "long",
@@ -74,6 +78,8 @@ const UpdatesComponent = (function () {
    * Get month/year grouping key from date
    */
   function getMonthGroup(dateStr) {
+    // Some source records provide only a year; do not invent a day or month.
+    if (/^\d{4}$/.test(dateStr)) return dateStr;
     const date = new Date(dateStr + "T00:00:00");
     return date.toLocaleDateString("en-US", { year: "numeric", month: "long" });
   }

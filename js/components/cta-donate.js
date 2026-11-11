@@ -11,28 +11,19 @@
     
     // Default configuration
     const defaultConfig = {
-        title: 'Every Dollar Makes a Difference',
+        title: 'Support Our Students',
         description: 'Your generosity directly supports children in need, providing them with food, shelter, education, and hope for a brighter future.',
         buttonText: 'Donate Now',
         buttonUrl: '/donate',
         sectionId: '',
-        showImpactExamples: true,
-        showTrustBadges: true
+        showImpactExamples: false,
+        showTrustBadges: false
     };
     
-    // Impact examples
-    const impactExamples = [
-        { amount: '$25', description: 'School supplies for a child' },
-        { amount: '$50', description: 'Monthly food for a child' },
-        { amount: '$100', description: 'Healthcare for a month' }
-    ];
-    
-    // Trust badges
-    const trustBadges = [
-        { icon: 'shield', text: '100% Tax Deductible' },
-        { icon: 'star', text: 'Verified Organization' }
-    ];
-    
+    // Amount-based examples and verification badges require confirmed information.
+    const impactExamples = [];
+    const trustBadges = [];
+
     /**
      * Helper to get nav URL with base path
      */

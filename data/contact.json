@@ -1,16 +1,18 @@
 {
   "organization": "Progressive Ideal Yatimkhana",
+  "alternateName": "Candemir Orphanage",
   "address": {
-    "street": "123, Pangsha",
+    "street": "Kurapara, Pangsha",
     "city": "Rajbari",
     "country": "Bangladesh",
-    "postalCode": "12345"
+    "postalCode": ""
   },
-  "phone": "+880 1234567890",
-  "email": "info@progressiveidealyatimkhana.org",
-  "hours": {
-    "weekdays": "9:00 AM - 5:00 PM",
-    "friday": "Closed",
-    "saturday": "9:00 AM - 5:00 PM"
-  }
+  "phone": "+880 1720-550728",
+  "additionalPhones": [
+    "+880 1711-421957"
+  ],
+  "email": "pitypangsha@gmail.com",
+  "visitNote": "Please call ahead to arrange a visit and ask for directions.",
+  "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Kurapara%2C+Pangsha%2C+Rajbari%2C+Bangladesh",
+  "source": "Orphanage brochure; contact details awaiting confirmation."
 }

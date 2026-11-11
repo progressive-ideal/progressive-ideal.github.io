@@ -1,27 +1,37 @@
 [
   {
     "id": 1,
-    "question": "How can I donate to the orphanage?",
-    "answer": "You can donate online through our secure donation platform, via bank transfer, or in person at our facility. We accept one-time donations as well as monthly recurring contributions. All donations are tax-deductible."
+    "question": "Where is the orphanage located?",
+    "answer": "Progressive Ideal Yatimkhana is in Kurapara, Pangsha, Rajbari, Bangladesh. Please call before visiting for directions and arrangements."
   },
   {
     "id": 2,
-    "question": "Can I volunteer at the orphanage?",
-    "answer": "Yes! We welcome volunteers with various skills. You can help with teaching, mentoring, organizing activities, administrative work, or maintenance. Please contact us to learn about current opportunities and the application process."
+    "question": "When was the orphanage established?",
+    "answer": "The orphanage was established in 2013. Its building was constructed in 2021 and inaugurated on 8 April 2023. It is also known as Candemir Orphanage."
   },
   {
     "id": 3,
-    "question": "How are donations used?",
-    "answer": "Approximately 85% of donations go directly to programs supporting the children - education, healthcare, nutrition, and daily care. The remaining 15% covers essential operational costs. We publish annual reports detailing how funds are allocated."
+    "question": "How many students live at the orphanage?",
+    "answer": "The January–June 2026 report records 48 resident students and a capacity of 48 beds. These are reported figures for that period, rather than a live count."
   },
   {
     "id": 4,
-    "question": "Can I sponsor a specific child?",
-    "answer": "Yes, we offer a child sponsorship program where you can support a specific child's education and care. You'll receive regular updates on their progress and can even exchange letters. Contact us to learn more about sponsorship opportunities."
+    "question": "What education and care do students receive?",
+    "answer": "The orphanage supports school education, tutoring and Hifz study alongside residential accommodation, meals, clothing and healthcare support."
   },
   {
     "id": 5,
-    "question": "Is my donation tax-deductible?",
-    "answer": "Yes, Progressive Ideal Yatimkhana is a registered charitable organization. All donations are tax-deductible to the full extent allowed by law. You will receive a receipt for your donation that can be used for tax purposes."
+    "question": "How can I donate or discuss sponsorship?",
+    "answer": "Please contact us for current donation or sponsorship arrangements and payment instructions. Online payment is not available on this website yet."
+  },
+  {
+    "id": 6,
+    "question": "Can I volunteer or arrange a visit?",
+    "answer": "Please contact the orphanage to discuss possible ways to help or arrange a visit. Confirm arrangements before travelling."
+  },
+  {
+    "id": 7,
+    "question": "What support is needed?",
+    "answer": "The January–June 2026 report identifies building repairs, painting and roof work, library resources, digital equipment, teacher training and access-road improvements as priorities. Contact us to discuss which needs are most urgent now."
   }
 ]

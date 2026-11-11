@@ -10,8 +10,8 @@
     const defaultData = {
         images: [
             {
-                src: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1920&h=1080&fit=crop",
-                alt: "Children smiling and learning together"
+                src: "assets/home-hero-1.jpg",
+                alt: "Progressive Ideal Yatimkhana campus"
             }
         ],
         interval: 5000

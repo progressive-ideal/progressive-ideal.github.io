@@ -1,30 +1,114 @@
 [
   {
     "id": 1,
-    "name": "John Smith",
-    "role": "Executive Director",
-    "bio": "20+ years in child welfare and nonprofit management",
-    "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop"
+    "name": "Dr. Md. Abdul Matin",
+    "role": "President",
+    "bio": "Doctor",
+    "group": "committee",
+    "image": null
   },
   {
     "id": 2,
-    "name": "Sarah Johnson",
-    "role": "Program Director",
-    "bio": "Expert in child development and education programs",
-    "image": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop"
+    "name": "Harun Or Rashid",
+    "role": "Secretary",
+    "bio": "Teacher",
+    "group": "committee",
+    "image": null
   },
   {
     "id": 3,
-    "name": "Michael Chen",
-    "role": "Operations Manager",
-    "bio": "Ensuring smooth daily operations and facility management",
-    "image": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop"
+    "name": "Maulana Enamul Haque",
+    "role": "Member",
+    "bio": "Teacher",
+    "group": "committee",
+    "image": null
   },
   {
     "id": 4,
-    "name": "Emily Davis",
-    "role": "Outreach Coordinator",
-    "bio": "Building partnerships and community relationships",
-    "image": "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=200&h=200&fit=crop"
+    "name": "Maulana Sultan Mahmud",
+    "role": "Member",
+    "bio": "Teacher",
+    "group": "committee",
+    "image": null
+  },
+  {
+    "id": 5,
+    "name": "Kazi Farhat Jamil Rupu",
+    "role": "Member",
+    "bio": "Businessperson",
+    "group": "committee",
+    "image": null
+  },
+  {
+    "id": 6,
+    "name": "Ahammad Ali Munshi",
+    "role": "Member",
+    "bio": "Businessperson",
+    "group": "committee",
+    "image": null
+  },
+  {
+    "id": 7,
+    "name": "H. M. Zilhajj Hasan",
+    "role": "Superintendent",
+    "bio": "",
+    "group": "staff",
+    "image": null
+  },
+  {
+    "id": 8,
+    "name": "Shahinur Rahman",
+    "role": "Assistant Superintendent",
+    "bio": "",
+    "group": "staff",
+    "image": null
+  },
+  {
+    "id": 9,
+    "name": "Hafiz Motaleb Hossain",
+    "role": "Assistant Teacher",
+    "bio": "",
+    "group": "staff",
+    "image": null
+  },
+  {
+    "id": 10,
+    "name": "Hafiz Md. Ibrahim Hossain",
+    "role": "Assistant Teacher · Hifz",
+    "bio": "",
+    "group": "staff",
+    "image": null
+  },
+  {
+    "id": 11,
+    "name": "Md. Mizanur Rahman",
+    "role": "Part-time Assistant Teacher",
+    "bio": "",
+    "group": "staff",
+    "image": null
+  },
+  {
+    "id": 12,
+    "name": "Md. Abdul Alim",
+    "role": "Cook",
+    "bio": "",
+    "group": "staff",
+    "image": null
+  },
+  {
+    "id": 13,
+    "name": "Md. Lokman Hossain",
+    "role": "Assistant Cook",
+    "bio": "",
+    "group": "staff",
+    "image": null
+  },
+  {
+    "id": 14,
+    "name": "Md. Shafiqul Islam",
+    "role": "Cleaner",
+    "bio": "",
+    "group": "staff",
+    "image": null
   }
 ]

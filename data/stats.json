@@ -1,14 +1,23 @@
 {
+  "source": "January–June 2026 orphanage report",
   "stats": [
-    { "value": 50000, "label": "Funds Raised", "prefix": "$", "suffix": "+" },
-    { "value": 150, "label": "Children Helped", "suffix": "+" },
-    { "value": 50, "label": "Active Volunteers", "suffix": "+" },
-    { "value": 25, "label": "Years of Service" },
-    { "value": 200, "label": "Meals Served Monthly" }
+    {
+      "value": 48,
+      "label": "Resident students · Jan–Jun 2026"
+    },
+    {
+      "value": 48,
+      "label": "Beds · Jan–Jun 2026"
+    },
+    {
+      "value": 2013,
+      "label": "Year established",
+      "animate": false
+    },
+    {
+      "value": 48,
+      "label": "Passed all subjects · Annual exams 2025"
+    }
   ],
-  "campaigns": [
-    { "name": "New Classroom Building", "progress": 65, "goal": "$50,000" },
-    { "name": "Medical Fund", "progress": 80, "goal": "$20,000" },
-    { "name": "Food & Nutrition", "progress": 45, "goal": "$30,000" }
-  ]
+  "campaigns": []
 }

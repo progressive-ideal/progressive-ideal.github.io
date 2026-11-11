@@ -45,7 +45,7 @@
         return `
                     <div class="text-center min-w-[120px] sm:min-w-[150px]" data-animate="fade-in-up" data-delay="${delay}">
                         <div class="text-4xl font-bold text-primary-600 lg:text-5xl">
-                            <span data-counter="${stat.value}" data-prefix="${prefix}" data-suffix="${suffix}">${prefix}0${suffix}</span>
+                            ${stat.animate === false ? `<span>${prefix}${stat.value}${suffix}</span>` : `<span data-counter="${stat.value}" data-prefix="${prefix}" data-suffix="${suffix}">${prefix}0${suffix}</span>`}
                         </div>
                         <div class="mt-2 text-sm font-medium text-gray-600">${stat.label}</div>
                     </div>`;
@@ -88,7 +88,7 @@
      */
     function renderCampaigns(campaigns) {
         const placeholder = document.getElementById('campaigns-container');
-        if (!placeholder || !campaigns) return;
+        if (!placeholder || !campaigns || !campaigns.length) return;
         
         placeholder.innerHTML = `<h3 class="text-center text-xl font-semibold text-gray-900">Active Campaigns</h3>
                     

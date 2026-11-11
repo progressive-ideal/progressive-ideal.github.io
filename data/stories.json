@@ -1,51 +1,9 @@
 [
-  {
+    {
     "quote": "When I came to Progressive Ideal Yatimkhana, I was scared and alone. Today, I am a university student studying to become a doctor. The orphanage gave me not just a home, but a family and a future.",
     "author": "Sarah M.",
     "role": "BUET Engineer",
     "image": "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=100&h=100&fit=crop",
     "icon": "education"
-  },
-  {
-    "quote": "The support I received at Progressive Ideal Yatimkhana changed my life. I learned computer skills, finished school, and now I work as a software developer. I'm forever grateful.",
-    "author": "James K.",
-    "role": "Software Developer",
-    "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop",
-    "icon": "work"
-  },
-  {
-    "quote": "As a monthly donor, I've seen firsthand how every dollar makes a difference. The transparency and dedication of the team is remarkable. These children truly have a chance at a better life.",
-    "author": "Maria L.",
-    "role": "Monthly Donor",
-    "image": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop",
-    "icon": "heart"
-  },
-  {
-    "quote": "I donated. Yay.",
-    "author": "John L.",
-    "role": "Donor",
-    "image": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop",
-    "icon": "heart"
-  },
-  {
-    "quote": "I donated. Yay.",
-    "author": "John L.",
-    "role": "Donor",
-    "image": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop",
-    "icon": "heart"
-  },
-  {
-    "quote": "I donated. Yay.",
-    "author": "John L.",
-    "role": "Donor",
-    "image": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop",
-    "icon": "heart"
-  },
-  {
-    "quote": "I donated. Yay.",
-    "author": "John L.",
-    "role": "Donor",
-    "image": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop",
-    "icon": "heart"
   }
 ]

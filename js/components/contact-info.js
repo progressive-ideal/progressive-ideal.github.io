@@ -10,27 +10,25 @@
     
     // Default data (fallback)
     const defaultContact = {
-        organization: "Progressive Ideal Yatimkhana",
-        address: {
-            street: "123 Charity Lane",
-            city: "City",
-            country: "Country",
-            postalCode: "12345"
+        "organization": "Progressive Ideal Yatimkhana",
+        "alternateName": "Candemir Orphanage",
+        "address": {
+            "street": "Kurapara, Pangsha",
+            "city": "Rajbari",
+            "country": "Bangladesh",
+            "postalCode": ""
         },
-        phone: "+1 (555) 123-4567",
-        email: "info@progressiveidealyatimkhana.org",
-        hours: {
-            weekdays: "9:00 AM - 5:00 PM",
-            friday: "Closed",
-            saturday: "Closed"
-        }
+        "phone": "+880 1720-550728",
+        "additionalPhones": [
+            "+880 1711-421957"
+        ],
+        "email": "pitypangsha@gmail.com",
+        "visitNote": "Please call ahead to arrange a visit and ask for directions.",
+        "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Kurapara%2C+Pangsha%2C+Rajbari%2C+Bangladesh",
+        "source": "Orphanage brochure; contact details awaiting confirmation."
     };
     
-    const defaultSocialLinks = [
-        { platform: "Facebook", url: "https://facebook.com", icon: "facebook" },
-        { platform: "YouTube", url: "https://youtube.com", icon: "youtube" },
-        { platform: "Instagram", url: "https://instagram.com", icon: "instagram" }
-    ];
+    const defaultSocialLinks = [];
     
     // Social media icons
     const socialIcons = {
@@ -78,7 +76,7 @@
                                 </div>
                                 <div>
                                     <h3 class="font-semibold text-gray-900">Phone</h3>
-                                    <p class="mt-1 text-gray-600"><a href="tel:${contact.phone.replace(/[^0-9+]/g, '')}" class="hover:text-primary-600">${contact.phone}</a></p>
+                                    ${[contact.phone, ...(contact.additionalPhones || [])].map(phone => `<p class="mt-1 text-gray-600"><a href="tel:${phone.replace(/[^0-9+]/g, '')}" class="hover:text-primary-600">${phone}</a></p>`).join('')}
                                 </div>
                             </div>
                             <div class="flex gap-4">
@@ -90,7 +88,7 @@
                                 </div>
                                 <div>
                                     <h3 class="font-semibold text-gray-900">Address</h3>
-                                    <p class="mt-1 text-gray-600">${contact.address.street}<br>${contact.address.city}, ${contact.address.country} ${contact.address.postalCode}</p>
+                                    <p class="mt-1 text-gray-600">${contact.address.street}<br>${contact.address.city}, ${contact.address.country} ${contact.address.postalCode || ''}</p>
                                 </div>
                             </div>
                             
@@ -113,14 +111,14 @@
                                     </svg>
                                 </div>
                                 <div>
-                                    <h3 class="font-semibold text-gray-900">Office Hours</h3>
-                                    <p class="mt-1 text-gray-600">Sunday - Thursday: ${contact.hours.weekdays}<br>Friday: ${contact.hours.friday}<br>Saturday: ${contact.hours.saturday}</p>
+                                    <h3 class="font-semibold text-gray-900">Arrange a Visit</h3>
+                                    <p class="mt-1 text-gray-600">${contact.visitNote}</p>
                                 </div>
                             </div>
                         </div>
                         
                         <!-- Social Links -->
-                        <div class="mt-10 text-center">
+                        ${socialLinks.length ? `<div class="mt-10 text-center">
                             <h3 class="font-semibold text-gray-900">Follow Us</h3>
                             <div class="mt-4 flex justify-center gap-4">
                                 ${socialLinks.map(link => {
@@ -130,7 +128,7 @@
                                 </a>`;
                                 }).join('')}
                             </div>
-                        </div>`;
+                        </div>` : ''}`;
     }
     
     /**
